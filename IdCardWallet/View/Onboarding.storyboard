@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,38 +13,61 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="OnboardingController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eVc-lM-WpQ">
-                                <rect key="frame" x="45" y="246" width="303" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eVc-lM-WpQ">
+                                <rect key="frame" x="45" y="192" width="285" height="201"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="201" id="yRm-ob-w9f"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-c3-HQZ">
-                                <rect key="frame" x="159" y="629" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-c3-HQZ">
+                                <rect key="frame" x="8.6666666666666572" y="575" width="358" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="358" id="2lb-Ut-c0N"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYB-nn-DQJ">
-                                <rect key="frame" x="159" y="685" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYB-nn-DQJ">
+                                <rect key="frame" x="8.6666666666666572" y="631" width="358" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="358" id="gfl-YR-hVF"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="saveButtonUI:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OmX-Hm-aZO"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2D-ee-csW" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="20" y="412" width="335" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="yMd-6i-Qkd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="K2D-ee-csW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="0I4-5D-v98"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="K2D-ee-csW" secondAttribute="trailing" constant="20" id="6De-Ub-Tb2"/>
+                            <constraint firstItem="iYB-nn-DQJ" firstAttribute="top" secondItem="b2d-c3-HQZ" secondAttribute="bottom" constant="21" id="DJE-bN-ZPL"/>
                             <constraint firstItem="eVc-lM-WpQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="142" id="NcM-Ee-5gP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eVc-lM-WpQ" secondAttribute="trailing" constant="45" id="StI-LC-prl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iYB-nn-DQJ" secondAttribute="bottom" constant="58" id="Zfy-3i-aoh"/>
+                            <constraint firstItem="b2d-c3-HQZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bxM-b7-71x"/>
+                            <constraint firstItem="iYB-nn-DQJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eQW-z4-kX4"/>
+                            <constraint firstItem="K2D-ee-csW" firstAttribute="top" secondItem="eVc-lM-WpQ" secondAttribute="bottom" constant="19" id="eiE-AC-ugo"/>
                             <constraint firstItem="eVc-lM-WpQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="45" id="sg3-UE-Eg0"/>
+                            <constraint firstItem="b2d-c3-HQZ" firstAttribute="top" secondItem="K2D-ee-csW" secondAttribute="bottom" constant="89" id="ut7-sO-ylA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="OnboardingImage" destination="eVc-lM-WpQ" id="ivb-6n-Uxr"/>
+                        <outlet property="TextView" destination="K2D-ee-csW" id="29X-mx-CXE"/>
                         <outlet property="saveButton" destination="b2d-c3-HQZ" id="Vta-Ts-XVv"/>
                         <outlet property="skipButton" destination="iYB-nn-DQJ" id="NF1-O8-RFe"/>
                     </connections>

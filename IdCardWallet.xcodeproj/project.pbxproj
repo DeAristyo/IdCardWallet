@@ -14,8 +14,7 @@
 		A58F3D5E2A654C2200BB0063 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D5D2A654C2200BB0063 /* TabBarController.swift */; };
 		A58F3D602A654D8C00BB0063 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */; };
 		A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D612A654E5000BB0063 /* OnboardingController.swift */; };
-		A58F3D642A66393300BB0063 /* LoginText.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D632A66393300BB0063 /* LoginText.xib */; };
-		A58F3D662A663A9500BB0063 /* LoginTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D652A663A9500BB0063 /* LoginTextfield.swift */; };
+		A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D672A669DEE00BB0063 /* TextFieldID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +27,7 @@
 		A58F3D5D2A654C2200BB0063 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A58F3D612A654E5000BB0063 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
-		A58F3D632A66393300BB0063 /* LoginText.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginText.xib; sourceTree = "<group>"; };
-		A58F3D652A663A9500BB0063 /* LoginTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextfield.swift; sourceTree = "<group>"; };
+		A58F3D672A669DEE00BB0063 /* TextFieldID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +83,8 @@
 		A58F3D522A6521F700BB0063 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A58F3D672A669DEE00BB0063 /* TextFieldID.swift */,
 				A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */,
-				A58F3D632A66393300BB0063 /* LoginText.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,7 +101,6 @@
 			children = (
 				A58F3D5D2A654C2200BB0063 /* TabBarController.swift */,
 				A58F3D612A654E5000BB0063 /* OnboardingController.swift */,
-				A58F3D652A663A9500BB0063 /* LoginTextfield.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,7 +163,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58F3D642A66393300BB0063 /* LoginText.xib in Resources */,
 				A58F3D602A654D8C00BB0063 /* Onboarding.storyboard in Resources */,
 				A58F3D4A2A6520CD00BB0063 /* LaunchScreen.storyboard in Resources */,
 				A58F3D472A6520CD00BB0063 /* Assets.xcassets in Resources */,
@@ -182,8 +178,8 @@
 			files = (
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
 				A58F3D5E2A654C2200BB0063 /* TabBarController.swift in Sources */,
+				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
 				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
-				A58F3D662A663A9500BB0063 /* LoginTextfield.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
