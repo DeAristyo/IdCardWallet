@@ -18,7 +18,7 @@ class OnboardingController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TextView.setupView(placeholders: "Login", images: UIImage.init(named: "tabProfile")!, labels: "Login", delegates: self)
+        TextView.setupView(placeholders: "Masookk", labels: "Mashyuuuk", delegates: self)
         
         OnboardingImage?.image = UIImage(named: "OnboardingIllustration")
 //        OnboardingImage?.frame = CGRect(x: 0, y: 142, width: 400, height: 214)
@@ -38,7 +38,6 @@ class OnboardingController: UIViewController{
 extension OnboardingController: textFieldIDDelegate{
     func getValue(value: String?) {
         skipButton.setTitle(value, for: .normal)
-        print(value)
     }
     
     

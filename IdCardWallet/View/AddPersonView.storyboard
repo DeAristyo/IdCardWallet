@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uMa-ad-sSL">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Person-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="AddPersonViewController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6h-X0-oF7" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="8" y="361" width="377" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="hqr-hw-dyx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZ0-rR-sD7" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="8" y="443" width="377" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="gC2-ak-1vA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mV-Ix-0YU" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="8" y="517" width="377" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="Pl8-ep-9Gb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFG-Iu-3LK" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="8" y="599" width="377" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="sqj-Sp-lAp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoF-2M-pv1" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="8" y="673" width="377" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="3Xk-Zb-0Ug"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CONTACT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDL-ls-E4C">
+                                <rect key="frame" x="16" y="178" width="103" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="8Wa-I6-zNr"/>
+                                    <constraint firstAttribute="width" constant="81" id="uJW-ET-d74"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oFG-Iu-3LK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="34w-MB-1Ri"/>
+                            <constraint firstItem="uDL-ls-E4C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="6dq-Sq-92Q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dZ0-rR-sD7" secondAttribute="trailing" constant="8" id="A27-DN-Zt5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3mV-Ix-0YU" secondAttribute="trailing" constant="8" id="EIN-8T-mEa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="uDL-ls-E4C" secondAttribute="top" constant="-176" id="EV2-OA-yUh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VoF-2M-pv1" secondAttribute="trailing" constant="8" id="HzG-Yq-Jre"/>
+                            <constraint firstItem="3mV-Ix-0YU" firstAttribute="top" secondItem="dZ0-rR-sD7" secondAttribute="bottom" id="Ii4-dn-XcD"/>
+                            <constraint firstItem="oFG-Iu-3LK" firstAttribute="top" secondItem="3mV-Ix-0YU" secondAttribute="bottom" constant="8" symbolic="YES" id="Nbx-mF-h7k"/>
+                            <constraint firstItem="VoF-2M-pv1" firstAttribute="top" secondItem="oFG-Iu-3LK" secondAttribute="bottom" id="Zgn-8I-VMP"/>
+                            <constraint firstItem="dZ0-rR-sD7" firstAttribute="top" secondItem="O6h-X0-oF7" secondAttribute="bottom" constant="8" symbolic="YES" id="ZnK-HH-hjj"/>
+                            <constraint firstItem="O6h-X0-oF7" firstAttribute="top" secondItem="uDL-ls-E4C" secondAttribute="bottom" constant="8" symbolic="YES" id="aBm-WH-Ych"/>
+                            <constraint firstItem="3mV-Ix-0YU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="ckp-jV-uPy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uDL-ls-E4C" secondAttribute="trailing" constant="274" id="dqt-G4-Qjk"/>
+                            <constraint firstItem="dZ0-rR-sD7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="fup-l5-lBG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oFG-Iu-3LK" secondAttribute="trailing" constant="8" id="kKr-Fg-Vxc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="O6h-X0-oF7" secondAttribute="trailing" constant="8" id="ow4-SS-NYd"/>
+                            <constraint firstItem="O6h-X0-oF7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="tGZ-i3-EgA"/>
+                            <constraint firstItem="VoF-2M-pv1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="zJF-Eq-1pe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail Person" id="aUT-Fs-DYo">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Ewc-h0-S53"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="AddressField" destination="oFG-Iu-3LK" id="Fb5-HK-ZRr"/>
+                        <outlet property="BirthdayField" destination="VoF-2M-pv1" id="4b9-by-YIB"/>
+                        <outlet property="EmailField" destination="3mV-Ix-0YU" id="9dt-uh-Qli"/>
+                        <outlet property="FullnameField" destination="O6h-X0-oF7" id="ih3-gt-Yr4"/>
+                        <outlet property="PhoneNumberField" destination="dZ0-rR-sD7" id="MPc-py-Hly"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988.54961832061065" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tTZ-x9-3ur">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uMa-ad-sSL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="toT-bo-hK2">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="LfE-Mj-Jvi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bw-1U-XHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.832061068702288" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

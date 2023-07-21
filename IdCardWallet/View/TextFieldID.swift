@@ -13,13 +13,13 @@ protocol textFieldIDDelegate{
 
 class TextFieldID: UIView{
     
-    lazy var iconImage: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFit
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "tabProfile")
-        return view
-    }()
+//    lazy var iconImage: UIImageView = {
+//        let view = UIImageView()
+//        view.contentMode = .scaleAspectFit
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.image = UIImage(named: "tabProfile")
+//        return view
+//    }()
     
     lazy var textInput: UITextField = {
         let view = UITextField()
@@ -31,7 +31,7 @@ class TextFieldID: UIView{
     lazy var divider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black
+        view.backgroundColor = .gray
         return view
     }()
     
@@ -57,15 +57,15 @@ class TextFieldID: UIView{
         setupAddSubView()
     }
     
-    func setupView(placeholders:String, images: UIImage, labels: String, delegates: textFieldIDDelegate){
+    func setupView(placeholders:String, labels: String, delegates: textFieldIDDelegate){
         textInput.placeholder = placeholders
-        iconImage.image = images
+//        iconImage.image = images
         inputLabel.text = labels
     }
     
     func setupAddSubView(){
         textInput.delegate = self
-        addSubview(iconImage)
+//        addSubview(iconImage)
         addSubview(inputLabel)
         addSubview(textInput)
         addSubview(divider)
@@ -75,17 +75,17 @@ class TextFieldID: UIView{
     
     func setupLayout(){
         NSLayoutConstraint.activate([
-            iconImage.topAnchor.constraint(equalTo: textInput.topAnchor, constant: 0),
-            iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            iconImage.widthAnchor.constraint(equalToConstant: 25),
-            iconImage.heightAnchor.constraint(equalToConstant: 25),
+//            iconImage.topAnchor.constraint(equalTo: textInput.topAnchor, constant: 0),
+//            iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+//            iconImage.widthAnchor.constraint(equalToConstant: 25),
+//            iconImage.heightAnchor.constraint(equalToConstant: 25),
             
-            inputLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 16),
+            inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             inputLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             inputLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
             textInput.topAnchor.constraint(equalTo: inputLabel.bottomAnchor, constant: 12),
-            textInput.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 16),
+            textInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             textInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             textInput.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: -12),
             
