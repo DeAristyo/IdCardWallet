@@ -20,7 +20,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
     var titles = [
         "Keep track of people you meet!",
         "Save notes!",
-        "Set Reminders"
+        "Set Reminders!"
     ]
     
     var desc = [
@@ -43,19 +43,26 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         self.view.layoutIfNeeded()
-
         self.scrollView.delegate = self
         
         var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        
+        let skipButtonSize: CGFloat = 60
+        let skipButtonPadding: CGFloat = 16
+        let skipButtonFrame = CGRect(x: view.bounds.width - skipButtonSize - skipButtonPadding,
+                                     y: skipButtonPadding,
+                                     width: skipButtonSize,
+                                     height: skipButtonSize)
         
         for index in 0..<titles.count {
             frame.origin.x = scrollWidth * CGFloat(index)
             frame.size = CGSize(width: scrollWidth, height: scrollHeight)
 
             let slide = UIView(frame: frame)
-            
             let image = UIImageView(image: UIImage.init(named: imgs[index]))
             image.image = UIImage(named: imgs[index])
             image.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
@@ -67,7 +74,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
                 txt1.textAlignment = .center
                 txt1.font = UIFont.boldSystemFont(ofSize: 28.0)
                 txt1.numberOfLines = 0
-                txt1.textColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
+                txt1.textColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
                 txt1.text = titles[index]
                 slide.addSubview(txt1)
 
@@ -95,50 +102,46 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
                     txt2.heightAnchor.constraint(equalToConstant: 200)
                 ])
            
-
-            
             if index == 2 {
-                let button = UIButton(frame: CGRect(x: slide.frame.width / 2 - 164, y: self.view.center.y + 210, width: 328, height: 40))
+                   let startButton = UIButton(frame: CGRect(x: slide.frame.width / 2 - 164,
+                                                            y: self.view.center.y + 210,
+                                                            width: 328,
+                                                            height: 40))
 
-                button.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
-                button.setTitle("Start", for: .normal)
-                button.layer.cornerRadius = 7
-                button.isEnabled = true
-                button.isUserInteractionEnabled = true
-//                button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-                
-                slide.addSubview(button)
-            }
+                   startButton.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
+                   startButton.setTitle("Start", for: .normal)
+                   startButton.layer.cornerRadius = 7
+                   startButton.isEnabled = true
+                   startButton.isUserInteractionEnabled = true
+                    startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
 
-            
+                   slide.addSubview(startButton)
+               } else if (index == 0 || index == 1) && slide.subviews.contains(where: { $0 is UIButton }) == false {
+                   // Add the skip button for index 0 and 1 slides if it hasn't been added yet
+                   let skipButton = UIButton(type: .system)
+                   skipButton.setTitle("Skip", for: .normal)
+                   skipButton.titleLabel?.font = UIFont.systemFont(ofSize: 20.0)
+                   skipButton.setTitleColor(UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1), for: .normal)
+                   skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+
+                   skipButton.frame = skipButtonFrame
+                   slide.addSubview(skipButton)
+               }
             
             slide.addSubview(txt1)
-            slide.addSubview(txt2)
-            txt2.sizeToFit()
-            slide.addSubview(image)
-            scrollView.addSubview(slide)
-        }
+                slide.addSubview(txt2)
+                txt2.sizeToFit()
+                slide.addSubview(image)
+                scrollView.addSubview(slide)
+            }
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(titles.count) , height: scrollHeight)
         self.scrollView.contentSize.height = 1.0
 
         pageControl.numberOfPages = titles.count
         pageControl.currentPage = 0
+      
     }
-    
-//    @objc func didTapButton(_ sender: UIButton) {
-//        performSegue(withIdentifier: "ToCameraScreen", sender: nil)
-//    }
     
     @objc func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         setIndiactorForCurrentPage()
@@ -148,36 +151,13 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
         let page = (scrollView?.contentOffset.x)!/scrollWidth
         pageControl?.currentPage = Int(page)
     }
-}
-  
     
-    //    @IBOutlet var OnboardingImage: UIImageView!
-//    @IBOutlet weak var text1: UILabel!
-//    @IBOutlet weak var text2: UILabel!
-//
-//    @IBOutlet weak var nextButton: UIButton!
-//
-//    @IBOutlet weak var skipButton: UIButton!
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        OnboardingImage?.image = UIImage(named: "OnboardingIllustration")
-//
-//        text1.lineBreakMode = .byWordWrapping
-//        text1.numberOfLines = 0
-//
-//        text2.lineBreakMode = .byWordWrapping
-//        text2.numberOfLines = 0
-//
-//    }
-//
-//}
-//
-//extension OnboardingController: textFieldIDDelegate{
-//    func getValue(value: String?) {
-//
-//    }
-//
-//
-//}
+    @objc func skipButtonTapped() {
+       
+        print("Skip button tapped!")
+    }
+    @objc func startButtonTapped() {
+       
+        print("Start button tapped!")
+    }
+}
