@@ -59,14 +59,12 @@ class AddPersonViewController: UIViewController{
   
 }
 
-protocol SocialMediaSelectionDelegate: AnyObject {
-    func didSelectSocialMedia(platform: String)
-}
+//protocol SocialMediaSelectionDelegate: AnyObject {
+//    func didSelectSocialMedia(platform: String)
+//}
 
 extension AddPersonViewController: textFieldIDDelegate{
     func getValue(value: String?) {
         print(value)
     }
 }
-
-
