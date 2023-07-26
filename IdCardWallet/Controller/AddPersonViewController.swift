@@ -7,20 +7,43 @@
 
 import UIKit
 
-class AddPersonViewController: UIViewController{
+class AddPersonViewController: UIViewController, SocialMediaDelegate {
     
     @IBOutlet weak var FullnameField: TextFieldID!
     @IBOutlet weak var PhoneNumberField: TextFieldID!
     @IBOutlet weak var EmailField: TextFieldID!
     @IBOutlet weak var AddressField: TextFieldID!
     @IBOutlet weak var BirthdayField: TextFieldID!
-    @IBOutlet weak var SocialMedia: UIButton!
+    
     @IBOutlet weak var Note: UIButton!
     @IBOutlet weak var Reminder: UIButton!
+    
+    @IBOutlet weak var selectedSocialMediaLabel: UILabel!
+        @IBOutlet weak var socialMediaTextField: UITextField!
+    
+    func didSelectSocialMedia(_ socialMedia: String) {
+        print("Selected social media: \(socialMedia)")
+        print(socialMedia)
+        selectedSocialMediaLabel.text = socialMedia
+        socialMediaTextField.placeholder = "Enter your \(socialMedia) handle"
+    }
+    
+    @IBAction func addSocialMediaButtonTapped(_ sender: UIButton) {
+        // Navigate to the SocialMediaController
+        let socialMediaNavigationView = UIStoryboard(name: "AddPersonView", bundle: nil).instantiateViewController(withIdentifier: "SocialMediaController")
+        
+        let socialMediaController = socialMediaNavigationView.children.first as! SocialMediaController
+        
+        socialMediaController.delegate = self
+        socialMediaNavigationView.modalPresentationStyle = .pageSheet
+        
+        self.present(socialMediaNavigationView, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         let appearance =  UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
@@ -53,7 +76,11 @@ class AddPersonViewController: UIViewController{
         BirthdayField
             .setupView(placeholders: "Pick to choose", labels: "Birthday", delegates: self)
                                
-        
+        FullnameField.delegate = self
+        PhoneNumberField.delegate = self
+        EmailField.delegate = self
+        AddressField.delegate = self
+        BirthdayField.delegate = self
             
     }
   

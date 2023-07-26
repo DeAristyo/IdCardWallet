@@ -104,19 +104,19 @@ extension TextFieldID: UITextFieldDelegate{
         delegate?.getValue(value: textField.text)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        delegate?.getValue(value: textField.text)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        delegate?.getValue(value: textField.text)
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        delegate?.getValue(value: textField.text)
-        return true
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        delegate?.getValue(value: textField.text)
+//    }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        delegate?.getValue(value: textField.text)
+//        return true
+//    }
+//    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        delegate?.getValue(value: textField.text)
+//        return true
+//    }
     
 
 }
