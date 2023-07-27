@@ -14,7 +14,9 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     @IBOutlet weak var EmailField: TextFieldID!
     @IBOutlet weak var AddressField: TextFieldID!
     @IBOutlet weak var BirthdayField: TextFieldID!
-    
+    @IBOutlet weak var birthdayDatePicker: UIDatePicker!
+    @IBOutlet weak var LinkedInField: TextFieldID!
+    @IBOutlet weak var InstagramField: TextFieldID!
     @IBOutlet weak var Note: UIButton!
     @IBOutlet weak var Reminder: UIButton!
     
@@ -22,7 +24,7 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         @IBOutlet weak var socialMediaTextField: UITextField!
     
     func didSelectSocialMedia(_ socialMedia: String) {
-        print("Selected social media: \(socialMedia)")
+        print("Selected social m: \(socialMedia)")
         print(socialMedia)
         selectedSocialMediaLabel.text = socialMedia
         socialMediaTextField.placeholder = "Enter your \(socialMedia) handle"
@@ -43,6 +45,7 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         
         let appearance =  UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -75,7 +78,13 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
 
         BirthdayField
             .setupView(placeholders: "Pick to choose", labels: "Birthday", delegates: self)
-                               
+                   
+        LinkedInField
+            .setupView(placeholders: "e.g. https://id.linkedin.com/marklee", labels: "LinkedIn", delegates: self)
+        
+        InstagramField
+            .setupView(placeholders: "e.g. https://id.instagram.com/marklee", labels: "Instagram", delegates: self)
+        
         FullnameField.delegate = self
         PhoneNumberField.delegate = self
         EmailField.delegate = self

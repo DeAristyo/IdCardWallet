@@ -15,6 +15,7 @@
 		A58F3D602A654D8C00BB0063 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */; };
 		A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D612A654E5000BB0063 /* OnboardingController.swift */; };
 		A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D672A669DEE00BB0063 /* TextFieldID.swift */; };
+		BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4132A726D0E0084D88C /* EditProfileController.swift */; };
 		BFA750A02A70D62E0016F1C5 /* SocialMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA7509F2A70D62E0016F1C5 /* SocialMediaController.swift */; };
 		BFF9CD132A692588006CD9B8 /* AddPersonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF9CD122A692588006CD9B8 /* AddPersonView.storyboard */; };
 		BFF9CD152A69259F006CD9B8 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9CD142A69259F006CD9B8 /* AddPersonViewController.swift */; };
@@ -31,6 +32,7 @@
 		A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A58F3D612A654E5000BB0063 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		A58F3D672A669DEE00BB0063 /* TextFieldID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldID.swift; sourceTree = "<group>"; };
+		BF7AE4132A726D0E0084D88C /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		BFA7509F2A70D62E0016F1C5 /* SocialMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaController.swift; sourceTree = "<group>"; };
 		BFF9CD122A692588006CD9B8 /* AddPersonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPersonView.storyboard; sourceTree = "<group>"; };
 		BFF9CD142A69259F006CD9B8 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				A58F3D612A654E5000BB0063 /* OnboardingController.swift */,
 				BFF9CD142A69259F006CD9B8 /* AddPersonViewController.swift */,
 				BFA7509F2A70D62E0016F1C5 /* SocialMediaController.swift */,
+				BF7AE4132A726D0E0084D88C /* EditProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
+				BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */,
 				BFA750A02A70D62E0016F1C5 /* SocialMediaController.swift in Sources */,
 				A58F3D5E2A654C2200BB0063 /* TabBarController.swift in Sources */,
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
