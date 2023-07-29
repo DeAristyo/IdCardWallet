@@ -22,6 +22,9 @@
 		32AAE0C52A73BD8B00A7A55B /* IdCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */; };
 		32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C62A752B9C00A7A55B /* HeaderView.swift */; };
 		32AAE0C92A75433700A7A55B /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C82A75433700A7A55B /* NoteList.swift */; };
+		32AAE0CB2A758A7400A7A55B /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0CA2A758A7400A7A55B /* Form.swift */; };
+		32AAE0CD2A758ACD00A7A55B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0CC2A758ACD00A7A55B /* Group.swift */; };
+		32AAE0CF2A758E5600A7A55B /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0CE2A758E5600A7A55B /* ReminderList.swift */; };
 		A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D3D2A6520CC00BB0063 /* AppDelegate.swift */; };
 		A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D3F2A6520CC00BB0063 /* SceneDelegate.swift */; };
 		A58F3D472A6520CD00BB0063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D462A6520CD00BB0063 /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 		32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdCardView.swift; sourceTree = "<group>"; };
 		32AAE0C62A752B9C00A7A55B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		32AAE0C82A75433700A7A55B /* NoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; };
+		32AAE0CA2A758A7400A7A55B /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Form.swift; path = IdCardWallet/Controller/Form.swift; sourceTree = SOURCE_ROOT; };
+		32AAE0CC2A758ACD00A7A55B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Group.swift; path = IdCardWallet/Controller/Group.swift; sourceTree = SOURCE_ROOT; };
+		32AAE0CE2A758E5600A7A55B /* ReminderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
 		A58F3D3A2A6520CC00BB0063 /* IdCardWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdCardWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F3D3D2A6520CC00BB0063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58F3D3F2A6520CC00BB0063 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 		A58F3D532A65222000BB0063 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				32AAE0CA2A758A7400A7A55B /* Form.swift */,
+				32AAE0CC2A758ACD00A7A55B /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 				32AAE0B82A70CAA000A7A55B /* UpcomingList.swift */,
 				32AAE0BA2A70CAE100A7A55B /* Profile.swift */,
 				32AAE0C82A75433700A7A55B /* NoteList.swift */,
+				32AAE0CE2A758E5600A7A55B /* ReminderList.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,9 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32AAE0BD2A71AFF000A7A55B /* CustomTableView.swift in Sources */,
+				32AAE0CF2A758E5600A7A55B /* ReminderList.swift in Sources */,
 				32AAE0B92A70CAA000A7A55B /* UpcomingList.swift in Sources */,
 				32AAE0BB2A70CAE100A7A55B /* Profile.swift in Sources */,
+				32AAE0CD2A758ACD00A7A55B /* Group.swift in Sources */,
 				32AAE0A72A6ED66C00A7A55B /* Checkbox.swift in Sources */,
+				32AAE0CB2A758A7400A7A55B /* Form.swift in Sources */,
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
 				32AAE0B72A70CA5A00A7A55B /* PeopleList.swift in Sources */,
 				32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */,

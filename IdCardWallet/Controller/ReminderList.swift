@@ -1,22 +1,15 @@
 //
-//  ContactList.swift
+//  ReminderList.swift
 //  IdCardWallet
 //
-//  Created by Auliya Michelle Adhana on 26/07/23.
+//  Created by Auliya Michelle Adhana on 30/07/23.
 //
 
 import UIKit
 
-class PeopleList: UIViewController {
+class ReminderList: UIViewController {
     
-    let people: [String: [String]] = [
-        "A": ["Anya","Ana", "Akaka"],
-        "B": ["Budi", "Bima", "Bia"],
-        "G": ["Gorila","Gaga"]
-    ]
-    
-    let alphabet = "abcdefghijklmnopqrstuvwxyz"
-    
+    let reminders: [String] = ["halo", "Kamu"]
     
     var navigationBarAppearace = UINavigationBarAppearance()
     var searchController = UISearchController(searchResultsController: nil)
@@ -24,23 +17,14 @@ class PeopleList: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
+        tableView.isUserInteractionEnabled = true
         tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.register(CustomTableCell.self, forCellReuseIdentifier: CustomTableCell.identifier)
         return tableView
     }()
     
-    var models = [Group]()
-    
-    func setupData() {
-        for (key, value) in people {
-            models.append(.init (title: key, people: value))
-        }
-        models = models.sorted(by: { $0.title < $1.title })
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         
         searchController.searchBar.searchTextField.backgroundColor = .white
         
@@ -61,7 +45,6 @@ class PeopleList: UIViewController {
         view.addSubview(tableView)
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -74,43 +57,21 @@ class PeopleList: UIViewController {
     }
 }
 
-extension PeopleList: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return models.count
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return Array(alphabet.uppercased()).compactMap({"\($0)"})
-    }
-    
+extension ReminderList: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models[section].people.count
+        return reminders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
         
-        cell.setupLayout(isCheckboxVisible: false)
-        cell.checkBox.isHidden = true
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         
-        
-        let name = models[indexPath.section].people[indexPath.row]
-        cell.setupView(titleName: name , subtitleName: "Section: \(indexPath.section)" )
+        cell.setupView(titleName: reminders[indexPath.row] , subtitleName: "Section" )
+        cell.setupLayout(isCheckboxVisible: false)
+        cell.checkBox.isHidden = true
         
         return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return models[section].title
-    }
-    
-    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        guard let targetIndex = models.firstIndex(where: { $0.title ==  title}) else { return 0 }
-        
-        return targetIndex
     }
     
 }

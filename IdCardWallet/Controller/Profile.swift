@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct Form {
-    let title: String
-    let value: Any
-}
-
 class Profile: UIViewController {
     
     private var cardView : IdCardView = {
