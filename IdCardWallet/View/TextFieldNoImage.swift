@@ -1,25 +1,18 @@
 //
-//  TextFieldLogin.swift
+//  TextFieldNoImage.swift
 //  IdCardWallet
 //
-//  Created by Dimas Aristyo Rahadian on 18/07/23.
+//  Created by Dimas Aristyo Rahadian on 27/07/23.
 //
 
+import Foundation
 import UIKit
 
-protocol textFieldIDDelegate{
-    func getValue(value: String?)
+protocol TextFieldIDDelegateNoImage{
+    func getValueNoImage(value: String?)
 }
 
-class TextFieldID: UIView{
-    
-//    lazy var iconImage: UIImageView = {
-//        let view = UIImageView()
-//        view.contentMode = .scaleAspectFit
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.image = UIImage(named: "tabProfile")
-//        return view
-//    }()
+class TextFieldNoImage: UIView{
     
     lazy var textInput: UITextField = {
         let view = UITextField()
@@ -27,7 +20,7 @@ class TextFieldID: UIView{
         view.placeholder = "E.g"
         return view
     }()
-    
+
     lazy var divider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +37,7 @@ class TextFieldID: UIView{
         return view
     }()
     
-    var delegate: textFieldIDDelegate?
+    var delegate: TextFieldIDDelegateNoImage?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,15 +50,14 @@ class TextFieldID: UIView{
         setupAddSubView()
     }
     
-    func setupView(placeholders:String, labels: String, delegates: textFieldIDDelegate){
+    func setupView(placeholders:String,  labels: String, delegates: TextFieldIDDelegateNoImage){
         textInput.placeholder = placeholders
-//        iconImage.image = images
         inputLabel.text = labels
+        self.delegate = delegates
     }
     
     func setupAddSubView(){
         textInput.delegate = self
-//        addSubview(iconImage)
         addSubview(inputLabel)
         addSubview(textInput)
         addSubview(divider)
@@ -75,10 +67,6 @@ class TextFieldID: UIView{
     
     func setupLayout(){
         NSLayoutConstraint.activate([
-//            iconImage.topAnchor.constraint(equalTo: textInput.topAnchor, constant: 0),
-//            iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-//            iconImage.widthAnchor.constraint(equalToConstant: 25),
-//            iconImage.heightAnchor.constraint(equalToConstant: 25),
             
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             inputLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
@@ -90,7 +78,7 @@ class TextFieldID: UIView{
             textInput.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: -12),
             
 //            divider.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor),
-            divider.heightAnchor.constraint(equalToConstant: 1),
+            divider.heightAnchor.constraint(equalToConstant: 0.5),
             divider.trailingAnchor.constraint(equalTo: textInput.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: textInput.widthAnchor),
             divider.topAnchor.constraint(equalTo: textInput.bottomAnchor),
@@ -99,20 +87,26 @@ class TextFieldID: UIView{
     }
 }
 
-extension TextFieldID: UITextFieldDelegate{
+extension TextFieldNoImage: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.getValue(value: textField.text)
+        delegate?.getValueNoImage(value: textField.text)
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        delegate?.getValueNoImage(value: textField.text)
+        return true
     }
     
 //    func textFieldDidBeginEditing(_ textField: UITextField) {
 //        delegate?.getValue(value: textField.text)
 //    }
-//    
+//
 //    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 //        delegate?.getValue(value: textField.text)
 //        return true
 //    }
-//    
+//
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        delegate?.getValue(value: textField.text)
 //        return true

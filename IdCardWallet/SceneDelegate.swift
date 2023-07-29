@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
+        let viewController = UIStoryboard(name: "DetailPersonView", bundle: nil).instantiateInitialViewController()
         
         window.rootViewController = viewController
         

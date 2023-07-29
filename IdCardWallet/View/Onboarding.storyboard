@@ -1,85 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SdK-DA-c7n">
+    <device id="retina6_72" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Onboarding Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="tlJ-qi-nHl">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="OnboardingController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                <viewController storyboardIdentifier="onboardingVC" id="SdK-DA-c7n" customClass="OnboardingController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ecG-Op-GUL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eVc-lM-WpQ">
-                                <rect key="frame" x="45" y="192" width="285" height="201"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="4q8-wq-wYU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="906"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="201" id="yRm-ob-w9f"/>
+                                    <constraint firstAttribute="width" secondItem="4q8-wq-wYU" secondAttribute="height" multiplier="69:151" id="Ivm-Tj-DkR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-c3-HQZ">
-                                <rect key="frame" x="8.6666666666666572" y="575" width="358" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="358" id="2lb-Ut-c0N"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYB-nn-DQJ">
-                                <rect key="frame" x="8.6666666666666572" y="631" width="358" height="89"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="358" id="gfl-YR-hVF"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="saveButtonUI:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OmX-Hm-aZO"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2D-ee-csW" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
-                                <rect key="frame" x="20" y="412" width="335" height="74"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="yMd-6i-Qkd"/>
-                                </constraints>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-Be-UIa">
+                                <rect key="frame" x="0.0" y="59" width="414" height="785"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="DkC-GD-DLY">
+                                <rect key="frame" x="149.33333333333334" y="844" width="115.66666666666666" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="tertiarySystemFillColor"/>
+                                <color key="currentPageIndicatorTintColor" red="0.035294117649999998" green="0.17254901959999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="y0d-iw-kz6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="K2D-ee-csW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="0I4-5D-v98"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="K2D-ee-csW" secondAttribute="trailing" constant="20" id="6De-Ub-Tb2"/>
-                            <constraint firstItem="iYB-nn-DQJ" firstAttribute="top" secondItem="b2d-c3-HQZ" secondAttribute="bottom" constant="21" id="DJE-bN-ZPL"/>
-                            <constraint firstItem="eVc-lM-WpQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="142" id="NcM-Ee-5gP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eVc-lM-WpQ" secondAttribute="trailing" constant="45" id="StI-LC-prl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iYB-nn-DQJ" secondAttribute="bottom" constant="58" id="Zfy-3i-aoh"/>
-                            <constraint firstItem="b2d-c3-HQZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bxM-b7-71x"/>
-                            <constraint firstItem="iYB-nn-DQJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eQW-z4-kX4"/>
-                            <constraint firstItem="K2D-ee-csW" firstAttribute="top" secondItem="eVc-lM-WpQ" secondAttribute="bottom" constant="19" id="eiE-AC-ugo"/>
-                            <constraint firstItem="eVc-lM-WpQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="45" id="sg3-UE-Eg0"/>
-                            <constraint firstItem="b2d-c3-HQZ" firstAttribute="top" secondItem="K2D-ee-csW" secondAttribute="bottom" constant="89" id="ut7-sO-ylA"/>
+                            <constraint firstItem="4q8-wq-wYU" firstAttribute="leading" secondItem="y0d-iw-kz6" secondAttribute="leading" id="D7L-K6-xZw"/>
+                            <constraint firstAttribute="bottom" secondItem="4q8-wq-wYU" secondAttribute="bottom" id="OPO-rD-vwe"/>
+                            <constraint firstItem="DkC-GD-DLY" firstAttribute="top" secondItem="KRH-Be-UIa" secondAttribute="bottom" id="Qo8-nE-aQz"/>
+                            <constraint firstItem="4q8-wq-wYU" firstAttribute="top" secondItem="ecG-Op-GUL" secondAttribute="top" id="T7K-0x-zkm"/>
+                            <constraint firstItem="DkC-GD-DLY" firstAttribute="top" secondItem="4q8-wq-wYU" secondAttribute="bottom" constant="-62" id="Tqt-D9-zPv"/>
+                            <constraint firstItem="4q8-wq-wYU" firstAttribute="trailing" secondItem="y0d-iw-kz6" secondAttribute="trailing" id="UqJ-Iy-MWO"/>
+                            <constraint firstItem="DkC-GD-DLY" firstAttribute="centerX" secondItem="ecG-Op-GUL" secondAttribute="centerX" id="YFL-bm-7A3"/>
+                            <constraint firstItem="KRH-Be-UIa" firstAttribute="trailing" secondItem="y0d-iw-kz6" secondAttribute="trailing" id="b6n-E5-nuW"/>
+                            <constraint firstItem="KRH-Be-UIa" firstAttribute="top" secondItem="y0d-iw-kz6" secondAttribute="top" id="kzS-c1-rgC"/>
+                            <constraint firstAttribute="bottom" secondItem="4q8-wq-wYU" secondAttribute="bottom" constant="-10" id="tWK-49-NTZ"/>
+                            <constraint firstItem="KRH-Be-UIa" firstAttribute="leading" secondItem="y0d-iw-kz6" secondAttribute="leading" id="xiQ-sA-bV7"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="OnboardingImage" destination="eVc-lM-WpQ" id="ivb-6n-Uxr"/>
-                        <outlet property="TextView" destination="K2D-ee-csW" id="29X-mx-CXE"/>
-                        <outlet property="saveButton" destination="b2d-c3-HQZ" id="Vta-Ts-XVv"/>
-                        <outlet property="skipButton" destination="iYB-nn-DQJ" id="NF1-O8-RFe"/>
+                        <outlet property="background" destination="4q8-wq-wYU" id="q8Y-vc-9TM"/>
+                        <outlet property="pageControl" destination="DkC-GD-DLY" id="pm8-aF-6qg"/>
+                        <outlet property="scrollView" destination="KRH-Be-UIa" id="BUI-0B-uO7"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2M-DA-4fW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-2"/>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="386" height="292"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemFillColor">
+            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
