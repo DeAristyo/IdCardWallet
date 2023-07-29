@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DataList" representedClassName="DataList" syncable="YES">
+        <attribute name="contactAddress" optional="YES" attributeType="String"/>
+        <attribute name="contactBirthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="contactEmail" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <relationship name="accountList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataPeople" inverseName="accountData" inverseEntity="DataPeople"/>
+    </entity>
+    <entity name="DataPeople" representedClassName="DataPeople" syncable="YES">
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <relationship name="accountData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DataList" inverseName="accountList" inverseEntity="DataList"/>
+    </entity>
+</model>
