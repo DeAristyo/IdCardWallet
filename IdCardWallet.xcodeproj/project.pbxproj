@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32AAE04C2A6A8B0400A7A55B /* CardnudgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE04A2A6A8B0400A7A55B /* CardnudgeController.swift */; };
+		32AAE04D2A6A8B0400A7A55B /* Cardnudge.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32AAE04B2A6A8B0400A7A55B /* Cardnudge.xib */; };
+		32AAE0592A6E66F500A7A55B /* TableViewComp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32AAE0582A6E66F500A7A55B /* TableViewComp.xib */; };
+		32AAE05B2A6E670D00A7A55B /* TableViewCompController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE05A2A6E670D00A7A55B /* TableViewCompController.swift */; };
+		32AAE0A72A6ED66C00A7A55B /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0A62A6ED66C00A7A55B /* Checkbox.swift */; };
+		32AAE0A92A6EEFE300A7A55B /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0A82A6EEFE300A7A55B /* CustomTableCell.swift */; };
+		32AAE0B72A70CA5A00A7A55B /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0B62A70CA5A00A7A55B /* PeopleList.swift */; };
+		32AAE0B92A70CAA000A7A55B /* UpcomingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0B82A70CAA000A7A55B /* UpcomingList.swift */; };
+		32AAE0BB2A70CAE100A7A55B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0BA2A70CAE100A7A55B /* Profile.swift */; };
+		32AAE0BD2A71AFF000A7A55B /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */; };
+		32AAE0BF2A725D1300A7A55B /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0BE2A725D1300A7A55B /* DetailTableCell.swift */; };
+		32AAE0C12A72603300A7A55B /* DetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C02A72603300A7A55B /* DetailTextField.swift */; };
+		32AAE0C52A73BD8B00A7A55B /* IdCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */; };
+		32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C62A752B9C00A7A55B /* HeaderView.swift */; };
+		32AAE0C92A75433700A7A55B /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C82A75433700A7A55B /* NoteList.swift */; };
 		A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D3D2A6520CC00BB0063 /* AppDelegate.swift */; };
 		A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D3F2A6520CC00BB0063 /* SceneDelegate.swift */; };
 		A58F3D472A6520CD00BB0063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D462A6520CD00BB0063 /* Assets.xcassets */; };
@@ -32,6 +47,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32AAE04A2A6A8B0400A7A55B /* CardnudgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardnudgeController.swift; sourceTree = "<group>"; };
+		32AAE04B2A6A8B0400A7A55B /* Cardnudge.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cardnudge.xib; sourceTree = "<group>"; };
+		32AAE0582A6E66F500A7A55B /* TableViewComp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewComp.xib; sourceTree = "<group>"; };
+		32AAE05A2A6E670D00A7A55B /* TableViewCompController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCompController.swift; sourceTree = "<group>"; };
+		32AAE0A62A6ED66C00A7A55B /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		32AAE0A82A6EEFE300A7A55B /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		32AAE0B62A70CA5A00A7A55B /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
+		32AAE0B82A70CAA000A7A55B /* UpcomingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingList.swift; sourceTree = "<group>"; };
+		32AAE0BA2A70CAE100A7A55B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		32AAE0BE2A725D1300A7A55B /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableCell.swift; sourceTree = "<group>"; };
+		32AAE0C02A72603300A7A55B /* DetailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextField.swift; sourceTree = "<group>"; };
+		32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdCardView.swift; sourceTree = "<group>"; };
+		32AAE0C62A752B9C00A7A55B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		32AAE0C82A75433700A7A55B /* NoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; };
 		A58F3D3A2A6520CC00BB0063 /* IdCardWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdCardWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F3D3D2A6520CC00BB0063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58F3D3F2A6520CC00BB0063 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +152,15 @@
 				BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */,
 				BF8E36DC2A75352700404F5C /* TextFieldNoImage.swift */,
 				BF8E36E02A753A4400404F5C /* EditTextField.swift */,
+				32AAE04B2A6A8B0400A7A55B /* Cardnudge.xib */,
+				32AAE0582A6E66F500A7A55B /* TableViewComp.xib */,
+				32AAE0A62A6ED66C00A7A55B /* Checkbox.swift */,
+				32AAE0A82A6EEFE300A7A55B /* CustomTableCell.swift */,
+				32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */,
+				32AAE0BE2A725D1300A7A55B /* DetailTableCell.swift */,
+				32AAE0C02A72603300A7A55B /* DetailTextField.swift */,
+				32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */,
+				32AAE0C62A752B9C00A7A55B /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +182,14 @@
 				BF7AE4252A73BC400084D88C /* DetailPersonViewController.swift */,
 				BF7AE4132A726D0E0084D88C /* EditProfileController.swift */,
 				BF8E36D22A74FCF500404F5C /* EditPersonController.swift */,
+				32AAE04A2A6A8B0400A7A55B /* CardnudgeController.swift */,
+				A58F3D5D2A654C2200BB0063 /* TabBarController.swift */,
+				A58F3D612A654E5000BB0063 /* OnboardingController.swift */,
+				32AAE05A2A6E670D00A7A55B /* TableViewCompController.swift */,
+				32AAE0B62A70CA5A00A7A55B /* PeopleList.swift */,
+				32AAE0B82A70CAA000A7A55B /* UpcomingList.swift */,
+				32AAE0BA2A70CAE100A7A55B /* Profile.swift */,
+				32AAE0C82A75433700A7A55B /* NoteList.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +257,8 @@
 				A58F3D4A2A6520CD00BB0063 /* LaunchScreen.storyboard in Resources */,
 				BFF9CD132A692588006CD9B8 /* AddPersonView.storyboard in Resources */,
 				A58F3D472A6520CD00BB0063 /* Assets.xcassets in Resources */,
+				32AAE0592A6E66F500A7A55B /* TableViewComp.xib in Resources */,
+				32AAE04D2A6A8B0400A7A55B /* Cardnudge.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +286,24 @@
 				BF7AE4182A73A0FA0084D88C /* AddReminderSheet.swift in Sources */,
 				BF8E36DD2A75352700404F5C /* TextFieldNoImage.swift in Sources */,
 				BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */,
+				32AAE0BD2A71AFF000A7A55B /* CustomTableView.swift in Sources */,
+				32AAE0B92A70CAA000A7A55B /* UpcomingList.swift in Sources */,
+				32AAE0BB2A70CAE100A7A55B /* Profile.swift in Sources */,
+				32AAE0A72A6ED66C00A7A55B /* Checkbox.swift in Sources */,
+				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
+				32AAE0B72A70CA5A00A7A55B /* PeopleList.swift in Sources */,
+				32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */,
+				32AAE0A92A6EEFE300A7A55B /* CustomTableCell.swift in Sources */,
+				A58F3D5E2A654C2200BB0063 /* TabBarController.swift in Sources */,
+				32AAE0C52A73BD8B00A7A55B /* IdCardView.swift in Sources */,
+				32AAE05B2A6E670D00A7A55B /* TableViewCompController.swift in Sources */,
+				32AAE0C92A75433700A7A55B /* NoteList.swift in Sources */,
+				32AAE0BF2A725D1300A7A55B /* DetailTableCell.swift in Sources */,
+				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
+				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
+				32AAE0C12A72603300A7A55B /* DetailTextField.swift in Sources */,
+				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
+				32AAE04C2A6A8B0400A7A55B /* CardnudgeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 75VHUVZJF4;
+				DEVELOPMENT_TEAM = NJYYRNFLHT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdCardWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -402,7 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 75VHUVZJF4;
+				DEVELOPMENT_TEAM = NJYYRNFLHT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdCardWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

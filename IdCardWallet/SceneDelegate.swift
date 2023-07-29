@@ -22,7 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let viewController = UIStoryboard(name: "DetailPersonView", bundle: nil).instantiateInitialViewController()
         
-        window.rootViewController = viewController
+
+        window.backgroundColor = UIColor(named: "PrimaryColor")
+        window.rootViewController = TabBarController()
         
         self.window = window
         window.makeKeyAndVisible()
