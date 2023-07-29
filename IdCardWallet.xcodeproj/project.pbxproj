@@ -23,6 +23,9 @@
 		BF7AE4242A73B9CB0084D88C /* DetailPersonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */; };
 		BF7AE4262A73BC400084D88C /* DetailPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4252A73BC400084D88C /* DetailPersonViewController.swift */; };
 		BF8E36D32A74FCF500404F5C /* EditPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E36D22A74FCF500404F5C /* EditPersonController.swift */; };
+		BF8E36DD2A75352700404F5C /* TextFieldNoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E36DC2A75352700404F5C /* TextFieldNoImage.swift */; };
+		BF8E36DF2A75354B00404F5C /* EditTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E36DE2A75354B00404F5C /* EditTableCell.swift */; };
+		BF8E36E12A753A4400404F5C /* EditTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E36E02A753A4400404F5C /* EditTextField.swift */; };
 		BFA750A02A70D62E0016F1C5 /* SocialMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA7509F2A70D62E0016F1C5 /* SocialMediaController.swift */; };
 		BFF9CD132A692588006CD9B8 /* AddPersonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF9CD122A692588006CD9B8 /* AddPersonView.storyboard */; };
 		BFF9CD152A69259F006CD9B8 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9CD142A69259F006CD9B8 /* AddPersonViewController.swift */; };
@@ -47,6 +50,9 @@
 		BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPersonView.storyboard; sourceTree = "<group>"; };
 		BF7AE4252A73BC400084D88C /* DetailPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonViewController.swift; sourceTree = "<group>"; };
 		BF8E36D22A74FCF500404F5C /* EditPersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonController.swift; sourceTree = "<group>"; };
+		BF8E36DC2A75352700404F5C /* TextFieldNoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldNoImage.swift; sourceTree = "<group>"; };
+		BF8E36DE2A75354B00404F5C /* EditTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableCell.swift; sourceTree = "<group>"; };
+		BF8E36E02A753A4400404F5C /* EditTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextField.swift; sourceTree = "<group>"; };
 		BFA7509F2A70D62E0016F1C5 /* SocialMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaController.swift; sourceTree = "<group>"; };
 		BFF9CD122A692588006CD9B8 /* AddPersonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPersonView.storyboard; sourceTree = "<group>"; };
 		BFF9CD142A69259F006CD9B8 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 			children = (
 				BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */,
 				BF7AE41F2A73A9410084D88C /* DetailTextField.swift */,
+				BF8E36DE2A75354B00404F5C /* EditTableCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,6 +120,8 @@
 				A58F3D672A669DEE00BB0063 /* TextFieldID.swift */,
 				BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */,
 				BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */,
+				BF8E36DC2A75352700404F5C /* TextFieldNoImage.swift */,
+				BF8E36E02A753A4400404F5C /* EditTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,7 +232,10 @@
 				BF7AE41C2A73A8480084D88C /* ProfileController.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
 				BFF9CD152A69259F006CD9B8 /* AddPersonViewController.swift in Sources */,
+				BF8E36DF2A75354B00404F5C /* EditTableCell.swift in Sources */,
+				BF8E36E12A753A4400404F5C /* EditTextField.swift in Sources */,
 				BF7AE4182A73A0FA0084D88C /* AddReminderSheet.swift in Sources */,
+				BF8E36DD2A75352700404F5C /* TextFieldNoImage.swift in Sources */,
 				BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
