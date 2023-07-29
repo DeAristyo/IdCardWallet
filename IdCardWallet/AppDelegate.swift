@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = OnboardingController()
         
         return true
-    }
+    } 
 
     // MARK: UISceneSession Lifecycle
 
