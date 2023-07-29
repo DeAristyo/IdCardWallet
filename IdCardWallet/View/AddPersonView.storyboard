@@ -9,36 +9,40 @@
     </dependencies>
     <scenes>
         <!--Profile-->
-        <scene sceneID="Btj-yu-iuQ">
+        <scene sceneID="HKZ-u9-yer">
             <objects>
-                <viewController id="N9b-Q4-wqU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yq9-Pt-doT">
+                <viewController id="9XD-fz-UI7" customClass="ProfileController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Az2-g3-qud">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIt-Du-hD9">
-                                <rect key="frame" x="256" y="59" width="111" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit Person"/>
-                                <connections>
-                                    <segue destination="IJM-QO-0zd" kind="presentation" id="znj-Xz-e1d"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="60P-Zn-6XW"/>
+                        <viewLayoutGuide key="safeArea" id="9ZV-wF-SGx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="tabProfile" id="AeJ-P2-HGY"/>
+                    <navigationItem key="navigationItem" title="Profile" id="QkN-Gu-cYR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4GA-MX-Rsx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lKH-0S-vE5">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <connections>
+                                <segue destination="XI3-dB-DeU" kind="presentation" id="l7y-7H-Ibl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonSementara" destination="4GA-MX-Rsx" id="dHI-cL-lcm"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DlJ-GR-5Sb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PCe-Mm-hwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4817.5572519083971" y="-130.28169014084509"/>
+            <point key="canvasLocation" x="5951.9083969465646" y="-73.239436619718319"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="3lG-eR-pI6">
             <objects>
-                <viewController id="XI3-dB-DeU" customClass="EditProfileController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileControllerID" id="XI3-dB-DeU" customClass="EditProfileController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N9I-ep-jdF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,23 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfy-sM-LbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5918" y="-130"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="L2I-Ra-UfE">
-            <objects>
-                <navigationController id="IJM-QO-0zd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h5S-aD-ErH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="XI3-dB-DeU" kind="relationship" relationship="rootViewController" id="cOv-r3-SHU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iBi-Ws-i48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5297" y="621"/>
+            <point key="canvasLocation" x="6843.5114503816794" y="-130.28169014084509"/>
         </scene>
         <!--Add Person-->
         <scene sceneID="jId-cb-Ewv">
@@ -225,6 +213,9 @@
                                                         <state key="normal" title="Add Note">
                                                             <color key="titleColor" red="0.035294117649999998" green="0.17254901959999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="addNoteAction:" destination="bxs-T0-A3F" eventType="touchUpInside" id="Ph4-yV-1ci"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addButton" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CzQ-4i-nyT">
                                                         <rect key="frame" x="27" y="674" width="24" height="24"/>
@@ -239,6 +230,22 @@
                                                         <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-dh-4dR" userLabel="AddNoteButton">
+                                                        <rect key="frame" x="0.0" y="661" width="390" height="48"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="addNoteAction:" destination="bxs-T0-A3F" eventType="touchUpInside" id="jkH-jp-bsd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZK-zF-ySd" userLabel="AddReminderButton">
+                                                        <rect key="frame" x="0.0" y="757" width="390" height="48"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="addReminderAction:" destination="bxs-T0-A3F" eventType="touchUpInside" id="Gc3-pD-Tdm"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="DMW-PC-YtV"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -253,8 +260,12 @@
                                                     <constraint firstItem="qeM-09-gbw" firstAttribute="top" secondItem="12F-be-lpn" secondAttribute="bottom" id="9qQ-zn-9Kv"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="trailing" secondItem="bCT-mW-5b4" secondAttribute="trailing" id="BVO-M7-Myj"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="top" secondItem="BG0-ds-8i1" secondAttribute="topMargin" constant="-6" id="E69-cU-BXH"/>
+                                                    <constraint firstItem="NZK-zF-ySd" firstAttribute="trailing" secondItem="DMW-PC-YtV" secondAttribute="trailing" id="EY2-V8-I8l"/>
+                                                    <constraint firstItem="NZK-zF-ySd" firstAttribute="leading" secondItem="DMW-PC-YtV" secondAttribute="leading" id="GRD-2j-PZP"/>
                                                     <constraint firstItem="7ZZ-5A-cFo" firstAttribute="leading" secondItem="CzQ-4i-nyT" secondAttribute="trailing" constant="-51" id="GmB-Qf-ghR"/>
+                                                    <constraint firstItem="8FF-dh-4dR" firstAttribute="trailing" secondItem="DMW-PC-YtV" secondAttribute="trailing" id="Hv7-YS-fA3"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="leading" secondItem="8Sj-hF-uBT" secondAttribute="trailing" constant="-97.666666666666657" id="IGX-bf-K9I"/>
+                                                    <constraint firstItem="8FF-dh-4dR" firstAttribute="leading" secondItem="DMW-PC-YtV" secondAttribute="leading" id="Iev-M1-jNE"/>
                                                     <constraint firstItem="CzQ-4i-nyT" firstAttribute="top" secondItem="WMV-DU-T2r" secondAttribute="bottom" constant="13" id="JOA-4D-f2O"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="trailing" secondItem="xHz-PH-bc8" secondAttribute="trailing" id="JaZ-EZ-tLd"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="trailing" secondItem="PCb-2U-tS6" secondAttribute="trailing" id="Kgb-5h-jlt"/>
@@ -266,6 +277,7 @@
                                                     <constraint firstItem="7ZZ-5A-cFo" firstAttribute="trailing" secondItem="DMW-PC-YtV" secondAttribute="trailing" id="NHM-9u-F7h"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="leading" secondItem="qeM-09-gbw" secondAttribute="leading" id="P5A-RL-4Ca"/>
                                                     <constraint firstItem="hAk-fj-Pyu" firstAttribute="top" secondItem="bCT-mW-5b4" secondAttribute="bottom" constant="76" id="PJu-Iz-gYE"/>
+                                                    <constraint firstItem="NZK-zF-ySd" firstAttribute="top" secondItem="7ZZ-5A-cFo" secondAttribute="bottom" id="Tzx-oL-3at"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="trailing" secondItem="12F-be-lpn" secondAttribute="trailing" id="UGM-oi-vlI"/>
                                                     <constraint firstItem="t9d-cv-YTe" firstAttribute="leading" secondItem="bCT-mW-5b4" secondAttribute="leading" id="UbE-ts-X9Y"/>
                                                     <constraint firstItem="loi-ap-ecG" firstAttribute="top" secondItem="WMV-DU-T2r" secondAttribute="bottom" constant="10" id="V8S-m7-mtc"/>
@@ -275,7 +287,9 @@
                                                     <constraint firstItem="WMV-DU-T2r" firstAttribute="centerX" secondItem="bCT-mW-5b4" secondAttribute="centerX" id="XR5-c1-qkO"/>
                                                     <constraint firstItem="DMW-PC-YtV" firstAttribute="trailing" secondItem="PCb-2U-tS6" secondAttribute="trailing" id="Xk2-oR-sVu"/>
                                                     <constraint firstItem="t9d-cv-YTe" firstAttribute="trailing" secondItem="bCT-mW-5b4" secondAttribute="trailing" id="XyW-yR-QuU"/>
+                                                    <constraint firstItem="8FF-dh-4dR" firstAttribute="top" secondItem="WMV-DU-T2r" secondAttribute="bottom" id="Z0l-NV-Qok"/>
                                                     <constraint firstItem="PCb-2U-tS6" firstAttribute="leading" secondItem="DMW-PC-YtV" secondAttribute="leading" id="ZH3-Ul-5OS"/>
+                                                    <constraint firstItem="7ZZ-5A-cFo" firstAttribute="top" secondItem="8FF-dh-4dR" secondAttribute="bottom" id="bec-4F-qBk"/>
                                                     <constraint firstItem="sDh-JW-6K7" firstAttribute="top" secondItem="bCT-mW-5b4" secondAttribute="bottom" constant="-26" id="dI6-fb-Rn5"/>
                                                     <constraint firstItem="hAk-fj-Pyu" firstAttribute="trailing" secondItem="bCT-mW-5b4" secondAttribute="trailing" id="dW7-I3-cQw"/>
                                                     <constraint firstItem="frl-nS-6fK" firstAttribute="top" secondItem="hAk-fj-Pyu" secondAttribute="bottom" constant="22" id="fof-MN-US5"/>
@@ -289,6 +303,7 @@
                                                     <constraint firstItem="9K6-C1-xhj" firstAttribute="top" secondItem="xHz-PH-bc8" secondAttribute="bottom" id="pYm-gA-RDz"/>
                                                     <constraint firstItem="xHz-PH-bc8" firstAttribute="top" secondItem="z0U-bn-gCa" secondAttribute="bottom" constant="69" id="pbv-KY-KQm"/>
                                                     <constraint firstItem="DMW-PC-YtV" firstAttribute="bottom" secondItem="7ZZ-5A-cFo" secondAttribute="bottom" constant="283" id="pvD-5i-jwh"/>
+                                                    <constraint firstItem="DMW-PC-YtV" firstAttribute="bottom" secondItem="NZK-zF-ySd" secondAttribute="bottom" constant="235" id="qOa-ge-JZT"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="leading" secondItem="bCT-mW-5b4" secondAttribute="leading" id="rbz-HB-S3J"/>
                                                     <constraint firstItem="7ZZ-5A-cFo" firstAttribute="leading" secondItem="DMW-PC-YtV" secondAttribute="leading" id="s54-QW-oU4"/>
                                                     <constraint firstItem="xHz-PH-bc8" firstAttribute="top" secondItem="PCb-2U-tS6" secondAttribute="bottom" id="tyf-Zh-fx1"/>
@@ -321,6 +336,9 @@
                                         <state key="normal" title="Add Reminder">
                                             <color key="titleColor" red="0.035294117649999998" green="0.17254901959999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addReminderAction:" destination="bxs-T0-A3F" eventType="touchUpInside" id="OYz-t7-cG7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -359,14 +377,14 @@
                         <outlet property="FullnameField" destination="PCb-2U-tS6" id="HgA-Dt-77C"/>
                         <outlet property="InstagramField" destination="hAk-fj-Pyu" id="QrI-36-bnv"/>
                         <outlet property="LinkedInField" destination="t9d-cv-YTe" id="0Eh-ZX-8Zq"/>
-                        <outlet property="Note" destination="loi-ap-ecG" id="kGY-Sm-z4t"/>
+                        <outlet property="Note" destination="8FF-dh-4dR" id="S7P-HN-Y1o"/>
                         <outlet property="PhoneNumberField" destination="xHz-PH-bc8" id="fQG-yD-QZe"/>
-                        <outlet property="Reminder" destination="EoA-mY-xpQ" id="2oP-Lg-Pka"/>
+                        <outlet property="Reminder" destination="NZK-zF-ySd" id="Z6c-0v-Yb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tk9-6I-4Nr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3080.9160305343512" y="-194.36619718309859"/>
+            <point key="canvasLocation" x="3080.1526717557249" y="-194.36619718309859"/>
         </scene>
         <!--Upcoming-->
         <scene sceneID="fls-FV-znH">
@@ -469,12 +487,31 @@
                     <connections>
                         <segue destination="uMa-ad-sSL" kind="relationship" relationship="viewControllers" id="uVo-lR-yI0"/>
                         <segue destination="0El-T4-l1a" kind="relationship" relationship="viewControllers" id="xSM-dm-Nmh"/>
-                        <segue destination="N9b-Q4-wqU" kind="relationship" relationship="viewControllers" id="PIj-fM-lK4"/>
+                        <segue destination="C2M-qs-QfX" kind="relationship" relationship="viewControllers" id="RUU-s8-vZh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6S-jB-4bg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1237" y="-130"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="Pf6-R1-hU0">
+            <objects>
+                <navigationController title="People" automaticallyAdjustsScrollViewInsets="NO" id="C2M-qs-QfX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="tabProfile" id="hik-g9-HGh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H8P-tz-zyq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9XD-fz-UI7" kind="relationship" relationship="rootViewController" id="0wB-LA-Hx3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DoI-7q-rsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5025.1908396946565" y="-73.239436619718319"/>
         </scene>
     </scenes>
     <resources>

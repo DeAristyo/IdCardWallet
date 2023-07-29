@@ -92,7 +92,19 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         BirthdayField.delegate = self
             
     }
+    
+    
   
+    @IBAction func addReminderAction(_ sender: Any) {
+        let vc = AddReminderSheet()
+        let navVc = UINavigationController(rootViewController: vc)
+        present(navVc, animated: true)
+    }
+    @IBAction func addNoteAction(_ sender: Any) {
+        let vc = AddNoteSheet()
+        let navVc = UINavigationController(rootViewController: vc)
+        present(navVc, animated: true)
+    }
 }
 
 //protocol SocialMediaSelectionDelegate: AnyObject {
