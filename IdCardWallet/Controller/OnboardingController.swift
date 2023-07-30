@@ -28,12 +28,12 @@ class OnboardingController: UIViewController{
         saveButton.tintColor = .white
         saveButton.layer.cornerRadius = 12
         TextView.delegate = self
-        
+    
         
     }
     
     @IBAction func skipButtonAction(_ sender: UIButton) {
-        let vc = AddNoteSheet(title: "Add Note")
+        let vc = ReminderSheet(title: "Add Reminder")
         let navVc = UINavigationController(rootViewController: vc)
         present(navVc, animated: true)
     }

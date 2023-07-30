@@ -23,6 +23,9 @@ class LabelView: UIView{
         view.text = "E.g"
         view.font = .systemFont(ofSize: 16)
         view.textColor = .gray
+        view.lineBreakMode = .byCharWrapping
+        view.numberOfLines = 0
+        
         return view
     }()
     

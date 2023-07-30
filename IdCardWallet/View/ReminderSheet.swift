@@ -77,8 +77,9 @@ class ReminderSheet: UIViewController{
         
         setupLayout()
         textFieldInput.setupView(placeholders: "e.g. Disscuss New Album Release", labels: "Title", delegates: self)
-        textFieldInputName.setupView(placeholders: "Choose Contact", labels: "Name", delegates: self)
+   //     textFieldInputName.setupView(placeholders: "Choose Contact", labels: "Name", delegates: self)
         longTextFieldInput.setupView(placeholders: "e.g. He will release new album called “rose ” that was inspired by his mom name", labels: "Note", delegates: self)
+   //     textFieldInput.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
     }
     
     

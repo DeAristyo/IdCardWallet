@@ -1,5 +1,5 @@
 //
-//  DetailNoteController.swift
+//  DetailReminderController.swift
 //  IdCardWallet
 //
 //  Created by Dimas Aristyo Rahadian on 29/07/23.
@@ -8,13 +8,14 @@
 import Foundation
 import UIKit
 
-class DetailNoteController: UIViewController{
+class DetailReminderController: UIViewController{
     
     let noteField = [
         Form(title: "Title", value: "Disscuss New Feature"),
-        Form(title: "Contact Date", value: "05 June 2023"),
-        Form(title: "Meeting Place", value: "Starduck Coffee"),
-        Form(title: "Note", value: "He got that James Dean daydream look in his eyes, long hair, slicked back, white T-shirt"),
+        Form(title: "Note", value: "He will release new album called “rose ” that was inspired by his mom name"),
+        Form(title: "Date", value: "Tuesday, 07 June 2023"),
+        Form(title: "Time", value: "08:00"),
+        Form(title: "Location", value: "Zoom"),
     ]
     
     
@@ -67,7 +68,7 @@ class DetailNoteController: UIViewController{
     
 }
 
-extension DetailNoteController: UITableViewDataSource {
+extension DetailReminderController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return noteField.count
     }

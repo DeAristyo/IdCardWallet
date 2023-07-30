@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32AAE0D32A767D8900A7A55B /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0D22A767D8900A7A55B /* Form.swift */; };
+		32AAE0D52A768A5E00A7A55B /* DetailReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0D42A768A5E00A7A55B /* DetailReminderController.swift */; };
 		A50861542A717EE900084E63 /* TextViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50861532A717EE900084E63 /* TextViewID.swift */; };
 		A50861562A7256CE00084E63 /* CalendarPickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50861552A7256CE00084E63 /* CalendarPickerField.swift */; };
 		A50861582A726D4F00084E63 /* TextFieldNoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50861572A726D4F00084E63 /* TextFieldNoImage.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32AAE0D22A767D8900A7A55B /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Form.swift; path = IdCardWallet/Controller/Form.swift; sourceTree = SOURCE_ROOT; };
+		32AAE0D42A768A5E00A7A55B /* DetailReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReminderController.swift; sourceTree = "<group>"; };
 		A50861532A717EE900084E63 /* TextViewID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewID.swift; sourceTree = "<group>"; };
 		A50861552A7256CE00084E63 /* CalendarPickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerField.swift; sourceTree = "<group>"; };
 		A50861572A726D4F00084E63 /* TextFieldNoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldNoImage.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		A58F3D532A65222000BB0063 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				32AAE0D22A767D8900A7A55B /* Form.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				A58F3D5D2A654C2200BB0063 /* TabBarController.swift */,
 				A58F3D612A654E5000BB0063 /* OnboardingController.swift */,
 				A515E0AC2A75279A006BEA3C /* DetailNoteController.swift */,
+				32AAE0D42A768A5E00A7A55B /* DetailReminderController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
 				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
 				A58D66072A6ED7A200371D41 /* DataPeople+CoreDataProperties.swift in Sources */,
+				32AAE0D32A767D8900A7A55B /* Form.swift in Sources */,
 				A50861542A717EE900084E63 /* TextViewID.swift in Sources */,
 				A515E0AD2A75279A006BEA3C /* DetailNoteController.swift in Sources */,
 				A58D65DF2A6E877E00371D41 /* IdCardData.xcdatamodeld in Sources */,
@@ -264,6 +271,7 @@
 				A515E0A92A73B87A006BEA3C /* TimePickerField.swift in Sources */,
 				A515E0B12A753152006BEA3C /* DetailTableCell.swift in Sources */,
 				A58D65E72A6EC96C00371D41 /* DataManager.swift in Sources */,
+				32AAE0D52A768A5E00A7A55B /* DetailReminderController.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
