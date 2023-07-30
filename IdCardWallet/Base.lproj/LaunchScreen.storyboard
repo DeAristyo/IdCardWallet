@@ -16,13 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splashImage" translatesAutoresizingMaskIntoConstraints="NO" id="r3H-4d-wvA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImage" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-Hs-Nto">
                                 <rect key="frame" x="76" y="362" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.17254901960784313" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HWb-Hs-Nto" secondAttribute="bottom" constant="328" id="4L2-X3-Ho7"/>
+                            <constraint firstItem="HWb-Hs-Nto" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="303" id="QBQ-p5-b27"/>
+                            <constraint firstItem="HWb-Hs-Nto" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="gwe-fp-huH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HWb-Hs-Nto" secondAttribute="trailing" constant="77" id="mjZ-Dn-Vmt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,9 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splashImage" width="350" height="248"/>
-        <namedColor name="PrimaryColor">
-            <color red="0.035294117647058823" green="0.17254901960784313" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="splashImage" width="350" height="247.33332824707031"/>
     </resources>
 </document>

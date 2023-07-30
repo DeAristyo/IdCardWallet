@@ -2,7 +2,7 @@
 //  AddNoteSheet.swift
 //  IdCardWallet
 //
-//  Created by Billbert Pohandy on 27/07/23.
+//  Created by Dimas Aristyo Rahadian on 29/07/23.
 //
 
 import Foundation

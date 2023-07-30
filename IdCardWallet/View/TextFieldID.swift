@@ -27,7 +27,7 @@ class TextFieldID: UIView{
         view.placeholder = "E.g"
         return view
     }()
-    
+
     lazy var divider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,6 +61,7 @@ class TextFieldID: UIView{
         textInput.placeholder = placeholders
 //        iconImage.image = images
         inputLabel.text = labels
+        self.delegate = delegates
     }
     
     func setupAddSubView(){
@@ -90,7 +91,7 @@ class TextFieldID: UIView{
             textInput.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: -12),
             
 //            divider.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor),
-            divider.heightAnchor.constraint(equalToConstant: 1),
+            divider.heightAnchor.constraint(equalToConstant: 0.5),
             divider.trailingAnchor.constraint(equalTo: textInput.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: textInput.widthAnchor),
             divider.topAnchor.constraint(equalTo: textInput.bottomAnchor),
@@ -113,6 +114,20 @@ extension TextFieldID: UITextFieldDelegate{
 //        return true
 //    }
 //    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        delegate?.getValue(value: textField.text)
+//        return true
+//    }
+    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        delegate?.getValue(value: textField.text)
+//    }
+//
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        delegate?.getValue(value: textField.text)
+//        return true
+//    }
+//
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        delegate?.getValue(value: textField.text)
 //        return true
