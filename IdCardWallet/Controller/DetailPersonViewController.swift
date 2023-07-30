@@ -7,10 +7,7 @@
 
 import UIKit
 
-struct Forms {
-    let title: String
-    let value: Any
-}
+
 
 class DetailPersonViewController: UIViewController {
     @IBOutlet weak var buttonSementara: UIBarButtonItem!
@@ -18,26 +15,26 @@ class DetailPersonViewController: UIViewController {
     let labels: [String] = ["Contacts", "Fullname", "Email", "Phone Number", "Address", "Job", "Company"]
     
     let contacts = [
-        Forms(title: "Fullname", value: "Michelle"),
-        Forms(title: "Email", value: "michelle@gmail.com"),
-        Forms(title: "Phone Number", value: "081234567890"),
-        Forms(title: "Address", value: "Address 123"),
-        Forms(title: "Job", value: "Ios Dev"),
-        Forms(title: "Company", value: "ABC Corp")
+        Form(title: "Fullname", value: "Michelle"),
+        Form(title: "Email", value: "michelle@gmail.com"),
+        Form(title: "Phone Number", value: "081234567890"),
+        Form(title: "Address", value: "Address 123"),
+        Form(title: "Job", value: "Ios Dev"),
+        Form(title: "Company", value: "ABC Corp")
     ]
     
-    let socialMedia: [Forms] = [
-            Forms(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
-            Forms(title: "Instagram", value: "https://www.instagram.com/michelle"),
+    let socialMedia: [Form] = [
+            Form(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
+            Form(title: "Instagram", value: "https://www.instagram.com/michelle"),
         ]
     
-    let note: Forms = Forms(title: "", value: "View All Notes")
-    let reminder: Forms = Forms(title: "", value: "View All Reminder")
+    let note: Form = Form(title: "", value: "View All Notes")
+    let reminder: Form = Form(title: "", value: "View All Reminder")
 
     private let tableView: UITableView = {
         let tableView = UITableView()
 //        tableView.separatorStyle = .none
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -61,7 +58,7 @@ class DetailPersonViewController: UIViewController {
             editPersonController.modalPresentationStyle = .fullScreen
 
             // Instead of presenting from self, present the EditPersonController from the navigation controller
-            self.navigationController?.pushViewController(editPersonController, animated: false)
+            self.navigationController?.pushViewController(editPersonController, animated: true)
         }
 
         
@@ -70,11 +67,11 @@ class DetailPersonViewController: UIViewController {
             
         }
         let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { action in
-            print("action add clicked")
+            print("action add Reminder clicked")
             
         }
         let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { action in
-            print("action add clicked")
+            print("action Delete clicked")
             
         }
         let menu = UIMenu(title: "", children: [actionEditDetail,actionNote, actionReminder, actionDelete])
@@ -82,13 +79,15 @@ class DetailPersonViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
         
         navigationItem.rightBarButtonItem?.tintColor = .white
+        navigationItem.leftBarButtonItem?.tintColor = .white
         navigationController?.navigationBar.isHidden = false
         
         let appearance =  UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
+        appearance.backgroundColor = UIColor(named: "PrimaryColor")
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        
         
         let textAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
@@ -101,6 +100,8 @@ class DetailPersonViewController: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
+        
+        view.backgroundColor = .white
         
         self.navigationItem.title = "Detail Person"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -116,8 +117,8 @@ class DetailPersonViewController: UIViewController {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
 //            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])

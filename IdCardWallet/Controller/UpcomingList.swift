@@ -33,6 +33,7 @@ class UpcomingList: UIViewController {
         navigationBarAppearace.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBarAppearace.titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        navigationItem.title = "Upcoming"
         navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true

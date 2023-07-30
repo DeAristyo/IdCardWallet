@@ -7,16 +7,11 @@
 
 import UIKit
 
-struct Group {
-    let title: String
-    let people: [String]
-}
-
 class PeopleList: UIViewController {
     
     let people: [String: [String]] = [
         "A": ["Anya","Ana", "Akaka"],
-        "B": ["Budi", "Bima", "Bia"],
+        "B": ["Budi", "Bima", "Bia", "Billa"],
         "G": ["Gorila","Gaga"]
     ]
     
@@ -54,6 +49,7 @@ class PeopleList: UIViewController {
         navigationBarAppearace.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBarAppearace.titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        navigationItem.title = "People"
         navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -62,6 +58,7 @@ class PeopleList: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.searchController = searchController
         
+        tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -79,7 +76,11 @@ class PeopleList: UIViewController {
     }
 }
 
-extension PeopleList: UITableViewDataSource {
+extension PeopleList: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailPersonViewController(), animated: true)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count

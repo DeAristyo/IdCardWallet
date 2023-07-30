@@ -17,11 +17,11 @@
 		32AAE0B92A70CAA000A7A55B /* UpcomingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0B82A70CAA000A7A55B /* UpcomingList.swift */; };
 		32AAE0BB2A70CAE100A7A55B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0BA2A70CAE100A7A55B /* Profile.swift */; };
 		32AAE0BD2A71AFF000A7A55B /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */; };
-		32AAE0BF2A725D1300A7A55B /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0BE2A725D1300A7A55B /* DetailTableCell.swift */; };
-		32AAE0C12A72603300A7A55B /* DetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C02A72603300A7A55B /* DetailTextField.swift */; };
 		32AAE0C52A73BD8B00A7A55B /* IdCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */; };
 		32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C62A752B9C00A7A55B /* HeaderView.swift */; };
 		32AAE0C92A75433700A7A55B /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAE0C82A75433700A7A55B /* NoteList.swift */; };
+		A515E0B52A758127006BEA3C /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515E0B42A758127006BEA3C /* Form.swift */; };
+		A515E0B72A7582CF006BEA3C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515E0B62A7582CF006BEA3C /* Group.swift */; };
 		A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D3D2A6520CC00BB0063 /* AppDelegate.swift */; };
 		A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D3F2A6520CC00BB0063 /* SceneDelegate.swift */; };
 		A58F3D472A6520CD00BB0063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D462A6520CD00BB0063 /* Assets.xcassets */; };
@@ -32,7 +32,6 @@
 		BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4132A726D0E0084D88C /* EditProfileController.swift */; };
 		BF7AE4162A7285A60084D88C /* AddNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */; };
 		BF7AE4182A73A0FA0084D88C /* AddReminderSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */; };
-		BF7AE41C2A73A8480084D88C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE41B2A73A8480084D88C /* ProfileController.swift */; };
 		BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */; };
 		BF7AE4202A73A9410084D88C /* DetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE41F2A73A9410084D88C /* DetailTextField.swift */; };
 		BF7AE4242A73B9CB0084D88C /* DetailPersonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */; };
@@ -57,11 +56,11 @@
 		32AAE0B82A70CAA000A7A55B /* UpcomingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingList.swift; sourceTree = "<group>"; };
 		32AAE0BA2A70CAE100A7A55B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
-		32AAE0BE2A725D1300A7A55B /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableCell.swift; sourceTree = "<group>"; };
-		32AAE0C02A72603300A7A55B /* DetailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextField.swift; sourceTree = "<group>"; };
 		32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdCardView.swift; sourceTree = "<group>"; };
 		32AAE0C62A752B9C00A7A55B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		32AAE0C82A75433700A7A55B /* NoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; };
+		A515E0B42A758127006BEA3C /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		A515E0B62A7582CF006BEA3C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A58F3D3A2A6520CC00BB0063 /* IdCardWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdCardWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58F3D3D2A6520CC00BB0063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58F3D3F2A6520CC00BB0063 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +73,6 @@
 		BF7AE4132A726D0E0084D88C /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteSheet.swift; sourceTree = "<group>"; };
 		BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderSheet.swift; sourceTree = "<group>"; };
-		BF7AE41B2A73A8480084D88C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailTableCell.swift; path = IdCardWallet/Controller/DetailTableCell.swift; sourceTree = SOURCE_ROOT; };
 		BF7AE41F2A73A9410084D88C /* DetailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailTextField.swift; path = IdCardWallet/Controller/DetailTextField.swift; sourceTree = SOURCE_ROOT; };
 		BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPersonView.storyboard; sourceTree = "<group>"; };
@@ -157,8 +155,6 @@
 				32AAE0A62A6ED66C00A7A55B /* Checkbox.swift */,
 				32AAE0A82A6EEFE300A7A55B /* CustomTableCell.swift */,
 				32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */,
-				32AAE0BE2A725D1300A7A55B /* DetailTableCell.swift */,
-				32AAE0C02A72603300A7A55B /* DetailTextField.swift */,
 				32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */,
 				32AAE0C62A752B9C00A7A55B /* HeaderView.swift */,
 			);
@@ -168,6 +164,8 @@
 		A58F3D532A65222000BB0063 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A515E0B42A758127006BEA3C /* Form.swift */,
+				A515E0B62A7582CF006BEA3C /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,15 +173,12 @@
 		A58F3D5C2A654C0000BB0063 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A58F3D612A654E5000BB0063 /* OnboardingController.swift */,
 				BFF9CD142A69259F006CD9B8 /* AddPersonViewController.swift */,
 				BFA7509F2A70D62E0016F1C5 /* SocialMediaController.swift */,
-				BF7AE41B2A73A8480084D88C /* ProfileController.swift */,
 				BF7AE4252A73BC400084D88C /* DetailPersonViewController.swift */,
 				BF7AE4132A726D0E0084D88C /* EditProfileController.swift */,
 				BF8E36D22A74FCF500404F5C /* EditPersonController.swift */,
 				32AAE04A2A6A8B0400A7A55B /* CardnudgeController.swift */,
-				A58F3D5D2A654C2200BB0063 /* TabBarController.swift */,
 				A58F3D612A654E5000BB0063 /* OnboardingController.swift */,
 				32AAE05A2A6E670D00A7A55B /* TableViewCompController.swift */,
 				32AAE0B62A70CA5A00A7A55B /* PeopleList.swift */,
@@ -278,7 +273,6 @@
 				BFA750A02A70D62E0016F1C5 /* SocialMediaController.swift in Sources */,
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
 				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
-				BF7AE41C2A73A8480084D88C /* ProfileController.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
 				BFF9CD152A69259F006CD9B8 /* AddPersonViewController.swift in Sources */,
 				BF8E36DF2A75354B00404F5C /* EditTableCell.swift in Sources */,
@@ -291,17 +285,16 @@
 				32AAE0BB2A70CAE100A7A55B /* Profile.swift in Sources */,
 				32AAE0A72A6ED66C00A7A55B /* Checkbox.swift in Sources */,
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
+				A515E0B52A758127006BEA3C /* Form.swift in Sources */,
 				32AAE0B72A70CA5A00A7A55B /* PeopleList.swift in Sources */,
 				32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */,
 				32AAE0A92A6EEFE300A7A55B /* CustomTableCell.swift in Sources */,
-				A58F3D5E2A654C2200BB0063 /* TabBarController.swift in Sources */,
 				32AAE0C52A73BD8B00A7A55B /* IdCardView.swift in Sources */,
+				A515E0B72A7582CF006BEA3C /* Group.swift in Sources */,
 				32AAE05B2A6E670D00A7A55B /* TableViewCompController.swift in Sources */,
 				32AAE0C92A75433700A7A55B /* NoteList.swift in Sources */,
-				32AAE0BF2A725D1300A7A55B /* DetailTableCell.swift in Sources */,
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
 				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
-				32AAE0C12A72603300A7A55B /* DetailTextField.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
 				32AAE04C2A6A8B0400A7A55B /* CardnudgeController.swift in Sources */,
 			);

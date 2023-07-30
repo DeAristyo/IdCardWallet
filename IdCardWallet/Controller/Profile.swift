@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct Form {
-    let title: String
-    let value: Any
-}
-
 class Profile: UIViewController {
     
     private var cardView : IdCardView = {
@@ -40,7 +35,7 @@ class Profile: UIViewController {
         tableView.backgroundColor = .white
         
         tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
-     
+        
         return tableView
     }()
     
@@ -57,15 +52,32 @@ class Profile: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        navigationItem.rightBarButtonItem?.tintColor = .white
-        
         tableView.dataSource = self
         tableView.tableHeaderView = cardView
         tableView.backgroundColor = .white
         
         view.addSubview(tableView)
         view.backgroundColor = UIColor(named: "BackgroundColor")
-  
+        
+        let actionEditProfile = UIAction(title: "Edit Profile", image: UIImage(named: "editProfileImage")) { [weak self] action in
+            guard let self = self else { return }
+            
+            // Instantiate your EditProfileController from the storyboard
+            let storyboard = UIStoryboard(name: "AddPersonView", bundle: nil)
+            let editProfileController = storyboard.instantiateViewController(withIdentifier: "EditProfileControllerID") as! EditProfileController
+            
+            // Present the EditProfileController modally
+            let navigationController = UINavigationController(rootViewController: editProfileController)
+            self.present(navigationController, animated: true, completion: nil)
+        }
+        
+        
+        let menu = UIMenu(title: "", children: [actionEditProfile])
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        
+        
         
         setupLayout()
         
