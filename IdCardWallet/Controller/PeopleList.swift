@@ -54,7 +54,7 @@ class PeopleList: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(openModal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(addPersonFunc))
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.searchController = searchController
         
@@ -71,7 +71,11 @@ class PeopleList: UIViewController {
         tableView.frame = view.bounds
     }
     
-    @objc private func openModal()  {
+    @objc private func addPersonFunc()  {
+        let navigate = UIStoryboard(name: "AddPersonViewID", bundle: nil).instantiateInitialViewController()
+        
+        print(navigate)
+        navigationController?.pushViewController(navigate!, animated: true)
         print("Modal opened")
     }
 }

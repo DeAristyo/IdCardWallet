@@ -29,9 +29,13 @@
 		A58F3D602A654D8C00BB0063 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */; };
 		A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D612A654E5000BB0063 /* OnboardingController.swift */; };
 		A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F3D672A669DEE00BB0063 /* TextFieldID.swift */; };
+		A5D27A912A76713300283828 /* TimePickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27A902A76713300283828 /* TimePickerField.swift */; };
+		A5D27A932A76715400283828 /* CalendarPickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27A922A76715400283828 /* CalendarPickerField.swift */; };
+		A5D27A952A76719200283828 /* ReminderSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27A942A76719200283828 /* ReminderSheet.swift */; };
+		A5D27A972A7671E900283828 /* TextViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27A962A7671E900283828 /* TextViewID.swift */; };
+		A5D27A992A7680D000283828 /* EditProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D27A982A7680D000283828 /* EditProfileView.storyboard */; };
 		BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4132A726D0E0084D88C /* EditProfileController.swift */; };
 		BF7AE4162A7285A60084D88C /* AddNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */; };
-		BF7AE4182A73A0FA0084D88C /* AddReminderSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */; };
 		BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */; };
 		BF7AE4202A73A9410084D88C /* DetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE41F2A73A9410084D88C /* DetailTextField.swift */; };
 		BF7AE4242A73B9CB0084D88C /* DetailPersonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */; };
@@ -70,9 +74,13 @@
 		A58F3D5F2A654D8C00BB0063 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A58F3D612A654E5000BB0063 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		A58F3D672A669DEE00BB0063 /* TextFieldID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldID.swift; sourceTree = "<group>"; };
+		A5D27A902A76713300283828 /* TimePickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerField.swift; sourceTree = "<group>"; };
+		A5D27A922A76715400283828 /* CalendarPickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerField.swift; sourceTree = "<group>"; };
+		A5D27A942A76719200283828 /* ReminderSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSheet.swift; sourceTree = "<group>"; };
+		A5D27A962A7671E900283828 /* TextViewID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewID.swift; sourceTree = "<group>"; };
+		A5D27A982A7680D000283828 /* EditProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfileView.storyboard; sourceTree = "<group>"; };
 		BF7AE4132A726D0E0084D88C /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteSheet.swift; sourceTree = "<group>"; };
-		BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderSheet.swift; sourceTree = "<group>"; };
 		BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailTableCell.swift; path = IdCardWallet/Controller/DetailTableCell.swift; sourceTree = SOURCE_ROOT; };
 		BF7AE41F2A73A9410084D88C /* DetailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailTextField.swift; path = IdCardWallet/Controller/DetailTextField.swift; sourceTree = SOURCE_ROOT; };
 		BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPersonView.storyboard; sourceTree = "<group>"; };
@@ -147,7 +155,6 @@
 				BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */,
 				A58F3D672A669DEE00BB0063 /* TextFieldID.swift */,
 				BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */,
-				BF7AE4172A73A0FA0084D88C /* AddReminderSheet.swift */,
 				BF8E36DC2A75352700404F5C /* TextFieldNoImage.swift */,
 				BF8E36E02A753A4400404F5C /* EditTextField.swift */,
 				32AAE04B2A6A8B0400A7A55B /* Cardnudge.xib */,
@@ -157,6 +164,11 @@
 				32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */,
 				32AAE0C42A73BD8B00A7A55B /* IdCardView.swift */,
 				32AAE0C62A752B9C00A7A55B /* HeaderView.swift */,
+				A5D27A902A76713300283828 /* TimePickerField.swift */,
+				A5D27A922A76715400283828 /* CalendarPickerField.swift */,
+				A5D27A942A76719200283828 /* ReminderSheet.swift */,
+				A5D27A962A7671E900283828 /* TextViewID.swift */,
+				A5D27A982A7680D000283828 /* EditProfileView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,6 +262,7 @@
 				BF7AE4242A73B9CB0084D88C /* DetailPersonView.storyboard in Resources */,
 				A58F3D602A654D8C00BB0063 /* Onboarding.storyboard in Resources */,
 				A58F3D4A2A6520CD00BB0063 /* LaunchScreen.storyboard in Resources */,
+				A5D27A992A7680D000283828 /* EditProfileView.storyboard in Resources */,
 				BFF9CD132A692588006CD9B8 /* AddPersonView.storyboard in Resources */,
 				A58F3D472A6520CD00BB0063 /* Assets.xcassets in Resources */,
 				32AAE0592A6E66F500A7A55B /* TableViewComp.xib in Resources */,
@@ -264,11 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D27A972A7671E900283828 /* TextViewID.swift in Sources */,
 				BF8E36D32A74FCF500404F5C /* EditPersonController.swift in Sources */,
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
 				BF7AE4162A7285A60084D88C /* AddNoteSheet.swift in Sources */,
 				BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */,
 				BF7AE4202A73A9410084D88C /* DetailTextField.swift in Sources */,
+				A5D27A952A76719200283828 /* ReminderSheet.swift in Sources */,
+				A5D27A912A76713300283828 /* TimePickerField.swift in Sources */,
 				BF7AE4262A73BC400084D88C /* DetailPersonViewController.swift in Sources */,
 				BFA750A02A70D62E0016F1C5 /* SocialMediaController.swift in Sources */,
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
@@ -277,7 +293,6 @@
 				BFF9CD152A69259F006CD9B8 /* AddPersonViewController.swift in Sources */,
 				BF8E36DF2A75354B00404F5C /* EditTableCell.swift in Sources */,
 				BF8E36E12A753A4400404F5C /* EditTextField.swift in Sources */,
-				BF7AE4182A73A0FA0084D88C /* AddReminderSheet.swift in Sources */,
 				BF8E36DD2A75352700404F5C /* TextFieldNoImage.swift in Sources */,
 				BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */,
 				32AAE0BD2A71AFF000A7A55B /* CustomTableView.swift in Sources */,
@@ -288,6 +303,7 @@
 				A515E0B52A758127006BEA3C /* Form.swift in Sources */,
 				32AAE0B72A70CA5A00A7A55B /* PeopleList.swift in Sources */,
 				32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */,
+				A5D27A932A76715400283828 /* CalendarPickerField.swift in Sources */,
 				32AAE0A92A6EEFE300A7A55B /* CustomTableCell.swift in Sources */,
 				32AAE0C52A73BD8B00A7A55B /* IdCardView.swift in Sources */,
 				A515E0B72A7582CF006BEA3C /* Group.swift in Sources */,

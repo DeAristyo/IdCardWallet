@@ -95,11 +95,11 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     
     
   
-    @IBAction func addReminderAction(_ sender: Any) {
-        let vc = AddReminderSheet()
-        let navVc = UINavigationController(rootViewController: vc)
-        present(navVc, animated: true)
-    }
+//    @IBAction func addReminderAction(_ sender: Any) {
+//        let vc = AddReminderSheet()
+//        let navVc = UINavigationController(rootViewController: vc)
+//        present(navVc, animated: true)
+//    }
     @IBAction func addNoteAction(_ sender: Any) {
         let vc = AddNoteSheet()
         let navVc = UINavigationController(rootViewController: vc)

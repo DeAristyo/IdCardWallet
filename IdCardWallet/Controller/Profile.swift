@@ -63,7 +63,7 @@ class Profile: UIViewController {
             guard let self = self else { return }
             
             // Instantiate your EditProfileController from the storyboard
-            let storyboard = UIStoryboard(name: "AddPersonView", bundle: nil)
+            let storyboard = UIStoryboard(name: "EditProfileView", bundle: nil)
             let editProfileController = storyboard.instantiateViewController(withIdentifier: "EditProfileControllerID") as! EditProfileController
             
             // Present the EditProfileController modally

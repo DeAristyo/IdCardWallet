@@ -63,12 +63,17 @@ class DetailPersonViewController: UIViewController {
 
         
         let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) { action in
-            print("action add clicked")
+            let vc = AddNoteSheet(title: "Add Note")
+            let navVc = UINavigationController(rootViewController: vc)
+            self.present(navVc, animated: true)
+            print("action Add Note clicked")
             
         }
         let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { action in
-            print("action add Reminder clicked")
-            
+            let vc = ReminderSheet(title: "Add Reminder")
+            let navVc = UINavigationController(rootViewController: vc)
+            self.present(navVc, animated: true)
+            print("action Ad Reminder clicked")
         }
         let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { action in
             print("action Delete clicked")
