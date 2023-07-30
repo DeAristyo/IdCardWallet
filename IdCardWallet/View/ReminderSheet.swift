@@ -32,7 +32,7 @@ class ReminderSheet: UIViewController{
         return view
     }()
     
-    var textFieldInputName: TextFieldNoImage = {
+    var textFieldInputLocation: TextFieldNoImage = {
         let view = TextFieldNoImage()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -70,7 +70,7 @@ class ReminderSheet: UIViewController{
     
     override func viewDidLoad() {
         textFieldInput.delegate = self
-        textFieldInputName.delegate = self
+        textFieldInputLocation.delegate = self
         longTextFieldInput.delegate = self
         
         view.backgroundColor = .white
@@ -83,8 +83,9 @@ class ReminderSheet: UIViewController{
         
         setupLayout()
         textFieldInput.setupView(placeholders: "e.g. Disscuss New Album Release", labels: "Title", delegates: self)
-        textFieldInputName.setupView(placeholders: "Choose Contact", labels: "Name", delegates: self)
+        textFieldInputLocation.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
         longTextFieldInput.setupView(placeholders: "e.g. He will release new album called “rose ” that was inspired by his mom name", labels: "Note", delegates: self)
+   //     textFieldInput.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
     }
     
     
@@ -110,9 +111,9 @@ class ReminderSheet: UIViewController{
     func setupLayout(){
         stackView.addArrangedSubview(textFieldInput)
         stackView.addArrangedSubview(longTextFieldInput)
-        stackView.addArrangedSubview(textFieldInputName)
         stackView.addArrangedSubview(calendarFieldInput)
         stackView.addArrangedSubview(timeFieldInput)
+        stackView.addArrangedSubview(textFieldInputLocation)
         scrollView.addSubview(stackView)
         view.addSubview(scrollView)
         

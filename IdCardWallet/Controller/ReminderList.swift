@@ -1,13 +1,13 @@
 //
-//  NoteList.swift
+//  ReminderList.swift
 //  IdCardWallet
 //
-//  Created by Auliya Michelle Adhana on 29/07/23.
+//  Created by Dimas Aristyo Rahadian on 30/07/23.
 //
 
 import UIKit
 
-class NoteList: UIViewController {
+class ReminderList: UIViewController {
     
     let reminders: [String] = ["halo", "Kamu"]
     
@@ -25,7 +25,7 @@ class NoteList: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Notes"
+        self.navigationItem.title = "Reminders"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.sizeToFit()
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "PrimaryColor")
@@ -36,10 +36,11 @@ class NoteList: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         searchController.searchBar.searchTextField.backgroundColor = .white
+    
+        navigationItem.searchController = searchController
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(openModal))
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationItem.searchController = searchController
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -54,20 +55,20 @@ class NoteList: UIViewController {
     }
     
     @objc private func openModal()  {
-        let vc = AddNoteSheet(title: "Add Note")
+        let vc = ReminderSheet(title: "Add Reminder")
         let navVc = UINavigationController(rootViewController: vc)
         self.present(navVc, animated: true)
         print("action Add Note clicked")
     }
 }
 
-extension NoteList: UITableViewDataSource, UITableViewDelegate {
+extension ReminderList: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reminders.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailNoteController(), animated: true)
+        navigationController?.pushViewController(DetailReminderController(), animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +79,7 @@ extension NoteList: UITableViewDataSource, UITableViewDelegate {
         cell.setupView(titleName: reminders[indexPath.row] , subtitleName: "Section" )
         cell.setupLayout(isCheckboxVisible: false)
         cell.checkBox.isHidden = true
+        
         
         return cell
     }

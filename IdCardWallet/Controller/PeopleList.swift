@@ -72,7 +72,7 @@ class PeopleList: UIViewController {
     }
     
     @objc private func addPersonFunc()  {
-        let navigate = UIStoryboard(name: "AddPersonViewID", bundle: nil).instantiateInitialViewController()
+        let navigate = UIStoryboard(name: "AddPersonView", bundle: nil).instantiateInitialViewController()
         
         print(navigate)
         navigationController?.pushViewController(navigate!, animated: true)

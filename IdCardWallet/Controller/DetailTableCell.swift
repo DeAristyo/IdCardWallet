@@ -2,7 +2,7 @@
 //  DetailTableCell.swift
 //  IdCardWallet
 //
-//  Created by Billbert Pohandy on 28/07/23.
+//  Created by Auliya Michelle Adhana on 25/07/23.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 class DetailTableCell: UITableViewCell {
     static let identifier = "DetailTableCell"
     
-    let textField = DetailTextField()
+    let textField = LabelView()
     
     lazy var card: UIView = {
         let view = UIView()
@@ -82,10 +82,10 @@ class DetailTableCell: UITableViewCell {
     func setupLayout(isCheckboxVisible:Bool = true){
         
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: topAnchor, constant: -5),
-            textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            textField.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
             
 //            checkBox.centerYAnchor.constraint(equalTo: card.centerYAnchor),
 //            checkBox.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
@@ -110,3 +110,4 @@ class DetailTableCell: UITableViewCell {
     
     
 }
+

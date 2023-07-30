@@ -11,8 +11,7 @@
         <!--Edit Profile-->
         <scene sceneID="lWO-30-McG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JtV-IR-Zlo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="EditProfileControllerID" id="emr-Ue-GO9" customClass="EditProfileController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="emr-Ue-GO9" customClass="EditProfileController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9w3-cH-3qg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +64,7 @@
                         <outlet property="UsernameProfile" destination="p6E-qG-qh4" id="wxD-zV-d0D"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtV-IR-Zlo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6886" y="-158"/>
         </scene>

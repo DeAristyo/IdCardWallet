@@ -37,6 +37,7 @@ class DetailPersonViewController: UIViewController {
         tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
 
         return tableView
     }()
@@ -45,8 +46,6 @@ class DetailPersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
-        
         let actionEditDetail = UIAction(title: "Edit Detail", image: UIImage(named: "editProfileImage")) { [weak self] action in
             guard let self = self else { return }
 
@@ -67,8 +66,8 @@ class DetailPersonViewController: UIViewController {
             let navVc = UINavigationController(rootViewController: vc)
             self.present(navVc, animated: true)
             print("action Add Note clicked")
-            
         }
+        
         let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { action in
             let vc = ReminderSheet(title: "Add Reminder")
             let navVc = UINavigationController(rootViewController: vc)
@@ -79,32 +78,20 @@ class DetailPersonViewController: UIViewController {
             print("action Delete clicked")
             
         }
-        let menu = UIMenu(title: "", children: [actionEditDetail,actionNote, actionReminder, actionDelete])
+        let menu = UIMenu(title: "", children: [actionEditDetail, actionNote, actionReminder, actionDelete])
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
-        
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationItem.leftBarButtonItem?.tintColor = .white
-        navigationController?.navigationBar.isHidden = false
         
-        let appearance =  UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(named: "PrimaryColor")
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        
-        
-        let textAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-        ]
-        appearance.titleTextAttributes = textAttributes
-        appearance.largeTitleTextAttributes = textAttributes
-        
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
+        self.navigationItem.title = "Detail Person"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.sizeToFit()
+        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "PrimaryColor")
+        let backButton = UIBarButtonItem()
+        backButton.title = "Person"
+        backButton.tintColor = .white
+        view.backgroundColor = .white
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         view.backgroundColor = .white
         
@@ -162,9 +149,9 @@ extension DetailPersonViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 0:
-            cell.setupView(titleName: contacts[indexPath.row].title, subtitleName: contacts[indexPath.row].value as! String)
+            cell.setupView(titleName: contacts[indexPath.row].value, subtitleName: contacts[indexPath.row].title as! String)
         case 1:
-            cell.setupView(titleName: socialMedia[indexPath.row].title, subtitleName: socialMedia[indexPath.row].value as! String)
+            cell.setupView(titleName: socialMedia[indexPath.row].value, subtitleName: socialMedia[indexPath.row].title as! String)
         case 2:
             cell.setupView(titleName: note.title, subtitleName: note.value as! String)
             cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
@@ -202,11 +189,13 @@ extension DetailPersonViewController: UITableViewDataSource {
     @objc func noteCellTapped() {
         // Handle the tap action for the Note cell
         print("Note cell tapped!")
+        navigationController?.pushViewController(NoteList(), animated: true)
         // Here you can present a new view controller or perform any action you want.
     }
     @objc func reminderCellTapped() {
         // Handle the tap action for the Note cell
         print("Reminder cell tapped!")
+        navigationController?.pushViewController(ReminderList(), animated: true)
         // Here you can present a new view controller or perform any action you want.
     }
 }

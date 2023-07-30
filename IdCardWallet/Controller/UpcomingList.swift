@@ -37,12 +37,11 @@ class UpcomingList: UIViewController {
         navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(openModal))
-        navigationItem.rightBarButtonItem?.tintColor = .white
+    
         navigationItem.searchController = searchController
         
         tableView.dataSource = self
+        tableView.delegate = self
         view.addSubview(tableView)
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
@@ -58,9 +57,13 @@ class UpcomingList: UIViewController {
     }
 }
 
-extension UpcomingList: UITableViewDataSource {
+extension UpcomingList: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reminders.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailUpcomingController(), animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,7 +72,8 @@ extension UpcomingList: UITableViewDataSource {
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         
         cell.setupView(titleName: reminders[indexPath.row] , subtitleName: "Section" )
-        cell.setupLayout(isCheckboxVisible: true)
+        cell.setupLayout(isCheckboxVisible: false)
+        cell.checkBox.isHidden = true
         
         
         return cell
