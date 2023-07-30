@@ -1,23 +1,21 @@
 //
-//  ProfileController.swift
+//  ContactList.swift
 //  IdCardWallet
 //
-//  Created by Billbert Pohandy on 28/07/23.
+//  Created by Auliya Michelle Adhana on 26/07/23.
 //
 
-import Foundation
 import UIKit
 
-struct Form {
-    let title: String
-    let value: Any
-}
-
-class ProfileController: UIViewController {
-    @IBOutlet weak var buttonSementara: UIBarButtonItem!
+class Profile: UIViewController {
     
-    
-    let labels: [String] = ["Fullname", "Email", "Phone Number", "Address", "Job", "Company"]
+    private var cardView : IdCardView = {
+        let view = IdCardView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        
+        return view
+    }()
     
     let x = [
         Form(title: "Fullname", value: "Michelle"),
@@ -29,67 +27,57 @@ class ProfileController: UIViewController {
     ]
     
     var navigationBarAppearace = UINavigationBarAppearance()
-//    let tableView = CustomTableView()
+    //    let tableView = CustomTableView()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-//        tableView.separatorStyle = .none
-        tableView.backgroundColor = .red
-        tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
+        tableView.backgroundColor = .white
+        
+        tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
+        
         return tableView
     }()
     
-    private let containerView: UIView = {
-        let containerView = UIView()
-        containerView.backgroundColor = .magenta
-        
-        return containerView
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBarAppearace.configureWithOpaqueBackground()
-        navigationBarAppearace.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
+        navigationBarAppearace.backgroundColor = UIColor(named: "PrimaryColor")
         navigationBarAppearace.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBarAppearace.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
-        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        tableView.dataSource = self
+        tableView.tableHeaderView = cardView
+        tableView.backgroundColor = .white
+        
+        view.addSubview(tableView)
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         
         let actionEditProfile = UIAction(title: "Edit Profile", image: UIImage(named: "editProfileImage")) { [weak self] action in
             guard let self = self else { return }
-
+            
             // Instantiate your EditProfileController from the storyboard
-            let storyboard = UIStoryboard(name: "AddPersonView", bundle: nil)
+            let storyboard = UIStoryboard(name: "EditProfileView", bundle: nil)
             let editProfileController = storyboard.instantiateViewController(withIdentifier: "EditProfileControllerID") as! EditProfileController
-
+            
             // Present the EditProfileController modally
             let navigationController = UINavigationController(rootViewController: editProfileController)
             self.present(navigationController, animated: true, completion: nil)
         }
-
-                let actionShare = UIAction(title: "Share", image: UIImage(named: "shareProfileImage")) { action in
-                    print("action add clicked")
-                    
-                }
-                let menu = UIMenu(title: "", children: [actionEditProfile, actionShare])
+        
+        
+        let menu = UIMenu(title: "", children: [actionEditProfile])
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
-        
-       
-                
-
-        
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationController?.navigationBar.isHidden = false
         
-        tableView.dataSource = self
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
+        
         
         setupLayout()
         
@@ -97,43 +85,36 @@ class ProfileController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    
-    @objc private func openModal()  {
-        print("Modal opened")
     }
     
     func setupLayout(){
         NSLayoutConstraint.activate([
+            
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-//            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 16)
+            
         ])
     }
-    
 }
 
-extension ProfileController: UITableViewDataSource {
+
+
+
+extension Profile: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return x.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableCell.identifier, for: indexPath) as! DetailTableCell
-
-        cell.backgroundColor = .white
-
+        
+        cell.backgroundColor = .clear
         cell.setupView(titleName: x[indexPath.row].title, subtitleName: x[indexPath.row].value as! String)
-//        cell.setupView(titleName: reminders[indexPath.row] , subtitleName: "Section" )
-//        cell.setupLayout(isCheckboxVisible: true)
-
-
+        
         return cell
     }
-
+    
 }
-

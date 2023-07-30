@@ -1,14 +1,14 @@
 //
-//  AddNoteSheet.swift
+//  ReminderSheet.swift
 //  IdCardWallet
 //
-//  Created by Billbert Pohandy on 27/07/23.
+//  Created by Dimas Aristyo Rahadian on 30/07/23.
 //
 
 import Foundation
 import UIKit
 
-class AddNoteSheet: UIViewController{
+class ReminderSheet: UIViewController{
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -32,7 +32,7 @@ class AddNoteSheet: UIViewController{
         return view
     }()
     
-    var meetPlaceInput: TextFieldNoImage = {
+    var textFieldInputLocation: TextFieldNoImage = {
         let view = TextFieldNoImage()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -70,7 +70,7 @@ class AddNoteSheet: UIViewController{
     
     override func viewDidLoad() {
         textFieldInput.delegate = self
-        meetPlaceInput.delegate = self
+        textFieldInputLocation.delegate = self
         longTextFieldInput.delegate = self
         
         view.backgroundColor = .white
@@ -82,9 +82,10 @@ class AddNoteSheet: UIViewController{
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(textAttributes, for: .normal)
         
         setupLayout()
-        textFieldInput.setupView(placeholders: "e.g. Disscuss New Feature", labels: "Title", delegates: self)
-        meetPlaceInput.setupView(placeholders: "e.g. Starducks Coffee", labels: "Meeting Place", delegates: self)
-        longTextFieldInput.setupView(placeholders: "e.g. He got that James Dean daydream look  in his eyes, long hair, slicked back, white T-shirt", labels: "Note", delegates: self)
+        textFieldInput.setupView(placeholders: "e.g. Disscuss New Album Release", labels: "Title", delegates: self)
+        textFieldInputLocation.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
+        longTextFieldInput.setupView(placeholders: "e.g. He will release new album called “rose ” that was inspired by his mom name", labels: "Note", delegates: self)
+   //     textFieldInput.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
     }
     
     
@@ -96,11 +97,23 @@ class AddNoteSheet: UIViewController{
         self.dismiss(animated: true)
     }
     
+    func updateContentSize() {
+        // Calculate the total height of all the subviews inside the scrollView
+        var totalContentHeight: CGFloat = 0.0
+        for subview in scrollView.subviews {
+            totalContentHeight += subview.frame.height
+        }
+        
+        // Set the contentSize of the scrollView based on the calculated height
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: totalContentHeight)
+    }
+    
     func setupLayout(){
         stackView.addArrangedSubview(textFieldInput)
-        stackView.addArrangedSubview(calendarFieldInput)
-        stackView.addArrangedSubview(meetPlaceInput)
         stackView.addArrangedSubview(longTextFieldInput)
+        stackView.addArrangedSubview(calendarFieldInput)
+        stackView.addArrangedSubview(timeFieldInput)
+        stackView.addArrangedSubview(textFieldInputLocation)
         scrollView.addSubview(stackView)
         view.addSubview(scrollView)
         
@@ -113,42 +126,41 @@ class AddNoteSheet: UIViewController{
             calendarFieldInput.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             calendarFieldInput.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            //            textFieldInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            //            textFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            //            textFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //            textFieldInput.heightAnchor.constraint(equalToConstant: 74),
-            //
-            //            longTextFieldInput.topAnchor.constraint(equalTo: textFieldInput.bottomAnchor),
-            //            longTextFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            //            longTextFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //            longTextFieldInput.heightAnchor.constraint(equalToConstant: 118),
-            //
-            //            textFieldInputName.topAnchor.constraint(equalTo: longTextFieldInput.bottomAnchor),
-            //            textFieldInputName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            //            textFieldInputName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //            textFieldInputName.heightAnchor.constraint(equalToConstant: 74),
+//            textFieldInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            textFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+//            textFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+//            textFieldInput.heightAnchor.constraint(equalToConstant: 74),
+//
+//            longTextFieldInput.topAnchor.constraint(equalTo: textFieldInput.bottomAnchor),
+//            longTextFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+//            longTextFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+//            longTextFieldInput.heightAnchor.constraint(equalToConstant: 118),
+//
+//            textFieldInputName.topAnchor.constraint(equalTo: longTextFieldInput.bottomAnchor),
+//            textFieldInputName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+//            textFieldInputName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+//            textFieldInputName.heightAnchor.constraint(equalToConstant: 74),
             
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             
-            
+
         ])
     }
     
 }
 
-extension AddNoteSheet: TextFieldIDDelegateNoImage{
+extension ReminderSheet: TextFieldIDDelegateNoImage{
     func getValueNoImage(value: String?) {
         print(value)
     }
     
 }
 
-extension AddNoteSheet: textViewIDDelegate{
+extension ReminderSheet: textViewIDDelegate{
     func getValue(value: String?) {
         print(value)
     }
 }
-

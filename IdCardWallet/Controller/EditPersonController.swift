@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct Formss {
-    let title: String
-    let value: Any
-//    var isEditable: Bool
-}
 
 class EditPersonController: UIViewController, textFieldIDDelegate {
     func getValue(value: String?) {
@@ -21,30 +16,29 @@ class EditPersonController: UIViewController, textFieldIDDelegate {
     let labels: [String] = ["Contacts", "Fullname", "Email", "Phone Number", "Address", "Job", "Company"]
     
     let contacts = [
-        Formss(title: "Fullname", value: "Michelle"),
-        Formss(title: "Email", value: "michelle@gmail.com"),
-        Formss(title: "Phone Number", value: "081234567890"),
-        Formss(title: "Address", value: "Address 123"),
-        Formss(title: "Job", value: "Ios Dev"),
-        Formss(title: "Company", value: "ABC Corp")
+        Form(title: "Fullname", value: "Michelle"),
+        Form(title: "Email", value: "michelle@gmail.com"),
+        Form(title: "Phone Number", value: "081234567890"),
+        Form(title: "Address", value: "Address 123"),
+        Form(title: "Job", value: "Ios Dev"),
+        Form(title: "Company", value: "ABC Corp")
     ]
     
-    let socialMedia: [Formss] = [
-            Formss(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
-            Formss(title: "Instagram", value: "https://www.instagram.com/michelle"),
-        ]
+    let socialMedia: [Form] = [
+        Form(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
+        Form(title: "Instagram", value: "https://www.instagram.com/michelle"),
+    ]
     
-    let note: Formss = Formss(title: "", value: "View All Notes")
-    let reminder: Formss = Formss(title: "", value: "View All Reminder")
-
-  
+    let note: Form = Form(title: "", value: "View All Notes")
+    let reminder: Form = Form(title: "", value: "View All Reminder")
+    
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
-//        tableView.separatorStyle = .none
-        tableView.backgroundColor = .red
+        //        tableView.separatorStyle = .none
         tableView.register(EditTableCell.self, forCellReuseIdentifier: EditTableCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         return tableView
     }()
     
@@ -52,28 +46,15 @@ class EditPersonController: UIViewController, textFieldIDDelegate {
         
         super.viewDidLoad()
         
-        let cancelAttributes: [NSAttributedString.Key: Any] = [
-                   .foregroundColor: UIColor.gray, // Set the desired color for Cancel button
-                   .font: UIFont.systemFont(ofSize: 17) // Set the desired font for Cancel button
-                   ]
-                   let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ngecancel))
-                   cancelButton.setTitleTextAttributes(cancelAttributes, for: .normal)
-                   self.navigationItem.leftBarButtonItem = cancelButton
-       
-        let saveAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.init(red: 9/255.0, green: 44/255.0, blue: 76/255.0, alpha: 1), // Set the desired color for Save button
-                    .font: UIFont.boldSystemFont(ofSize: 17) // Set the desired font for Save button
-                ]
-                let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(ngesave))
-                saveButton.setTitleTextAttributes(saveAttributes, for: .normal)
-                self.navigationItem.rightBarButtonItem = saveButton
-
-            
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ngecancel))
+        self.navigationItem.leftBarButtonItem?.tintColor = .white
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(ngesave))
+        navigationItem.rightBarButtonItem?.tintColor = .white
         
         let appearance =  UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
+        appearance.backgroundColor = UIColor(named: "PrimaryColor")
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         
@@ -94,7 +75,6 @@ class EditPersonController: UIViewController, textFieldIDDelegate {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.dataSource = self
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
         setupLayout()
@@ -106,16 +86,16 @@ class EditPersonController: UIViewController, textFieldIDDelegate {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-//            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            //            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         let contactsLabel = UILabel()
-            contactsLabel.text = "Contacts"
-            contactsLabel.font = UIFont.boldSystemFont(ofSize: 24)
-            contactsLabel.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(contactsLabel)
-    
-}
+        contactsLabel.text = "Contacts"
+        contactsLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        contactsLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contactsLabel)
         
+    }
+    
     @objc func ngecancel() {
         print("udah cancel")
         navigationController?.popViewController(animated: true)
@@ -123,9 +103,9 @@ class EditPersonController: UIViewController, textFieldIDDelegate {
     @objc func ngesave() {
         print("udah save")
     }
-//    func getValue(value: String?) {
-//        print(value)
-//    }
+    //    func getValue(value: String?) {
+    //        print(value)
+    //    }
     @objc func showEditPersonController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let editPersonController = storyboard.instantiateViewController(withIdentifier: "EditPersonControllerID") as! EditPersonController
@@ -152,11 +132,11 @@ extension EditPersonController: UITableViewDataSource {
             return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EditTableCell.identifier, for: indexPath) as! EditTableCell
         cell.backgroundColor = .white
-
+        
         switch indexPath.section {
         case 0:
             cell.setupView(placeholder: contacts[indexPath.row].value as! String, label: contacts[indexPath.row].title, delegates: self)
@@ -167,20 +147,20 @@ extension EditPersonController: UITableViewDataSource {
             cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
             cell.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(noteCellTapped))
-                       cell.addGestureRecognizer(tapGesture)
+            cell.addGestureRecognizer(tapGesture)
         case 3:
             cell.setupView(placeholder: reminder.value as! String, label: reminder.title, delegates: self)
             cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
             cell.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(reminderCellTapped))
-                       cell.addGestureRecognizer(tapGesture)
+            cell.addGestureRecognizer(tapGesture)
         default:
             break
         }
-
+        
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:

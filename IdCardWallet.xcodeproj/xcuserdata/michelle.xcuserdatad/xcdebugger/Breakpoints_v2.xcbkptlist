@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "51EB45CC-F781-4915-B9DB-4B422FB91210"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA22667E-B0CD-4775-97A5-279502F7C0CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IdCardWallet/Controller/TableViewCompController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "BA22667E-B0CD-4775-97A5-279502F7C0CD - b5ca0a332e4c9e8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IdCardWallet.TableViewCompController.items.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "IdCardWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelle/Documents/GitHub/IdCardWallet/IdCardWallet/Controller/TableViewCompController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "BA22667E-B0CD-4775-97A5-279502F7C0CD - 89cc392e9495f531"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IdCardWallet.TableViewCompController.init(style: __C.UITableViewStyle) -&gt; IdCardWallet.TableViewCompController"
+                  moduleName = "IdCardWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelle/Documents/GitHub/IdCardWallet/IdCardWallet/Controller/TableViewCompController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "BA22667E-B0CD-4775-97A5-279502F7C0CD - f8435bfb64cd357b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IdCardWallet.TableViewCompController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IdCardWallet.TableViewCompController"
+                  moduleName = "IdCardWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelle/Documents/GitHub/IdCardWallet/IdCardWallet/Controller/TableViewCompController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "BA22667E-B0CD-4775-97A5-279502F7C0CD - 74e59c174f1b7d2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IdCardWallet.TableViewCompController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IdCardWallet.TableViewCompController&gt;"
+                  moduleName = "IdCardWallet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelle/Documents/GitHub/IdCardWallet/IdCardWallet/Controller/TableViewCompController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

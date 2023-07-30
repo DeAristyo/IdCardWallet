@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let viewController = UIStoryboard(name: "DetailPersonView", bundle: nil).instantiateInitialViewController()
         
+
+//        window.backgroundColor = UIColor(named: "PrimaryColor")
         window.rootViewController = viewController
         
         self.window = window

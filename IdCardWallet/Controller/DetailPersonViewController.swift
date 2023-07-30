@@ -7,10 +7,7 @@
 
 import UIKit
 
-struct Forms {
-    let title: String
-    let value: Any
-}
+
 
 class DetailPersonViewController: UIViewController {
     @IBOutlet weak var buttonSementara: UIBarButtonItem!
@@ -18,28 +15,29 @@ class DetailPersonViewController: UIViewController {
     let labels: [String] = ["Contacts", "Fullname", "Email", "Phone Number", "Address", "Job", "Company"]
     
     let contacts = [
-        Forms(title: "Fullname", value: "Michelle"),
-        Forms(title: "Email", value: "michelle@gmail.com"),
-        Forms(title: "Phone Number", value: "081234567890"),
-        Forms(title: "Address", value: "Address 123"),
-        Forms(title: "Job", value: "Ios Dev"),
-        Forms(title: "Company", value: "ABC Corp")
+        Form(title: "Fullname", value: "Michelle"),
+        Form(title: "Email", value: "michelle@gmail.com"),
+        Form(title: "Phone Number", value: "081234567890"),
+        Form(title: "Address", value: "Address 123"),
+        Form(title: "Job", value: "Ios Dev"),
+        Form(title: "Company", value: "ABC Corp")
     ]
     
-    let socialMedia: [Forms] = [
-            Forms(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
-            Forms(title: "Instagram", value: "https://www.instagram.com/michelle"),
+    let socialMedia: [Form] = [
+            Form(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
+            Form(title: "Instagram", value: "https://www.instagram.com/michelle"),
         ]
     
-    let note: Forms = Forms(title: "", value: "View All Notes")
-    let reminder: Forms = Forms(title: "", value: "View All Reminder")
+    let note: Form = Form(title: "", value: "View All Notes")
+    let reminder: Form = Form(title: "", value: "View All Reminder")
 
     private let tableView: UITableView = {
         let tableView = UITableView()
 //        tableView.separatorStyle = .none
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
 
         return tableView
     }()
@@ -48,8 +46,6 @@ class DetailPersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
-        
         let actionEditDetail = UIAction(title: "Edit Detail", image: UIImage(named: "editProfileImage")) { [weak self] action in
             guard let self = self else { return }
 
@@ -61,46 +57,43 @@ class DetailPersonViewController: UIViewController {
             editPersonController.modalPresentationStyle = .fullScreen
 
             // Instead of presenting from self, present the EditPersonController from the navigation controller
-            self.navigationController?.pushViewController(editPersonController, animated: false)
+            self.navigationController?.pushViewController(editPersonController, animated: true)
         }
 
         
         let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) { action in
-            print("action add clicked")
-            
+            let vc = AddNoteSheet(title: "Add Note")
+            let navVc = UINavigationController(rootViewController: vc)
+            self.present(navVc, animated: true)
+            print("action Add Note clicked")
         }
+        
         let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { action in
-            print("action add clicked")
-            
+            let vc = ReminderSheet(title: "Add Reminder")
+            let navVc = UINavigationController(rootViewController: vc)
+            self.present(navVc, animated: true)
+            print("action Ad Reminder clicked")
         }
         let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { action in
-            print("action add clicked")
+            print("action Delete clicked")
             
         }
-        let menu = UIMenu(title: "", children: [actionEditDetail,actionNote, actionReminder, actionDelete])
+        let menu = UIMenu(title: "", children: [actionEditDetail, actionNote, actionReminder, actionDelete])
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
-        
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationController?.navigationBar.isHidden = false
         
-        let appearance =  UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        self.navigationItem.title = "Detail Person"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.sizeToFit()
+        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "PrimaryColor")
+        let backButton = UIBarButtonItem()
+        backButton.title = "Person"
+        backButton.tintColor = .white
+        view.backgroundColor = .white
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        let textAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-        ]
-        appearance.titleTextAttributes = textAttributes
-        appearance.largeTitleTextAttributes = textAttributes
-        
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
+        view.backgroundColor = .white
         
         self.navigationItem.title = "Detail Person"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -116,8 +109,8 @@ class DetailPersonViewController: UIViewController {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
 //            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
@@ -156,9 +149,9 @@ extension DetailPersonViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 0:
-            cell.setupView(titleName: contacts[indexPath.row].title, subtitleName: contacts[indexPath.row].value as! String)
+            cell.setupView(titleName: contacts[indexPath.row].value, subtitleName: contacts[indexPath.row].title as! String)
         case 1:
-            cell.setupView(titleName: socialMedia[indexPath.row].title, subtitleName: socialMedia[indexPath.row].value as! String)
+            cell.setupView(titleName: socialMedia[indexPath.row].value, subtitleName: socialMedia[indexPath.row].title as! String)
         case 2:
             cell.setupView(titleName: note.title, subtitleName: note.value as! String)
             cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
@@ -196,11 +189,13 @@ extension DetailPersonViewController: UITableViewDataSource {
     @objc func noteCellTapped() {
         // Handle the tap action for the Note cell
         print("Note cell tapped!")
+        navigationController?.pushViewController(NoteList(), animated: true)
         // Here you can present a new view controller or perform any action you want.
     }
     @objc func reminderCellTapped() {
         // Handle the tap action for the Note cell
         print("Reminder cell tapped!")
+        navigationController?.pushViewController(ReminderList(), animated: true)
         // Here you can present a new view controller or perform any action you want.
     }
 }

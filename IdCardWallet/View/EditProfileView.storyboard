@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="emr-Ue-GO9">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Profile-->
+        <scene sceneID="lWO-30-McG">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="emr-Ue-GO9" customClass="EditProfileController" customModule="IdCardWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9w3-cH-3qg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-Rb-AJJ">
+                                <rect key="frame" x="-16" y="85" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p6E-qG-qh4" userLabel="UsernameProfile" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="95" width="390" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDr-bl-L6O" userLabel="EmailProfile" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="169" width="390" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5H-Mf-NqR" userLabel="PhoneNumberProfile" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="243" width="390" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xj5-bC-vrC" userLabel="AddressProfile" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="317" width="390" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yJ-y4-N74" userLabel="JobProfile" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="391" width="390" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMk-JW-yrC" userLabel="CompanyProfile" customClass="TextFieldID" customModule="IdCardWallet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="465" width="390" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yrf-xP-Ve9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" largeTitleDisplayMode="always" id="etL-ps-wlc"/>
+                    <connections>
+                        <outlet property="AddressProfile" destination="xj5-bC-vrC" id="lzP-ee-TNh"/>
+                        <outlet property="CompanyProfile" destination="WMk-JW-yrC" id="V6P-PH-asB"/>
+                        <outlet property="EmailProfile" destination="pDr-bl-L6O" id="ycY-pv-PRM"/>
+                        <outlet property="JobProfile" destination="3yJ-y4-N74" id="1ON-mL-lay"/>
+                        <outlet property="PhoneNumberProfile" destination="b5H-Mf-NqR" id="fId-2l-kj2"/>
+                        <outlet property="UsernameProfile" destination="p6E-qG-qh4" id="wxD-zV-d0D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtV-IR-Zlo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6886" y="-158"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

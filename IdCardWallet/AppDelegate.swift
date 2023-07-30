@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = AddPersonViewController()
 
         return true
-    }
+    } 
 
     // MARK: UISceneSession Lifecycle
 
