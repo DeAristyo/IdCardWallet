@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 
 
 class DetailPersonViewController: UIViewController {
     @IBOutlet weak var buttonSementara: UIBarButtonItem!
     
-    let labels: [String] = ["Contacts", "Fullname", "Email", "Phone Number", "Address", "Job", "Company"]
+    var detailPerson = [PersonDetail]()
     
-    let contacts = [
+    var contacts = [
         Form(title: "Fullname", value: "Michelle"),
         Form(title: "Email", value: "michelle@gmail.com"),
         Form(title: "Phone Number", value: "081234567890"),
@@ -103,6 +104,26 @@ class DetailPersonViewController: UIViewController {
         view.addSubview(tableView)
         
         setupLayout()
+    }
+    
+    
+    
+    
+    func getPeopleList(fullName: String) {
+        print("id", fullName)
+        let personDetailFetch: NSFetchRequest<PersonDetail> = PersonDetail.fetchRequest()
+        personDetailFetch.predicate = NSPredicate(format: "personFullName == %@", fullName )
+     //   let sortByDate = NSSortDescriptor(key: #keyPath(PersonDetail.dateAdded), ascending: false)
+     //   personDataFetch.sortDescriptors = [sortByDate]
+        do {
+            let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+            let results = try managedContext.fetch(personDetailFetch)
+            detailPerson = results
+            
+            print("person list", detailPerson)
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
     }
     
     func setupLayout(){
