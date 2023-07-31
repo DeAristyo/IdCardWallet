@@ -102,7 +102,10 @@ class PeopleList: UIViewController {
 extension PeopleList: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailPersonViewController(), animated: true)
+        let vc = DetailPersonViewController()
+        vc.getPeopleList(fullName: personListData[indexPath.row].fullName ?? "test")
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 //    func numberOfSections(in tableView: UITableView) -> Int {
@@ -115,7 +118,8 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       //  return models[section].people.count
-        return personListData.count
+        print(personListData.count)
+        return (personListData.count - 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,7 +131,7 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
         
         
        // let name = models[indexPath.section].people[indexPath.row]
-        cell.setupView(titleName: personListData[indexPath.row].fullName ?? "test" , subtitleName: "Section" )
+        cell.setupView(titleName: personListData[indexPath.row].fullName ?? "" , subtitleName: personListData[indexPath.row].occupation ?? "" )
         
         return cell
     }
@@ -137,10 +141,10 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
 //        return models[section].title
 //    }
     
-    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        guard let targetIndex = models.firstIndex(where: { $0.title ==  title}) else { return 0 }
-        
-        return targetIndex
-    }
+//    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+//        guard let targetIndex = models.firstIndex(where: { $0.title ==  title}) else { return 0 }
+//
+//        return targetIndex
+//    }
     
 }
