@@ -15,6 +15,8 @@ class DetailPersonViewController: UIViewController {
     
     var detailPerson = [PersonDetail]()
     
+    var fullNamePersonDetail : String = ""
+    
     var contacts = [
         Form(title: "Fullname", value: "Michelle"),
         Form(title: "Email", value: "michelle@gmail.com"),
@@ -64,6 +66,8 @@ class DetailPersonViewController: UIViewController {
         
         let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) { action in
             let vc = AddNoteSheet(title: "Add Note")
+            let dataSender = AddNoteSheet()
+            dataSender.rightButtonAction(fullName: self.fullNamePersonDetail)
             let navVc = UINavigationController(rootViewController: vc)
             self.present(navVc, animated: true)
             print("action Add Note clicked")
@@ -111,6 +115,7 @@ class DetailPersonViewController: UIViewController {
     
     func getPeopleList(fullName: String) {
         print("id", fullName)
+        fullNamePersonDetail = fullName
         let personDetailFetch: NSFetchRequest<PersonDetail> = PersonDetail.fetchRequest()
         personDetailFetch.predicate = NSPredicate(format: "personFullName == %@", fullName )
      //   let sortByDate = NSSortDescriptor(key: #keyPath(PersonDetail.dateAdded), ascending: false)
@@ -209,6 +214,7 @@ extension DetailPersonViewController: UITableViewDataSource {
     
     @objc func noteCellTapped() {
         // Handle the tap action for the Note cell
+        
         print("Note cell tapped!")
         navigationController?.pushViewController(NoteList(), animated: true)
         // Here you can present a new view controller or perform any action you want.

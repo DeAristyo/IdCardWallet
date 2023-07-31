@@ -19,10 +19,10 @@
     </entity>
     <entity name="PersonNote" representedClassName=".PersonNote" parentEntity="PersonData" syncable="YES">
         <attribute name="contactDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="noteDetail" optional="YES" attributeType="String"/>
         <attribute name="noteFullName" optional="YES" attributeType="String"/>
-        <attribute name="notePerson" optional="YES" attributeType="String"/>
+        <attribute name="noteMeetingPlace" optional="YES" attributeType="String"/>
         <attribute name="noteTitle" optional="YES" attributeType="String"/>
-        <attribute name="wayOfInteraction" optional="YES" attributeType="String"/>
         <relationship name="personDataNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonData"/>
     </entity>
     <entity name="PersonReminder" representedClassName=".PersonReminder" parentEntity="PersonData" syncable="YES">

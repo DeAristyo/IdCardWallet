@@ -17,9 +17,9 @@ extension PersonNote {
     }
 
     @NSManaged public var contactDate: Date?
-    @NSManaged public var notePerson: String?
+    @NSManaged public var noteMeetingPlace: String?
     @NSManaged public var noteTitle: String?
-    @NSManaged public var wayOfInteraction: String?
+    @NSManaged public var noteDetail: String?
     @NSManaged public var noteFullName: String?
     @NSManaged public var personDataNotes: PersonData?
 

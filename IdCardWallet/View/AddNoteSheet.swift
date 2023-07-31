@@ -88,9 +88,29 @@ class AddNoteSheet: UIViewController{
     }
     
     
-    @objc func rightButtonAction(){
+    @objc func rightButtonAction(fullName: String){
         print("Udah ke save bang")
+//        let occupations = "Software Developer"
+//        let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+//
+//        let newNoteDetail = PersonNote(context: managedContext)
+////        newNoteDetail.setValue(fullName, forKey: #keyPath(PersonNote.noteFullName))
+//        newNoteDetail.setValue(textFieldInput.textInput.text, forKey: #keyPath(PersonNote.noteTitle))
+//        newNoteDetail.setValue(meetPlaceInput.textInput.text, forKey: #keyPath(PersonNote.noteMeetingPlace))
+//        newNoteDetail.setValue(longTextFieldInput.longTextInput.text, forKey: #keyPath(PersonNote.noteDetail))
+//        newNoteDetail.setValue(Date(), forKey: #keyPath(PersonNote.contactDate))
+//
+//        do{
+//            try AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+//            print("Dah ke save bang bismillahirohmanirohim ya allah tolong kami ya allah")
+//        }
+//        catch{
+//            fatalError()
+//            print("Astaghfirullahaladzim \(error.localizedDescription)")
+//        }
+//        self.dismiss(animated: true)
     }
+    
     @objc func leftButtonAction(){
         print("Udah ke balik bang")
         self.dismiss(animated: true)
