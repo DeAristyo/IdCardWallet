@@ -127,7 +127,7 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
         
         
        // let name = models[indexPath.section].people[indexPath.row]
-        cell.setupView(titleName: personListData[indexPath.row].fullName ?? "test" , subtitleName: "Section" )
+        cell.setupView(titleName: personListData[indexPath.row].fullName ?? "test" , subtitleName:personListData[indexPath.row].occupation ?? "Occupation" )
         
         return cell
     }

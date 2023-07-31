@@ -16,10 +16,11 @@ extension PersonNote {
         return NSFetchRequest<PersonNote>(entityName: "PersonNote")
     }
 
+    @NSManaged public var contactDate: Date?
     @NSManaged public var notePerson: String?
     @NSManaged public var noteTitle: String?
     @NSManaged public var wayOfInteraction: String?
-    @NSManaged public var contactDate: Date?
+    @NSManaged public var noteFullName: String?
     @NSManaged public var personDataNotes: PersonData?
 
 }

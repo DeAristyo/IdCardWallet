@@ -46,7 +46,10 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         super.viewDidLoad()
         
         
-        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Person"
+        backButton.tintColor = .white
+
         let appearance =  UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
