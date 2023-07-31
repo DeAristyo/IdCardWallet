@@ -38,6 +38,16 @@
 		A5D27A9F2A769CB000283828 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27A9E2A769CB000283828 /* LabelView.swift */; };
 		A5D27AA12A76A35100283828 /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27AA02A76A35100283828 /* ReminderList.swift */; };
 		A5D27AA32A76A39900283828 /* DetailUpcomingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27AA22A76A39900283828 /* DetailUpcomingController.swift */; };
+		A5D27AA92A76D4C300283828 /* IdCardData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5D27AA72A76D4C300283828 /* IdCardData.xcdatamodeld */; };
+		A5D27AD42A76DAD600283828 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27AD32A76DAD600283828 /* CoreDataStack.swift */; };
+		A5D27B192A76E65600283828 /* PersonNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B112A76E65600283828 /* PersonNote+CoreDataClass.swift */; };
+		A5D27B1A2A76E65600283828 /* PersonNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B122A76E65600283828 /* PersonNote+CoreDataProperties.swift */; };
+		A5D27B1B2A76E65600283828 /* PersonReminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B132A76E65600283828 /* PersonReminder+CoreDataClass.swift */; };
+		A5D27B1C2A76E65600283828 /* PersonReminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B142A76E65600283828 /* PersonReminder+CoreDataProperties.swift */; };
+		A5D27B1D2A76E65600283828 /* PersonData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B152A76E65600283828 /* PersonData+CoreDataClass.swift */; };
+		A5D27B1E2A76E65600283828 /* PersonData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B162A76E65600283828 /* PersonData+CoreDataProperties.swift */; };
+		A5D27B1F2A76E65600283828 /* PersonDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B172A76E65600283828 /* PersonDetail+CoreDataClass.swift */; };
+		A5D27B202A76E65600283828 /* PersonDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D27B182A76E65600283828 /* PersonDetail+CoreDataProperties.swift */; };
 		BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4132A726D0E0084D88C /* EditProfileController.swift */; };
 		BF7AE4162A7285A60084D88C /* AddNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */; };
 		BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */; };
@@ -87,6 +97,16 @@
 		A5D27A9E2A769CB000283828 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		A5D27AA02A76A35100283828 /* ReminderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
 		A5D27AA22A76A39900283828 /* DetailUpcomingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUpcomingController.swift; sourceTree = "<group>"; };
+		A5D27AA82A76D4C300283828 /* IdCardData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IdCardData.xcdatamodel; sourceTree = "<group>"; };
+		A5D27AD32A76DAD600283828 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		A5D27B112A76E65600283828 /* PersonNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonNote+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5D27B122A76E65600283828 /* PersonNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5D27B132A76E65600283828 /* PersonReminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonReminder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5D27B142A76E65600283828 /* PersonReminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonReminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5D27B152A76E65600283828 /* PersonData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5D27B162A76E65600283828 /* PersonData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5D27B172A76E65600283828 /* PersonDetail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5D27B182A76E65600283828 /* PersonDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF7AE4132A726D0E0084D88C /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteSheet.swift; sourceTree = "<group>"; };
 		BF7AE41D2A73A9140084D88C /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailTableCell.swift; path = IdCardWallet/Controller/DetailTableCell.swift; sourceTree = SOURCE_ROOT; };
@@ -132,6 +152,7 @@
 		A58F3D3C2A6520CC00BB0063 /* IdCardWallet */ = {
 			isa = PBXGroup;
 			children = (
+				A5D27AD22A76DABC00283828 /* CoreData */,
 				A58F3D5C2A654C0000BB0063 /* Controller */,
 				A58F3D532A65222000BB0063 /* Model */,
 				A58F3D522A6521F700BB0063 /* View */,
@@ -141,6 +162,7 @@
 				A58F3D462A6520CD00BB0063 /* Assets.xcassets */,
 				A58F3D482A6520CD00BB0063 /* LaunchScreen.storyboard */,
 				A58F3D4B2A6520CD00BB0063 /* Info.plist */,
+				A5D27AA72A76D4C300283828 /* IdCardData.xcdatamodeld */,
 			);
 			path = IdCardWallet;
 			sourceTree = "<group>";
@@ -162,12 +184,12 @@
 				BFF9CD122A692588006CD9B8 /* AddPersonView.storyboard */,
 				BF7AE4232A73B9CB0084D88C /* DetailPersonView.storyboard */,
 				A5D27A982A7680D000283828 /* EditProfileView.storyboard */,
+				32AAE04B2A6A8B0400A7A55B /* Cardnudge.xib */,
+				32AAE0582A6E66F500A7A55B /* TableViewComp.xib */,
 				A58F3D672A669DEE00BB0063 /* TextFieldID.swift */,
 				BF7AE4152A7285A60084D88C /* AddNoteSheet.swift */,
 				BF8E36DC2A75352700404F5C /* TextFieldNoImage.swift */,
 				BF8E36E02A753A4400404F5C /* EditTextField.swift */,
-				32AAE04B2A6A8B0400A7A55B /* Cardnudge.xib */,
-				32AAE0582A6E66F500A7A55B /* TableViewComp.xib */,
 				32AAE0A62A6ED66C00A7A55B /* Checkbox.swift */,
 				32AAE0A82A6EEFE300A7A55B /* CustomTableCell.swift */,
 				32AAE0BC2A71AFF000A7A55B /* CustomTableView.swift */,
@@ -211,6 +233,22 @@
 				A5D27AA22A76A39900283828 /* DetailUpcomingController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5D27AD22A76DABC00283828 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A5D27B112A76E65600283828 /* PersonNote+CoreDataClass.swift */,
+				A5D27B122A76E65600283828 /* PersonNote+CoreDataProperties.swift */,
+				A5D27B132A76E65600283828 /* PersonReminder+CoreDataClass.swift */,
+				A5D27B142A76E65600283828 /* PersonReminder+CoreDataProperties.swift */,
+				A5D27B152A76E65600283828 /* PersonData+CoreDataClass.swift */,
+				A5D27B162A76E65600283828 /* PersonData+CoreDataProperties.swift */,
+				A5D27B172A76E65600283828 /* PersonDetail+CoreDataClass.swift */,
+				A5D27B182A76E65600283828 /* PersonDetail+CoreDataProperties.swift */,
+				A5D27AD32A76DAD600283828 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,11 +330,14 @@
 				A5D27A972A7671E900283828 /* TextViewID.swift in Sources */,
 				BF8E36D32A74FCF500404F5C /* EditPersonController.swift in Sources */,
 				A5D27AA32A76A39900283828 /* DetailUpcomingController.swift in Sources */,
+				A5D27B202A76E65600283828 /* PersonDetail+CoreDataProperties.swift in Sources */,
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
 				BF7AE4162A7285A60084D88C /* AddNoteSheet.swift in Sources */,
 				BF7AE4142A726D0E0084D88C /* EditProfileController.swift in Sources */,
 				BF7AE4202A73A9410084D88C /* DetailTextField.swift in Sources */,
+				A5D27B1F2A76E65600283828 /* PersonDetail+CoreDataClass.swift in Sources */,
 				A5D27A952A76719200283828 /* ReminderSheet.swift in Sources */,
+				A5D27B1C2A76E65600283828 /* PersonReminder+CoreDataProperties.swift in Sources */,
 				A5D27AA12A76A35100283828 /* ReminderList.swift in Sources */,
 				A5D27A912A76713300283828 /* TimePickerField.swift in Sources */,
 				A5D27A9B2A769BCD00283828 /* DetailReminderController.swift in Sources */,
@@ -305,12 +346,16 @@
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
 				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
+				A5D27B1D2A76E65600283828 /* PersonData+CoreDataClass.swift in Sources */,
 				BFF9CD152A69259F006CD9B8 /* AddPersonViewController.swift in Sources */,
 				BF8E36DF2A75354B00404F5C /* EditTableCell.swift in Sources */,
 				BF8E36E12A753A4400404F5C /* EditTextField.swift in Sources */,
 				BF8E36DD2A75352700404F5C /* TextFieldNoImage.swift in Sources */,
 				A5D27A9D2A769C2D00283828 /* DetailNoteController.swift in Sources */,
+				A5D27B1B2A76E65600283828 /* PersonReminder+CoreDataClass.swift in Sources */,
+				A5D27AD42A76DAD600283828 /* CoreDataStack.swift in Sources */,
 				BF7AE41E2A73A9140084D88C /* DetailTableCell.swift in Sources */,
+				A5D27AA92A76D4C300283828 /* IdCardData.xcdatamodeld in Sources */,
 				32AAE0BD2A71AFF000A7A55B /* CustomTableView.swift in Sources */,
 				32AAE0B92A70CAA000A7A55B /* UpcomingList.swift in Sources */,
 				32AAE0BB2A70CAE100A7A55B /* Profile.swift in Sources */,
@@ -318,6 +363,7 @@
 				A58F3D622A654E5000BB0063 /* OnboardingController.swift in Sources */,
 				A515E0B52A758127006BEA3C /* Form.swift in Sources */,
 				32AAE0B72A70CA5A00A7A55B /* PeopleList.swift in Sources */,
+				A5D27B192A76E65600283828 /* PersonNote+CoreDataClass.swift in Sources */,
 				32AAE0C72A752B9C00A7A55B /* HeaderView.swift in Sources */,
 				A5D27A932A76715400283828 /* CalendarPickerField.swift in Sources */,
 				32AAE0A92A6EEFE300A7A55B /* CustomTableCell.swift in Sources */,
@@ -325,9 +371,11 @@
 				A515E0B72A7582CF006BEA3C /* Group.swift in Sources */,
 				32AAE0C92A75433700A7A55B /* NoteList.swift in Sources */,
 				A58F3D682A669DEE00BB0063 /* TextFieldID.swift in Sources */,
+				A5D27B1E2A76E65600283828 /* PersonData+CoreDataProperties.swift in Sources */,
 				A5D27A9F2A769CB000283828 /* LabelView.swift in Sources */,
 				A58F3D3E2A6520CC00BB0063 /* AppDelegate.swift in Sources */,
 				A58F3D402A6520CC00BB0063 /* SceneDelegate.swift in Sources */,
+				A5D27B1A2A76E65600283828 /* PersonNote+CoreDataProperties.swift in Sources */,
 				32AAE04C2A6A8B0400A7A55B /* CardnudgeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +584,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A5D27AA72A76D4C300283828 /* IdCardData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A5D27AA82A76D4C300283828 /* IdCardData.xcdatamodel */,
+			);
+			currentVersion = A5D27AA82A76D4C300283828 /* IdCardData.xcdatamodel */;
+			path = IdCardData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A58F3D322A6520CC00BB0063 /* Project object */;
 }

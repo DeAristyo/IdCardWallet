@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PersonData" representedClassName=".PersonData" syncable="YES">
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="occupation" optional="YES" attributeType="String"/>
+        <relationship name="fullNamePerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonDetail"/>
+        <relationship name="personNotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PersonNote"/>
+        <relationship name="personReminder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PersonReminder"/>
+    </entity>
+    <entity name="PersonDetail" representedClassName=".PersonDetail" parentEntity="PersonData" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="personFullName" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <relationship name="personDetailID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonData"/>
+    </entity>
+    <entity name="PersonNote" representedClassName=".PersonNote" parentEntity="PersonData" syncable="YES">
+        <attribute name="contactDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notePerson" optional="YES" attributeType="String"/>
+        <attribute name="noteTitle" optional="YES" attributeType="String"/>
+        <attribute name="wayOfInteraction" optional="YES" attributeType="String"/>
+        <relationship name="personDataNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonData"/>
+    </entity>
+    <entity name="PersonReminder" representedClassName=".PersonReminder" parentEntity="PersonData" syncable="YES">
+        <attribute name="reminderDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reminderFullName" optional="YES" attributeType="String"/>
+        <attribute name="reminderLocation" optional="YES" attributeType="String"/>
+        <attribute name="reminderNote" optional="YES" attributeType="String"/>
+        <attribute name="reminderTime" optional="YES" attributeType="String"/>
+        <attribute name="reminderTitle" optional="YES" attributeType="String"/>
+        <relationship name="personDataReminder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonData"/>
+    </entity>
+</model>
