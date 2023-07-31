@@ -125,7 +125,19 @@ class DetailPersonViewController: UIViewController {
             let results = try managedContext.fetch(personDetailFetch)
             detailPerson = results
             
-            print("person list", detailPerson)
+            let detailPersonData = detailPerson[0]
+            
+            contacts = [
+                Form(title: "Fullname", value: detailPersonData.personFullName  ?? "fullname"),
+                Form(title: "Email", value: detailPersonData.email ?? "email"),
+                Form(title: "Phone Number", value: detailPersonData.phoneNumber ?? "phone number"),
+                Form(title: "Address", value: detailPersonData.address ?? "address"),
+                Form(title: "Job", value: detailPersonData.occupation ?? "job"),
+//                Form(title: "Company", value: detailPersonData. ?? "phone number")
+            ]
+            
+            print("person list", detailPerson[0].personFullName ?? "test")
+            
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
