@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class PeopleList: UIViewController {
     
-    let people: [String: [String]] = [
-        "A": ["Anya","Ana", "Akaka"],
-        "B": ["Budi", "Bima", "Bia", "Billa"],
-        "G": ["Gorila","Gaga"]
-    ]
-    
-    let alphabet = "abcdefghijklmnopqrstuvwxyz"
+//    let people: [String: [String]] = [
+//        "A": ["Anya","Ana", "Akaka"],
+//        "B": ["Budi", "Bima", "Bia", "Billa"],
+//        "G": ["Gorila","Gaga"]
+//    ]
+//
+//    let alphabet = "abcdefghijklmnopqrstuvwxyz"
     
     
     var navigationBarAppearace = UINavigationBarAppearance()
@@ -31,16 +32,18 @@ class PeopleList: UIViewController {
     
     var models = [Group]()
     
-    func setupData() {
-        for (key, value) in people {
-            models.append(.init (title: key, people: value))
-        }
-        models = models.sorted(by: { $0.title < $1.title })
-    }
+    var personListData = [PersonData]()
+    
+//    func setupData() {
+//        for (key, value) in people {
+//            models.append(.init (title: key, people: value))
+//        }
+//        models = models.sorted(by: { $0.title < $1.title })
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
+        // setupData()
         
         searchController.searchBar.searchTextField.backgroundColor = .white
         
@@ -63,7 +66,23 @@ class PeopleList: UIViewController {
         view.addSubview(tableView)
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        
+        self.getPeopleList()
+    }
+    
+    func getPeopleList() {
+        let personDataFetch: NSFetchRequest<PersonData> = PersonData.fetchRequest()
+     //   let sortByDate = NSSortDescriptor(key: #keyPath(PersonDetail.dateAdded), ascending: false)
+     //   personDataFetch.sortDescriptors = [sortByDate]
+        do {
+            let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+            let results = try managedContext.fetch(personDataFetch)
+            personListData = results
+            
+            print("person list", personListData)
+            debugPrint(personListData)
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -86,16 +105,17 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(DetailPersonViewController(), animated: true)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return models.count
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return models.count
+//    }
     
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return Array(alphabet.uppercased()).compactMap({"\($0)"})
-    }
+//    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//        return Array(alphabet.uppercased()).compactMap({"\($0)"})
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models[section].people.count
+      //  return models[section].people.count
+        return personListData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,16 +126,16 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         
         
-        let name = models[indexPath.section].people[indexPath.row]
-        cell.setupView(titleName: name , subtitleName: "Section: \(indexPath.section)" )
+       // let name = models[indexPath.section].people[indexPath.row]
+        cell.setupView(titleName: personListData[indexPath.row].fullName ?? "test" , subtitleName: "Section" )
         
         return cell
     }
     
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return models[section].title
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return models[section].title
+//    }
     
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         guard let targetIndex = models.firstIndex(where: { $0.title ==  title}) else { return 0 }

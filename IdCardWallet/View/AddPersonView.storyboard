@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bxs-T0-A3F">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -91,8 +91,8 @@
                                                         <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REMINDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frl-nS-6fK">
-                                                        <rect key="frame" x="16" y="635" width="88" height="20.333333333333371"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frl-nS-6fK">
+                                                        <rect key="frame" x="16.000000000000004" y="635" width="46.333333333333343" height="20.333333333333371"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -133,8 +133,8 @@
                                                             <constraint firstAttribute="height" constant="24" id="p0S-Nf-a7L"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-Qw-Vp1">
-                                                        <rect key="frame" x="16.000000000000004" y="729" width="46.333333333333343" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="REMINDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-Qw-Vp1">
+                                                        <rect key="frame" x="16" y="729" width="102" height="20"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -191,7 +191,6 @@
                                                     <constraint firstItem="t9d-cv-YTe" firstAttribute="leading" secondItem="bCT-mW-5b4" secondAttribute="leading" id="UbE-ts-X9Y"/>
                                                     <constraint firstItem="loi-ap-ecG" firstAttribute="top" secondItem="WMV-DU-T2r" secondAttribute="bottom" constant="10" id="V8S-m7-mtc"/>
                                                     <constraint firstItem="CtW-Qw-Vp1" firstAttribute="leading" secondItem="DMW-PC-YtV" secondAttribute="leading" constant="16.000000000000004" id="Vby-VS-bnm"/>
-                                                    <constraint firstItem="DMW-PC-YtV" firstAttribute="trailing" secondItem="CtW-Qw-Vp1" secondAttribute="trailing" constant="327.66666666666663" id="WKm-dq-8Oh"/>
                                                     <constraint firstItem="z0U-bn-gCa" firstAttribute="leading" secondItem="PCb-2U-tS6" secondAttribute="leading" id="XIk-fk-mAU"/>
                                                     <constraint firstItem="WMV-DU-T2r" firstAttribute="centerX" secondItem="bCT-mW-5b4" secondAttribute="centerX" id="XR5-c1-qkO"/>
                                                     <constraint firstItem="DMW-PC-YtV" firstAttribute="trailing" secondItem="PCb-2U-tS6" secondAttribute="trailing" id="Xk2-oR-sVu"/>
@@ -276,6 +275,9 @@
                     <navigationItem key="navigationItem" title="Add Person" id="atP-dZ-5rs">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="zwN-ap-vkV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="SaveAction:" destination="bxs-T0-A3F" id="cQO-1L-h4k"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="391" height="1126"/>

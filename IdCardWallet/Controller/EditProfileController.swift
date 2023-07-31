@@ -62,6 +62,7 @@ class EditProfileController: UIViewController, textFieldIDDelegate {
     }
     @objc func ngesave() {
         print("udah save")
+        
     }
     //    func getValue(value: String?) {
     //        print(value)

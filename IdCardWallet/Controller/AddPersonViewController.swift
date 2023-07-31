@@ -21,7 +21,7 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     @IBOutlet weak var Reminder: UIButton!
     
     @IBOutlet weak var selectedSocialMediaLabel: UILabel!
-        @IBOutlet weak var socialMediaTextField: UITextField!
+    @IBOutlet weak var socialMediaTextField: UITextField!
     
     func didSelectSocialMedia(_ socialMedia: String) {
         print("Selected social m: \(socialMedia)")
@@ -44,7 +44,7 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         
         let appearance =  UINavigationBarAppearance()
@@ -52,21 +52,21 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-
+        
         let textAttributes: [NSAttributedString.Key: Any] = [
-                   .foregroundColor: UIColor.white,
-               ]
-               appearance.titleTextAttributes = textAttributes
-               appearance.largeTitleTextAttributes = textAttributes // For large titles
-
-               // Apply the appearance to the navigation bar
-               navigationController?.navigationBar.standardAppearance = appearance
-               navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-
-               // Ensure the appearance is not affected by the system's appearance
-               navigationController?.navigationBar.compactAppearance = appearance
-               navigationController?.navigationBar.scrollEdgeAppearance = appearance
-               navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
+            .foregroundColor: UIColor.white,
+        ]
+        appearance.titleTextAttributes = textAttributes
+        appearance.largeTitleTextAttributes = textAttributes // For large titles
+        
+        // Apply the appearance to the navigation bar
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        
+        // Ensure the appearance is not affected by the system's appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
         
         FullnameField.setupView(placeholders: "e.g. Mark Lee", labels: "Fullname", delegates: self)
         
@@ -75,10 +75,10 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         EmailField.setupView(placeholders: "e.g. mark@sment.kr", labels: "Email", delegates: self)
         
         AddressField.setupView(placeholders: "e.g. Korea, Seoul", labels: "Address", delegates: self)
-
+        
         BirthdayField
             .setupView(placeholders: "Pick to choose", labels: "Birthday", delegates: self)
-                   
+        
         LinkedInField
             .setupView(placeholders: "e.g. https://id.linkedin.com/marklee", labels: "LinkedIn", delegates: self)
         
@@ -90,11 +90,38 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         EmailField.delegate = self
         AddressField.delegate = self
         BirthdayField.delegate = self
-            
+        
+    }
+    
+    @IBAction func SaveAction(_ sender: UIBarButtonItem) {
+        
+        let occupations = "Software Developer"
+        let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+        
+        let newPeople = PersonData(context: managedContext)
+        newPeople.setValue(FullnameField.textInput.text, forKey: #keyPath(PersonData.fullName))
+        newPeople.setValue(occupations, forKey: #keyPath(PersonData.occupation))
+        
+        let newPeopleDetail = PersonDetail(context: managedContext)
+        newPeopleDetail.setValue(FullnameField.textInput.text, forKey: #keyPath(PersonDetail.personFullName))
+        newPeopleDetail.setValue(AddressField.textInput.text, forKey: #keyPath(PersonDetail.address))
+        newPeopleDetail.setValue(EmailField.textInput.text, forKey: #keyPath(PersonDetail.email))
+        newPeopleDetail.setValue(PhoneNumberField.textInput.text, forKey: #keyPath(PersonDetail.phoneNumber))
+        newPeopleDetail.setValue(Date(), forKey: #keyPath(PersonDetail.birthday))
+        
+        do{
+            try AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+            print("Dah ke save bang bismillahirohmanirohim ya allah tolong kami ya allah")
+            self.navigationController?.popViewController(animated: true)
+        }
+        catch{
+            fatalError()
+            print("Astaghfirullahaladzim \(error.localizedDescription)")
+        }
+        
     }
     
     
-  
     @IBAction func addReminderAction(_ sender: Any) {
         let vc = ReminderSheet(title: "Add Reminder")
         let navVc = UINavigationController(rootViewController: vc)
