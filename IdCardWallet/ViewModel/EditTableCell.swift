@@ -8,50 +8,45 @@
 import Foundation
 import UIKit
 
-protocol cellTextDelegate{
+protocol CellTextDelegate: AnyObject {
     func getCellText(value: String?)
 }
 
 class EditTableCell: UITableViewCell {
     static let identifier = "DetailTableCell"
-    
+
     let textField = EditTextField()
-    
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         setupAddSubView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         setupAddSubView()
     }
-    
-    func setupView(placeholder: String, label: String, delegates: EditTextFieldDelegate){
+
+    func setupView(placeholder: String, label: String, delegates: EditTextFieldDelegate) {
         textField.setupView(placeholders: placeholder, labels: label, delegates: delegates)
     }
 
-    
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(textField)
-        
+
         textField.translatesAutoresizingMaskIntoConstraints = false
-        
+
         setupLayout()
     }
 
-    
-    func setupLayout(isCheckboxVisible:Bool = true){
-        
+    func setupLayout(isCheckboxVisible: Bool = true) {
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor, constant: -5),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
 //            checkBox.centerYAnchor.constraint(equalTo: card.centerYAnchor),
 //            checkBox.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
 //            checkBox.widthAnchor.constraint(equalToConstant: 24),
@@ -72,7 +67,4 @@ class EditTableCell: UITableViewCell {
         ])
 
     }
-    
-    
 }
-

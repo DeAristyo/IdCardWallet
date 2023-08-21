@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension PersonReminder {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PersonReminder> {

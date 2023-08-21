@@ -261,6 +261,7 @@
 				A58F3D362A6520CC00BB0063 /* Sources */,
 				A58F3D372A6520CC00BB0063 /* Frameworks */,
 				A58F3D382A6520CC00BB0063 /* Resources */,
+				3236B62D2A8CE1EF00F47E3C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -321,6 +322,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3236B62D2A8CE1EF00F47E3C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A58F3D362A6520CC00BB0063 /* Sources */ = {
@@ -515,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 75VHUVZJF4;
+				DEVELOPMENT_TEAM = NJYYRNFLHT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdCardWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -542,7 +563,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 75VHUVZJF4;
+				DEVELOPMENT_TEAM = NJYYRNFLHT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdCardWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

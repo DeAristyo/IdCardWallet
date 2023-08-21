@@ -8,15 +8,13 @@
 import UIKit
 import CoreData
 
-
-
 class DetailPersonViewController: UIViewController {
     @IBOutlet weak var buttonSementara: UIBarButtonItem!
-    
+
     var detailPerson = [PersonDetail]()
-    
-    var fullNamePersonDetail : String = ""
-    
+
+    var fullNamePersonDetail: String = ""
+
     var contacts = [
         Form(title: "Fullname", value: "Michelle"),
         Form(title: "Email", value: "michelle@gmail.com"),
@@ -25,18 +23,18 @@ class DetailPersonViewController: UIViewController {
         Form(title: "Job", value: "Ios Dev"),
         Form(title: "Company", value: "ABC Corp")
     ]
-    
+
     let socialMedia: [Form] = [
-            Form(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
-            Form(title: "Instagram", value: "https://www.instagram.com/michelle"),
-        ]
-    
+        Form(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
+        Form(title: "Instagram", value: "https://www.instagram.com/michelle")
+    ]
+
     let note: Form = Form(title: "", value: "View All Notes")
     let reminder: Form = Form(title: "", value: "View All Reminder")
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-//        tableView.separatorStyle = .none
+        //        tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.register(DetailTableCell.self, forCellReuseIdentifier: DetailTableCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,17 +42,21 @@ class DetailPersonViewController: UIViewController {
 
         return tableView
     }()
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-        let actionEditDetail = UIAction(title: "Edit Detail", image: UIImage(named: "editProfileImage")) { [weak self] action in
-            guard let self = self else { return }
 
+    func setupNavigation() {
+        let actionEditDetail = UIAction(
+            title: "Edit Detail",
+            image: UIImage(named: "editProfileImage")
+        ) {[weak self] _ in
+            guard let self = self else { return }
             // Instantiate your EditPersonController from the storyboard
             let storyboard = UIStoryboard(name: "DetailPersonView", bundle: nil)
-            let editPersonController = storyboard.instantiateViewController(withIdentifier: "EditPersonControllerID") as! EditPersonController
+            guard let editPersonController =
+                    storyboard.instantiateViewController(withIdentifier: "EditPersonControllerID")
+                    as? EditPersonController
+            else {
+                return
+            }
 
             // Set the presentation style to full screen
             editPersonController.modalPresentationStyle = .fullScreen
@@ -63,31 +65,34 @@ class DetailPersonViewController: UIViewController {
             self.navigationController?.pushViewController(editPersonController, animated: true)
         }
 
-        
-        let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) { action in
-            let vc = AddNoteSheet(title: "Add Note")
+        let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) {_ in
+            let noteSheet = AddNoteSheet(title: "Add Note")
             let dataSender = AddNoteSheet()
             dataSender.rightButtonAction(fullName: self.fullNamePersonDetail)
-            let navVc = UINavigationController(rootViewController: vc)
-            self.present(navVc, animated: true)
+            let navigationController = UINavigationController(rootViewController: noteSheet)
+            self.present(navigationController, animated: true)
             print("action Add Note clicked")
         }
-        
-        let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { action in
-            let vc = ReminderSheet(title: "Add Reminder")
-            let navVc = UINavigationController(rootViewController: vc)
-            self.present(navVc, animated: true)
+
+        let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { _ in
+            let reminderSheet = ReminderSheet(title: "Add Reminder")
+            let navigationController = UINavigationController(rootViewController: reminderSheet)
+            self.present(navigationController, animated: true)
             print("action Ad Reminder clicked")
         }
-        let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { action in
+        let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { _ in
             print("action Delete clicked")
-            
         }
         let menu = UIMenu(title: "", children: [actionEditDetail, actionNote, actionReminder, actionDelete])
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: nil,
+            image: UIImage(named: "detailIcon"),
+            primaryAction: nil,
+            menu: menu
+        )
         navigationItem.rightBarButtonItem?.tintColor = .white
-        
+
         self.navigationItem.title = "Detail Person"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.sizeToFit()
@@ -95,77 +100,75 @@ class DetailPersonViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = "Person"
         backButton.tintColor = .white
-        view.backgroundColor = .white
+
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        
-        view.backgroundColor = .white
-        
+
         self.navigationItem.title = "Detail Person"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+       setupNavigation()
+
+        view.backgroundColor = .white
         tableView.dataSource = self
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
+
         view.addSubview(tableView)
-        
+
         setupLayout()
     }
-    
-    
-    
-    
+
     func getPeopleList(fullName: String) {
         print("id", fullName)
         fullNamePersonDetail = fullName
         let personDetailFetch: NSFetchRequest<PersonDetail> = PersonDetail.fetchRequest()
         personDetailFetch.predicate = NSPredicate(format: "personFullName == %@", fullName )
-     //   let sortByDate = NSSortDescriptor(key: #keyPath(PersonDetail.dateAdded), ascending: false)
-     //   personDataFetch.sortDescriptors = [sortByDate]
+        //   let sortByDate = NSSortDescriptor(key: #keyPath(PersonDetail.dateAdded), ascending: false)
+        //   personDataFetch.sortDescriptors = [sortByDate]
         do {
             let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
             let results = try managedContext.fetch(personDetailFetch)
             detailPerson = results
-            
+
             let detailPersonData = detailPerson[0]
-            
+
             contacts = [
                 Form(title: "Fullname", value: detailPersonData.personFullName  ?? "fullname"),
                 Form(title: "Email", value: detailPersonData.email ?? "email"),
                 Form(title: "Phone Number", value: detailPersonData.phoneNumber ?? "phone number"),
                 Form(title: "Address", value: detailPersonData.address ?? "address"),
-                Form(title: "Job", value: detailPersonData.occupation ?? "job"),
-//                Form(title: "Company", value: detailPersonData. ?? "phone number")
+                Form(title: "Job", value: detailPersonData.occupation ?? "job")
+                //                Form(title: "Company", value: detailPersonData. ?? "phone number")
             ]
-            
+
             print("person list", detailPerson[0].personFullName ?? "test")
-            
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
     }
-    
-    func setupLayout(){
+
+    func setupLayout() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-//            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            //            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         let contactsLabel = UILabel()
-            contactsLabel.text = "Contacts"
-            contactsLabel.font = UIFont.boldSystemFont(ofSize: 24)
-            contactsLabel.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(contactsLabel)
+        contactsLabel.text = "Contacts"
+        contactsLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        contactsLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contactsLabel)
     }
 }
-
 
 extension DetailPersonViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4 // Three sections: Contacts, Social Media, and Note
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -174,7 +177,7 @@ extension DetailPersonViewController: UITableViewDataSource {
             return socialMedia.count
         case 2:
             return 1
-        case 3 :
+        case 3:
             return 1
         default:
             return 0
@@ -182,31 +185,40 @@ extension DetailPersonViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableCell.identifier, for: indexPath) as! DetailTableCell
-        cell.backgroundColor = .white
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: DetailTableCell.identifier,
+            for: indexPath
+        ) as? DetailTableCell
+        cell?.backgroundColor = .white
 
         switch indexPath.section {
         case 0:
-            cell.setupView(titleName: contacts[indexPath.row].value, subtitleName: contacts[indexPath.row].title as! String)
+            cell?.setupView(
+                titleName: contacts[indexPath.row].value,
+                subtitleName: String(contacts[indexPath.row].title)
+            )
         case 1:
-            cell.setupView(titleName: socialMedia[indexPath.row].value, subtitleName: socialMedia[indexPath.row].title as! String)
+            cell?.setupView(
+                titleName: socialMedia[indexPath.row].value,
+                subtitleName: String(socialMedia[indexPath.row].title)
+            )
         case 2:
-            cell.setupView(titleName: note.title, subtitleName: note.value as! String)
-            cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
-            cell.isUserInteractionEnabled = true
+            cell?.setupView(titleName: note.title, subtitleName: String(note.value))
+            cell?.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
+            cell?.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(noteCellTapped))
-                       cell.addGestureRecognizer(tapGesture)
+            cell?.addGestureRecognizer(tapGesture)
         case 3:
-            cell.setupView(titleName: reminder.title, subtitleName: reminder.value as! String)
-            cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
-            cell.isUserInteractionEnabled = true
+            cell?.setupView(titleName: reminder.title, subtitleName: String(reminder.value))
+            cell?.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
+            cell?.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(reminderCellTapped))
-                       cell.addGestureRecognizer(tapGesture)
+            cell?.addGestureRecognizer(tapGesture)
         default:
             break
         }
 
-        return cell
+        return cell!
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -223,10 +235,10 @@ extension DetailPersonViewController: UITableViewDataSource {
             return nil
         }
     }
-    
+
     @objc func noteCellTapped() {
         // Handle the tap action for the Note cell
-        
+
         print("Note cell tapped!")
         navigationController?.pushViewController(NoteList(), animated: true)
         // Here you can present a new view controller or perform any action you want.

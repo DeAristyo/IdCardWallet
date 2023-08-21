@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol textViewIDDelegate{
+protocol TextViewIDDelegate: AnyObject {
     func getValue(value: String?)
 }
 
 class TextViewID: UIView {
-    
+
     lazy var longTextInput: UITextView = {
         let view = UITextView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -21,14 +21,14 @@ class TextViewID: UIView {
         view.font = .systemFont(ofSize: 16)
         return view
     }()
-    
+
     lazy var divider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .gray
         return view
     }()
-    
+
     lazy var inputLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,71 +37,70 @@ class TextViewID: UIView {
         view.text = "Label"
         return view
     }()
-    
-    var delegate: textViewIDDelegate?
-    
+
+    weak var delegate: TextViewIDDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAddSubView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         setupAddSubView()
     }
-    
-    func setupView(placeholders:String, labels: String, delegates: textViewIDDelegate){
+
+    func setupView(placeholders: String, labels: String, delegates: TextViewIDDelegate) {
         self.delegate = delegates
         longTextInput.text = placeholders
         inputLabel.text = labels
     }
-    
-    func setupAddSubView(){
+
+    func setupAddSubView() {
         longTextInput.delegate = self
         addSubview(inputLabel)
         addSubview(longTextInput)
         addSubview(divider)
-        
-        
+
         setupLayout()
     }
-    
-    func setupLayout(){
+
+    func setupLayout() {
         NSLayoutConstraint.activate([
-            
+
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             inputLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             inputLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            
+
             longTextInput.topAnchor.constraint(equalTo: inputLabel.bottomAnchor, constant: 12),
             longTextInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             longTextInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             longTextInput.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: -12),
             longTextInput.heightAnchor.constraint(equalToConstant: 66),
-            
+
             //            divider.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor),
             divider.heightAnchor.constraint(equalToConstant: 0.5),
             divider.trailingAnchor.constraint(equalTo: longTextInput.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: longTextInput.widthAnchor),
             divider.topAnchor.constraint(equalTo: longTextInput.bottomAnchor),
-            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
 
-extension TextViewID: UITextViewDelegate{
+extension TextViewID: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        print(textView.text)
+        print(String(textView.text))
     }
-    
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
         }
     }
-    
+
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == ""{
             textView.text = "e.g. He will release new album called 'rose' that was inspired by his mom name"

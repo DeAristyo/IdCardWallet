@@ -8,11 +8,10 @@
 import Foundation
 import UIKit
 
-class CalendarPickerField: UIView{
-    
+class CalendarPickerField: UIView {
     var calendarLayout: NSLayoutConstraint!
     var dividerLayout: NSLayoutConstraint!
-    
+
     lazy var switchButton: UISwitch = {
         let view = UISwitch()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -22,14 +21,14 @@ class CalendarPickerField: UIView{
         view.isUserInteractionEnabled = true
         return view
     }()
-    
+
     lazy var divider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .gray
         return view
     }()
-    
+
     lazy var inputLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +37,7 @@ class CalendarPickerField: UIView{
         view.text = "Date"
         return view
     }()
-    
+
     lazy var outputLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +46,7 @@ class CalendarPickerField: UIView{
         view.textColor = .gray
         return view
     }()
-    
+
     lazy var calendarView: UICalendarView = {
         let view = UICalendarView()
         view.calendar = Calendar(identifier: .gregorian)
@@ -59,26 +58,26 @@ class CalendarPickerField: UIView{
         view.selectionBehavior = UICalendarSelectionSingleDate(delegate: self)
         return view
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.isUserInteractionEnabled = true
         setupAddSubView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.isUserInteractionEnabled = true
         setupAddSubView()
     }
-    
-    @objc func switchState(_ sender:UISwitch){
-        if sender.isOn{
+
+    @objc func switchState(_ sender: UISwitch) {
+        if sender.isOn {
             UIView.transition(with: calendarView, duration: 0.4, options: .curveEaseOut) {
                 self.calendarLayout.constant = 339
             }
             print("Idup")
-        }else{
+        } else {
             UIView.transition(with: calendarView, duration: 0.4, options: .curveEaseIn) {
                 self.calendarLayout.constant = 0
             }
@@ -88,22 +87,21 @@ class CalendarPickerField: UIView{
             print("Mati")
         }
     }
-    
-    func setupAddSubView(){
+
+    func setupAddSubView() {
         addSubview(calendarView)
         addSubview(switchButton)
         addSubview(inputLabel)
         addSubview(divider)
         addSubview(outputLabel)
-        
+
         setupLayout()
     }
-    
-    func setupLayout(){
+
+    func setupLayout() {
         calendarLayout = calendarView.heightAnchor.constraint(equalToConstant: 0)
 //        dividerLayout = divider.topAnchor.constraint(equalTo: outputLabel.bottomAnchor, constant: 12)
         NSLayoutConstraint.activate([
-            
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             inputLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             inputLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -113,34 +111,25 @@ class CalendarPickerField: UIView{
             calendarView.topAnchor.constraint(equalTo: outputLabel.bottomAnchor, constant: 12),
             calendarLayout,
             calendarView.bottomAnchor.constraint(equalTo: divider.topAnchor),
-            
+
             outputLabel.topAnchor.constraint(equalTo: inputLabel.bottomAnchor, constant: 12),
             outputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             outputLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-//            outputLabel.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: -12),
-            
-//            vStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            vStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            vStackView.heightAnchor.constraint(equalToConstant: 500),
-            
-//            hStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//
+
             divider.heightAnchor.constraint(equalToConstant: 0.5),
             divider.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: calendarView.widthAnchor),
             divider.bottomAnchor.constraint(equalTo: bottomAnchor),
             divider.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -12),
-//            dividerLayout,
-            
+
             switchButton.topAnchor.constraint(equalTo: topAnchor, constant: 14),
-            switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
 }
 
-extension CalendarPickerField : UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate{
+extension CalendarPickerField: UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-        print(dateComponents?.date)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
         let calendar = Calendar.current
@@ -151,6 +140,5 @@ extension CalendarPickerField : UICalendarViewDelegate, UICalendarSelectionSingl
         } else {
             print("Error: Unable to get the date from DateComponents.")
         }
-        
     }
 }

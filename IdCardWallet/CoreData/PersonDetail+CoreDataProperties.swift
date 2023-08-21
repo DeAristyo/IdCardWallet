@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension PersonDetail {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PersonDetail> {
