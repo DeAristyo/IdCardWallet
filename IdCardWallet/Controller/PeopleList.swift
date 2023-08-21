@@ -53,11 +53,16 @@ class PeopleList: UIViewController {
         navigationBarAppearace.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         navigationItem.title = "People"
-        navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearace
+        navigationController?.navigationBar.scrollEdgeAppearance =
+            navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(addPersonFunc))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "plusIcon"),
+            style: .plain,
+            target: self,
+            action: #selector(addPersonFunc))
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.searchController = searchController
         
@@ -90,10 +95,10 @@ class PeopleList: UIViewController {
         tableView.frame = view.bounds
     }
     
-    @objc private func addPersonFunc()  {
+    @objc private func addPersonFunc() {
         let navigate = UIStoryboard(name: "AddPersonView", bundle: nil).instantiateInitialViewController()
         
-        print(navigate)
+        print(navigate as Any)
         navigationController?.pushViewController(navigate!, animated: true)
         print("Modal opened")
     }
@@ -123,7 +128,9 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableCell.identifier, for: indexPath)
+        as! CustomTableCell
         
         cell.setupLayout(isCheckboxVisible: false)
         cell.checkBox.isHidden = true
@@ -131,7 +138,9 @@ extension PeopleList: UITableViewDataSource, UITableViewDelegate {
         
         
        // let name = models[indexPath.section].people[indexPath.row]
-        cell.setupView(titleName: personListData[indexPath.row].fullName ?? "test" , subtitleName:personListData[indexPath.row].occupation ?? "Occupation" )
+        cell.setupView(
+            titleName: personListData[indexPath.row].fullName ?? "test" ,
+            subtitleName: personListData[indexPath.row].occupation ?? "Occupation" )
         
         return cell
     }

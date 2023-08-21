@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CalendarPickerField: UIView{
+class CalendarPickerField: UIView {
     
     var calendarLayout: NSLayoutConstraint!
     var dividerLayout: NSLayoutConstraint!
@@ -72,13 +72,13 @@ class CalendarPickerField: UIView{
         setupAddSubView()
     }
     
-    @objc func switchState(_ sender:UISwitch){
-        if sender.isOn{
+    @objc func switchState(_ sender: UISwitch) {
+        if sender.isOn {
             UIView.transition(with: calendarView, duration: 0.4, options: .curveEaseOut) {
                 self.calendarLayout.constant = 339
             }
             print("Idup")
-        }else{
+        } else {
             UIView.transition(with: calendarView, duration: 0.4, options: .curveEaseIn) {
                 self.calendarLayout.constant = 0
             }
@@ -89,7 +89,7 @@ class CalendarPickerField: UIView{
         }
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(calendarView)
         addSubview(switchButton)
         addSubview(inputLabel)
@@ -99,7 +99,7 @@ class CalendarPickerField: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         calendarLayout = calendarView.heightAnchor.constraint(equalToConstant: 0)
 //        dividerLayout = divider.topAnchor.constraint(equalTo: outputLabel.bottomAnchor, constant: 12)
         NSLayoutConstraint.activate([
@@ -133,12 +133,12 @@ class CalendarPickerField: UIView{
 //            dividerLayout,
             
             switchButton.topAnchor.constraint(equalTo: topAnchor, constant: 14),
-            switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
 }
 
-extension CalendarPickerField : UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate{
+extension CalendarPickerField: UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         print(dateComponents?.date)
         let dateFormatter = DateFormatter()

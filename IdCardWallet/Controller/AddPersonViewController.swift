@@ -9,14 +9,14 @@ import UIKit
 
 class AddPersonViewController: UIViewController, SocialMediaDelegate {
     
-    @IBOutlet weak var FullnameField: TextFieldID!
-    @IBOutlet weak var PhoneNumberField: TextFieldID!
-    @IBOutlet weak var EmailField: TextFieldID!
-    @IBOutlet weak var AddressField: TextFieldID!
-    @IBOutlet weak var BirthdayField: TextFieldID!
+    @IBOutlet weak var fullNameField: TextFieldID!
+    @IBOutlet weak var phoneNumberField: TextFieldID!
+    @IBOutlet weak var emailField: TextFieldID!
+    @IBOutlet weak var addressField: TextFieldID!
+    @IBOutlet weak var birthdayField: TextFieldID!
     @IBOutlet weak var birthdayDatePicker: UIDatePicker!
-    @IBOutlet weak var LinkedInField: TextFieldID!
-    @IBOutlet weak var InstagramField: TextFieldID!
+    @IBOutlet weak var linkedInField: TextFieldID!
+    @IBOutlet weak var instagramField: TextFieldID!
     @IBOutlet weak var Note: UIButton!
     @IBOutlet weak var Reminder: UIButton!
     
@@ -32,7 +32,9 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     
     @IBAction func addSocialMediaButtonTapped(_ sender: UIButton) {
         // Navigate to the SocialMediaController
-        let socialMediaNavigationView = UIStoryboard(name: "AddPersonView", bundle: nil).instantiateViewController(withIdentifier: "SocialMediaController")
+        let socialMediaNavigationView = UIStoryboard(
+            name: "AddPersonView",
+            bundle: nil).instantiateViewController(withIdentifier: "SocialMediaController")
         
         let socialMediaController = socialMediaNavigationView.children.first as! SocialMediaController
         
@@ -54,45 +56,47 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)
         navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance =
+            navigationController?.navigationBar.standardAppearance
         
         let textAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
+            .foregroundColor: UIColor.white
         ]
         appearance.titleTextAttributes = textAttributes
         appearance.largeTitleTextAttributes = textAttributes // For large titles
         
         // Apply the appearance to the navigation bar
         navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance =
+            navigationController?.navigationBar.standardAppearance
         
         // Ensure the appearance is not affected by the system's appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
         
-        FullnameField.setupView(placeholders: "e.g. Mark Lee", labels: "Fullname", delegates: self)
+        fullNameField.setupView(placeholders: "e.g. Mark Lee", labels: "Fullname", delegates: self)
         
-        PhoneNumberField.setupView(placeholders: "e.g. 081234567890", labels: "Phone Number", delegates: self)
+        phoneNumberField.setupView(placeholders: "e.g. 081234567890", labels: "Phone Number", delegates: self)
         
-        EmailField.setupView(placeholders: "e.g. mark@sment.kr", labels: "Email", delegates: self)
+        emailField.setupView(placeholders: "e.g. mark@sment.kr", labels: "Email", delegates: self)
         
-        AddressField.setupView(placeholders: "e.g. Korea, Seoul", labels: "Address", delegates: self)
+        addressField.setupView(placeholders: "e.g. Korea, Seoul", labels: "Address", delegates: self)
         
-        BirthdayField
+        birthdayField
             .setupView(placeholders: "Pick to choose", labels: "Birthday", delegates: self)
         
-        LinkedInField
+        linkedInField
             .setupView(placeholders: "e.g. https://id.linkedin.com/marklee", labels: "LinkedIn", delegates: self)
         
-        InstagramField
+        instagramField
             .setupView(placeholders: "e.g. https://id.instagram.com/marklee", labels: "Instagram", delegates: self)
         
-        FullnameField.delegate = self
-        PhoneNumberField.delegate = self
-        EmailField.delegate = self
-        AddressField.delegate = self
-        BirthdayField.delegate = self
+        fullNameField.delegate = self
+        phoneNumberField.delegate = self
+        emailField.delegate = self
+        addressField.delegate = self
+        birthdayField.delegate = self
         
     }
     
@@ -102,22 +106,21 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
         let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
         
         let newPeople = PersonData(context: managedContext)
-        newPeople.setValue(FullnameField.textInput.text, forKey: #keyPath(PersonData.fullName))
+        newPeople.setValue(fullNameField.textInput.text, forKey: #keyPath(PersonData.fullName))
         newPeople.setValue(occupations, forKey: #keyPath(PersonData.occupation))
         
         let newPeopleDetail = PersonDetail(context: managedContext)
-        newPeopleDetail.setValue(FullnameField.textInput.text, forKey: #keyPath(PersonDetail.personFullName))
-        newPeopleDetail.setValue(AddressField.textInput.text, forKey: #keyPath(PersonDetail.address))
-        newPeopleDetail.setValue(EmailField.textInput.text, forKey: #keyPath(PersonDetail.email))
-        newPeopleDetail.setValue(PhoneNumberField.textInput.text, forKey: #keyPath(PersonDetail.phoneNumber))
+        newPeopleDetail.setValue(fullNameField.textInput.text, forKey: #keyPath(PersonDetail.personFullName))
+        newPeopleDetail.setValue(addressField.textInput.text, forKey: #keyPath(PersonDetail.address))
+        newPeopleDetail.setValue(emailField.textInput.text, forKey: #keyPath(PersonDetail.email))
+        newPeopleDetail.setValue(phoneNumberField.textInput.text, forKey: #keyPath(PersonDetail.phoneNumber))
         newPeopleDetail.setValue(Date(), forKey: #keyPath(PersonDetail.birthday))
         
-        do{
+        do {
             try AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
             print("Dah ke save bang bismillahirohmanirohim ya allah tolong kami ya allah")
             self.navigationController?.popViewController(animated: true)
-        }
-        catch{
+        } catch {
             fatalError()
             print("Astaghfirullahaladzim \(error.localizedDescription)")
         }
@@ -137,12 +140,12 @@ class AddPersonViewController: UIViewController, SocialMediaDelegate {
     }
 }
 
-//protocol SocialMediaSelectionDelegate: AnyObject {
+// protocol SocialMediaSelectionDelegate: AnyObject {
 //    func didSelectSocialMedia(platform: String)
-//}
+// }
 
-extension AddPersonViewController: textFieldIDDelegate{
+extension AddPersonViewController: TextFieldIDDelegate {
     func getValue(value: String?) {
-        print(value)
+        print(value as Any)
     }
 }

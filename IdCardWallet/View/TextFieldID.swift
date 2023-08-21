@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol textFieldIDDelegate{
+protocol TextFieldIDDelegate: AnyObject {
     func getValue(value: String?)
 }
 
-class TextFieldID: UIView{
+class TextFieldID: UIView {
     
 //    lazy var iconImage: UIImageView = {
 //        let view = UIImageView()
@@ -44,7 +44,7 @@ class TextFieldID: UIView{
         return view
     }()
     
-    var delegate: textFieldIDDelegate?
+    var delegate: TextFieldIDDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,13 +57,13 @@ class TextFieldID: UIView{
         setupAddSubView()
     }
     
-    func setupView(placeholders:String, labels: String, delegates: textFieldIDDelegate){
+    func setupView(placeholders: String, labels: String, delegates: TextFieldIDDelegate) {
         textInput.placeholder = placeholders
 //        iconImage.image = images
         inputLabel.text = labels
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         textInput.delegate = self
 //        addSubview(iconImage)
         addSubview(inputLabel)
@@ -73,7 +73,7 @@ class TextFieldID: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
 //            iconImage.topAnchor.constraint(equalTo: textInput.topAnchor, constant: 0),
 //            iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -94,12 +94,12 @@ class TextFieldID: UIView{
             divider.trailingAnchor.constraint(equalTo: textInput.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: textInput.widthAnchor),
             divider.topAnchor.constraint(equalTo: textInput.bottomAnchor),
-            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
 
-extension TextFieldID: UITextFieldDelegate{
+extension TextFieldID: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.getValue(value: textField.text)
     }
@@ -113,7 +113,6 @@ extension TextFieldID: UITextFieldDelegate{
 //        return true
 //    }
 //    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        delegate?.getValue(value: textField.text)
 //        return true
 //    }

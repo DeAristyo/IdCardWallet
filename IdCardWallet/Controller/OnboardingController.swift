@@ -41,23 +41,24 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
           scrollWidth = scrollView.frame.size.width
           scrollHeight = scrollView.frame.size.height
     }
-    
+   
+
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
-        
+
         self.view.layoutIfNeeded()
         self.scrollView.delegate = self
-        
+
         var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
+
         let skipButtonSize: CGFloat = 60
         let skipButtonPadding: CGFloat = 16
         let skipButtonFrame = CGRect(x: view.bounds.width - skipButtonSize - skipButtonPadding,
                                      y: skipButtonPadding,
                                      width: skipButtonSize,
                                      height: skipButtonSize)
-        
+
         for index in 0..<titles.count {
             frame.origin.x = scrollWidth * CGFloat(index)
             frame.size = CGSize(width: scrollWidth, height: scrollHeight)
@@ -101,7 +102,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
                     txt2.widthAnchor.constraint(equalToConstant: 320),
                     txt2.heightAnchor.constraint(equalToConstant: 200)
                 ])
-           
+
             if index == 2 {
                    let startButton = UIButton(frame: CGRect(x: slide.frame.width / 2 - 164,
                                                             y: self.view.center.y + 210,
@@ -127,7 +128,7 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
                    skipButton.frame = skipButtonFrame
                    slide.addSubview(skipButton)
                }
-            
+
             slide.addSubview(txt1)
                 slide.addSubview(txt2)
                 txt2.sizeToFit()
@@ -140,25 +141,24 @@ class OnboardingController: UIViewController, UIScrollViewDelegate {
 
         pageControl.numberOfPages = titles.count
         pageControl.currentPage = 0
-      
+
     }
     
     @objc func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        setIndiactorForCurrentPage()
+        setIndicatorForCurrentPage()
     }
 
-    func setIndiactorForCurrentPage()  {
+    func setIndicatorForCurrentPage() {
         let page = (scrollView?.contentOffset.x)!/scrollWidth
         pageControl?.currentPage = Int(page)
     }
     
     @objc func skipButtonTapped() {
-       
+
         print("Skip button tapped!")
     }
     @objc func startButtonTapped() {
-       
+
         print("Start button tapped!")
     }
 }
-

@@ -34,8 +34,9 @@ class UpcomingList: UIViewController {
         navigationBarAppearace.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         navigationItem.title = "Upcoming"
-        navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearace
+        navigationController?.navigationBar.scrollEdgeAppearance =
+            navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
     
         navigationItem.searchController = searchController
@@ -52,7 +53,7 @@ class UpcomingList: UIViewController {
         tableView.frame = view.bounds
     }
     
-    @objc private func openModal()  {
+    @objc private func openModal() {
         print("Modal opened")
     }
 }
@@ -67,7 +68,10 @@ extension UpcomingList: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableCell.identifier,
+            for: indexPath)
+        as! CustomTableCell
         
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         

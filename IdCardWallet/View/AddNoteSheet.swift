@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AddNoteSheet: UIViewController{
+class AddNoteSheet: UIViewController {
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -76,19 +76,31 @@ class AddNoteSheet: UIViewController{
         view.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.sizeToFit()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(rightButtonAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Save",
+            style: .plain,
+            target: self,
+            action: #selector(rightButtonAction))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(textAttributes, for: .normal)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(leftButtonAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Cancel",
+            style: .plain,
+            target: self,
+            action: #selector(leftButtonAction))
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(textAttributes, for: .normal)
         
         setupLayout()
         textFieldInput.setupView(placeholders: "e.g. Disscuss New Feature", labels: "Title", delegates: self)
         meetPlaceInput.setupView(placeholders: "e.g. Starducks Coffee", labels: "Meeting Place", delegates: self)
-        longTextFieldInput.setupView(placeholders: "e.g. He got that James Dean daydream look  in his eyes, long hair, slicked back, white T-shirt", labels: "Note", delegates: self)
+        longTextFieldInput.setupView(
+            placeholders:
+                "e.g. He got that James Dean daydream look  in his eyes, long hair, slicked back, white T-shirt",
+            labels: "Note",
+            delegates: self)
     }
     
     
-    @objc func rightButtonAction(fullName: String){
+    @objc func rightButtonAction(fullName: String) {
         print("Udah ke save bang")
 //        let occupations = "Software Developer"
 //        let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
@@ -111,12 +123,12 @@ class AddNoteSheet: UIViewController{
 //        self.dismiss(animated: true)
     }
     
-    @objc func leftButtonAction(){
+    @objc func leftButtonAction() {
         print("Udah ke balik bang")
         self.dismiss(animated: true)
     }
     
-    func setupLayout(){
+    func setupLayout() {
         stackView.addArrangedSubview(textFieldInput)
         stackView.addArrangedSubview(calendarFieldInput)
         stackView.addArrangedSubview(meetPlaceInput)
@@ -132,26 +144,10 @@ class AddNoteSheet: UIViewController{
             
             calendarFieldInput.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             calendarFieldInput.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
-            //            textFieldInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            //            textFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            //            textFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //            textFieldInput.heightAnchor.constraint(equalToConstant: 74),
-            //
-            //            longTextFieldInput.topAnchor.constraint(equalTo: textFieldInput.bottomAnchor),
-            //            longTextFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            //            longTextFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //            longTextFieldInput.heightAnchor.constraint(equalToConstant: 118),
-            //
-            //            textFieldInputName.topAnchor.constraint(equalTo: longTextFieldInput.bottomAnchor),
-            //            textFieldInputName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            //            textFieldInputName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //            textFieldInputName.heightAnchor.constraint(equalToConstant: 74),
-            
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
             
             
         ])
@@ -159,16 +155,15 @@ class AddNoteSheet: UIViewController{
     
 }
 
-extension AddNoteSheet: TextFieldIDDelegateNoImage{
+extension AddNoteSheet: TextFieldIDDelegateNoImage {
     func getValueNoImage(value: String?) {
-        print(value)
+        print(value as Any)
     }
     
 }
 
-extension AddNoteSheet: textViewIDDelegate{
+extension AddNoteSheet: TextViewIDDelegate {
     func getValue(value: String?) {
-        print(value)
+        print(value as Any)
     }
 }
-

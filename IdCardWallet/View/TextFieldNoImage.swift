@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol TextFieldIDDelegateNoImage{
+protocol TextFieldIDDelegateNoImage {
     func getValueNoImage(value: String?)
 }
 
-class TextFieldNoImage: UIView{
+class TextFieldNoImage: UIView {
     
     lazy var textInput: UITextField = {
         let view = UITextField()
@@ -50,13 +50,13 @@ class TextFieldNoImage: UIView{
         setupAddSubView()
     }
     
-    func setupView(placeholders:String,  labels: String, delegates: TextFieldIDDelegateNoImage){
+    func setupView(placeholders: String,  labels: String, delegates: TextFieldIDDelegateNoImage) {
         textInput.placeholder = placeholders
         inputLabel.text = labels
         self.delegate = delegates
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         textInput.delegate = self
         addSubview(inputLabel)
         addSubview(textInput)
@@ -65,7 +65,7 @@ class TextFieldNoImage: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -82,35 +82,23 @@ class TextFieldNoImage: UIView{
             divider.trailingAnchor.constraint(equalTo: textInput.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: textInput.widthAnchor),
             divider.topAnchor.constraint(equalTo: textInput.bottomAnchor),
-            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
 
-extension TextFieldNoImage: UITextFieldDelegate{
+extension TextFieldNoImage: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.getValueNoImage(value: textField.text)
         
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
         delegate?.getValueNoImage(value: textField.text)
         return true
     }
-    
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        delegate?.getValue(value: textField.text)
-//    }
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        delegate?.getValue(value: textField.text)
-//        return true
-//    }
-//
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        delegate?.getValue(value: textField.text)
-//        return true
-//    }
-    
-
 }

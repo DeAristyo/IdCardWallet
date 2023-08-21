@@ -58,6 +58,6 @@ extension PersonData {
 
 }
 
-extension PersonData : Identifiable {
+extension PersonData: Identifiable {
 
 }

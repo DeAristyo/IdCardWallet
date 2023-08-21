@@ -61,12 +61,12 @@ class DetailTableCell: UITableViewCell {
         setupAddSubView()
     }
     
-    func setupView(titleName: String, subtitleName: String){
+    func setupView(titleName: String, subtitleName: String) {
         textField.setupView(titleName: titleName, subtitleName: subtitleName)
     }
 
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(textField)
 //        addSubview(checkBox)
 //        addSubview(iconButton)
@@ -79,13 +79,13 @@ class DetailTableCell: UITableViewCell {
     }
 
     
-    func setupLayout(isCheckboxVisible:Bool = true){
+    func setupLayout(isCheckboxVisible: Bool = true) {
         
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor)
             
 //            checkBox.centerYAnchor.constraint(equalTo: card.centerYAnchor),
 //            checkBox.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
@@ -110,4 +110,3 @@ class DetailTableCell: UITableViewCell {
     
     
 }
-

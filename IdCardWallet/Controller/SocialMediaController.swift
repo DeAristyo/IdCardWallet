@@ -35,10 +35,12 @@ class SocialMediaController: UIViewController,UITableViewDataSource, UITableView
             UIBarButtonItem.appearance().setTitleTextAttributes(buttonAttributes, for: .normal)
         
         let cancelItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
-            cancelItem.setTitleTextAttributes([.foregroundColor: UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)], for: .normal)
+            cancelItem.setTitleTextAttributes(
+                [.foregroundColor: UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)], for: .normal)
             
         let addItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-            addItem.setTitleTextAttributes([.foregroundColor: UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)], for: .normal)
+            addItem.setTitleTextAttributes(
+                [.foregroundColor: UIColor(red: 0.035, green: 0.173, blue: 0.298, alpha: 1)], for: .normal)
             
         self.navigationItem.leftBarButtonItem = cancelItem
         self.navigationItem.rightBarButtonItem = addItem
@@ -98,4 +100,3 @@ class SocialMediaController: UIViewController,UITableViewDataSource, UITableView
 protocol SocialMediaDelegate: AnyObject {
     func didSelectSocialMedia(_ socialMedia: String)
 }
-

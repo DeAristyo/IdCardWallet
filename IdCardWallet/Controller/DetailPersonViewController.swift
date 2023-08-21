@@ -15,7 +15,7 @@ class DetailPersonViewController: UIViewController {
     
     var detailPerson = [PersonDetail]()
     
-    var fullNamePersonDetail : String = ""
+    var fullNamePersonDetail: String = ""
     
     var contacts = [
         Form(title: "Fullname", value: "Michelle"),
@@ -28,7 +28,7 @@ class DetailPersonViewController: UIViewController {
     
     let socialMedia: [Form] = [
             Form(title: "LinkedIn", value: "https://www.linkedin.com/in/michelle"),
-            Form(title: "Instagram", value: "https://www.instagram.com/michelle"),
+            Form(title: "Instagram", value: "https://www.instagram.com/michelle")
         ]
     
     let note: Form = Form(title: "", value: "View All Notes")
@@ -49,12 +49,15 @@ class DetailPersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let actionEditDetail = UIAction(title: "Edit Detail", image: UIImage(named: "editProfileImage")) { [weak self] action in
+        let actionEditDetail = UIAction(title: "Edit Detail", image: UIImage(
+            named: "editProfileImage")) { [weak self] _ in
             guard let self = self else { return }
 
             // Instantiate your EditPersonController from the storyboard
             let storyboard = UIStoryboard(name: "DetailPersonView", bundle: nil)
-            let editPersonController = storyboard.instantiateViewController(withIdentifier: "EditPersonControllerID") as! EditPersonController
+            let editPersonController = storyboard.instantiateViewController(
+                withIdentifier: "EditPersonControllerID")
+            as! EditPersonController
 
             // Set the presentation style to full screen
             editPersonController.modalPresentationStyle = .fullScreen
@@ -64,7 +67,7 @@ class DetailPersonViewController: UIViewController {
         }
 
         
-        let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) { action in
+        let actionNote = UIAction(title: "Add Note", image: UIImage(named: "addNoteImage")) { _ in
             let vc = AddNoteSheet(title: "Add Note")
             let dataSender = AddNoteSheet()
             dataSender.rightButtonAction(fullName: self.fullNamePersonDetail)
@@ -73,19 +76,23 @@ class DetailPersonViewController: UIViewController {
             print("action Add Note clicked")
         }
         
-        let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { action in
+        let actionReminder = UIAction(title: "Add Reminder", image: UIImage(named: "reminderImage")) { _ in
             let vc = ReminderSheet(title: "Add Reminder")
             let navVc = UINavigationController(rootViewController: vc)
             self.present(navVc, animated: true)
             print("action Ad Reminder clicked")
         }
-        let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { action in
+        let actionDelete = UIAction(title: "Delete", image: UIImage(named: "deleteImage")) { _ in
             print("action Delete clicked")
             
         }
         let menu = UIMenu(title: "", children: [actionEditDetail, actionNote, actionReminder, actionDelete])
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: nil,
+            image: UIImage(named: "detailIcon"),
+            primaryAction: nil,
+            menu: menu)
         navigationItem.rightBarButtonItem?.tintColor = .white
         
         self.navigationItem.title = "Detail Person"
@@ -132,7 +139,7 @@ class DetailPersonViewController: UIViewController {
                 Form(title: "Email", value: detailPersonData.email ?? "email"),
                 Form(title: "Phone Number", value: detailPersonData.phoneNumber ?? "phone number"),
                 Form(title: "Address", value: detailPersonData.address ?? "address"),
-                Form(title: "Job", value: detailPersonData.occupation ?? "job"),
+                Form(title: "Job", value: detailPersonData.occupation ?? "job")
 //                Form(title: "Company", value: detailPersonData. ?? "phone number")
             ]
             
@@ -143,12 +150,12 @@ class DetailPersonViewController: UIViewController {
         }
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             
 //            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
@@ -174,7 +181,7 @@ extension DetailPersonViewController: UITableViewDataSource {
             return socialMedia.count
         case 2:
             return 1
-        case 3 :
+        case 3: 
             return 1
         default:
             return 0
@@ -182,22 +189,31 @@ extension DetailPersonViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableCell.identifier, for: indexPath) as! DetailTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: DetailTableCell.identifier,
+            for: indexPath)
+        as! DetailTableCell
         cell.backgroundColor = .white
 
         switch indexPath.section {
         case 0:
-            cell.setupView(titleName: contacts[indexPath.row].value, subtitleName: contacts[indexPath.row].title as! String)
+            cell.setupView(
+                titleName: contacts[indexPath.row].value,
+                subtitleName: contacts[indexPath.row].title
+            )
         case 1:
-            cell.setupView(titleName: socialMedia[indexPath.row].value, subtitleName: socialMedia[indexPath.row].title as! String)
+            cell.setupView(
+                titleName: socialMedia[indexPath.row].value,
+                subtitleName: socialMedia[indexPath.row].title
+            )
         case 2:
-            cell.setupView(titleName: note.title, subtitleName: note.value as! String)
+            cell.setupView(titleName: note.title, subtitleName: note.value )
             cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
             cell.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(noteCellTapped))
                        cell.addGestureRecognizer(tapGesture)
         case 3:
-            cell.setupView(titleName: reminder.title, subtitleName: reminder.value as! String)
+            cell.setupView(titleName: reminder.title, subtitleName: reminder.value )
             cell.accessoryType = .disclosureIndicator // Add a disclosure indicator to the Note cell
             cell.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(reminderCellTapped))

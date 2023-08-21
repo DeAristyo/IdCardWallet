@@ -39,7 +39,10 @@ class ReminderList: UIViewController {
     
         navigationItem.searchController = searchController
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(openModal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "plusIcon"),
+            style: .plain,
+            target: self, action: #selector(openModal))
         navigationItem.rightBarButtonItem?.tintColor = .white
         
         tableView.dataSource = self
@@ -54,7 +57,7 @@ class ReminderList: UIViewController {
         tableView.frame = view.bounds
     }
     
-    @objc private func openModal()  {
+    @objc private func openModal() {
         let vc = ReminderSheet(title: "Add Reminder")
         let navVc = UINavigationController(rootViewController: vc)
         self.present(navVc, animated: true)
@@ -72,7 +75,9 @@ extension ReminderList: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableCell.identifier, for: indexPath)
+        as! CustomTableCell
         
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IdCardView: UIView{
+class IdCardView: UIView {
     
     
     lazy var card: UIView = {
@@ -97,7 +97,7 @@ class IdCardView: UIView{
 //        phone.text = phoneLabel
 //    }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         print("Id card terpanggil")
         addSubview(card)
         addSubview(name)
@@ -110,7 +110,7 @@ class IdCardView: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             
             card.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -141,9 +141,7 @@ class IdCardView: UIView{
             
             company.topAnchor.constraint(equalTo: job.topAnchor, constant: 20),
             company.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
-            company.trailingAnchor.constraint(equalTo: card.trailingAnchor),
+            company.trailingAnchor.constraint(equalTo: card.trailingAnchor)
         ])
     }
 }
-
-

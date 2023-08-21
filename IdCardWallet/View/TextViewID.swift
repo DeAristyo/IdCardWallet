@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol textViewIDDelegate{
+protocol TextViewIDDelegate: AnyObject {
     func getValue(value: String?)
 }
 
@@ -38,7 +38,7 @@ class TextViewID: UIView {
         return view
     }()
     
-    var delegate: textViewIDDelegate?
+    var delegate: TextViewIDDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,13 +51,13 @@ class TextViewID: UIView {
         setupAddSubView()
     }
     
-    func setupView(placeholders:String, labels: String, delegates: textViewIDDelegate){
+    func setupView(placeholders: String, labels: String, delegates: TextViewIDDelegate) {
         self.delegate = delegates
         longTextInput.text = placeholders
         inputLabel.text = labels
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         longTextInput.delegate = self
         addSubview(inputLabel)
         addSubview(longTextInput)
@@ -67,7 +67,7 @@ class TextViewID: UIView {
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -85,14 +85,14 @@ class TextViewID: UIView {
             divider.trailingAnchor.constraint(equalTo: longTextInput.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: longTextInput.widthAnchor),
             divider.topAnchor.constraint(equalTo: longTextInput.bottomAnchor),
-            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
 
-extension TextViewID: UITextViewDelegate{
+extension TextViewID: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        print(textView.text)
+        print(textView.text!)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

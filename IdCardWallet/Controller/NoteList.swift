@@ -37,7 +37,11 @@ class NoteList: UIViewController {
         
         searchController.searchBar.searchTextField.backgroundColor = .white
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plusIcon"), style: .plain, target: self, action: #selector(openModal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "plusIcon"),
+            style: .plain,
+            target: self,
+            action: #selector(openModal))
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.searchController = searchController
         
@@ -53,7 +57,7 @@ class NoteList: UIViewController {
         tableView.frame = view.bounds
     }
     
-    @objc private func openModal()  {
+    @objc private func openModal() {
         let vc = AddNoteSheet(title: "Add Note")
         let navVc = UINavigationController(rootViewController: vc)
         self.present(navVc, animated: true)
@@ -71,7 +75,9 @@ extension NoteList: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableCell.identifier, for: indexPath)
+        as! CustomTableCell
         
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         

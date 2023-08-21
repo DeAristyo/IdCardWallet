@@ -42,7 +42,7 @@ class CustomTableView: UITableView {
 //    }
 
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(tableView)
         addSubview(tableCell)
         
@@ -50,10 +50,10 @@ class CustomTableView: UITableView {
     }
 
     
-    func setupLayout(isCheckboxVisible:Bool = true){
+    func setupLayout(isCheckboxVisible: Bool = true) {
         
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50 ),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50 )
 //            tableCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
 
@@ -67,7 +67,10 @@ extension CustomTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableCell.identifier,
+            for: indexPath)
+        as! CustomTableCell
         
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -77,4 +80,3 @@ extension CustomTableView: UITableViewDataSource {
     }
     
 }
-

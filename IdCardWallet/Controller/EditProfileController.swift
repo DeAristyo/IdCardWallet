@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditProfileController: UIViewController, textFieldIDDelegate {
+class EditProfileController: UIViewController, TextFieldIDDelegate {
     func getValue(value: String?) {
         print(value)
     }

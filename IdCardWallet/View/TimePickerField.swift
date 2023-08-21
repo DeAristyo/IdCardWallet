@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TimePickerField: UIView{
+class TimePickerField: UIView {
     
     var timeLayout: NSLayoutConstraint!
     
@@ -81,13 +81,13 @@ class TimePickerField: UIView{
         outputLabel.textColor = .link
     }
     
-    @objc func switchState(_ sender:UISwitch){
-        if sender.isOn{
+    @objc func switchState(_ sender: UISwitch) {
+        if sender.isOn {
             UIView.transition(with: timeView, duration: 0.4, options: .curveEaseOut) {
                 self.timeLayout.constant = 339
             }
             print("Idup")
-        }else{
+        } else {
             UIView.transition(with: timeView, duration: 0.4, options: .curveEaseIn) {
                 self.timeLayout.constant = 0
             }
@@ -98,7 +98,7 @@ class TimePickerField: UIView{
         }
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(timeView)
         
         addSubview(switchButton)
@@ -109,7 +109,7 @@ class TimePickerField: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         timeLayout = timeView.heightAnchor.constraint(equalToConstant: 0)
 //        dividerLayout = divider.topAnchor.constraint(equalTo: outputLabel.bottomAnchor, constant: 12)
         NSLayoutConstraint.activate([
@@ -143,8 +143,7 @@ class TimePickerField: UIView{
 //            dividerLayout,
             
             switchButton.topAnchor.constraint(equalTo: topAnchor, constant: 14),
-            switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
 }
-

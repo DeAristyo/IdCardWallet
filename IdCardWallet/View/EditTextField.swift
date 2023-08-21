@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol EditTextFieldDelegate{
+protocol EditTextFieldDelegate: AnyObject {
     func getValueEditField(value: String?)
 }
 
-class EditTextField: UIView{
+class EditTextField: UIView {
     
     lazy var textInput: UITextField = {
         let view = UITextField()
@@ -43,13 +43,13 @@ class EditTextField: UIView{
         setupAddSubView()
     }
     
-    func setupView(placeholders:String,  labels: String, delegates: EditTextFieldDelegate){
+    func setupView(placeholders: String,  labels: String, delegates: EditTextFieldDelegate) {
         textInput.placeholder = placeholders
         inputLabel.text = labels
         self.delegate = delegates
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         textInput.delegate = self
         addSubview(inputLabel)
         addSubview(textInput)
@@ -57,7 +57,7 @@ class EditTextField: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             inputLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
@@ -71,30 +71,18 @@ class EditTextField: UIView{
     }
 }
 
-extension EditTextField: UITextFieldDelegate{
+extension EditTextField: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.getValueEditField(value: textField.text)
         
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String)
+    -> Bool {
         delegate?.getValueEditField(value: textField.text)
         return true
     }
-    
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        delegate?.getValue(value: textField.text)
-//    }
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        delegate?.getValue(value: textField.text)
-//        return true
-//    }
-//
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        delegate?.getValue(value: textField.text)
-//        return true
-//    }
-    
-
 }

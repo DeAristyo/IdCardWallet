@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LabelView: UIView{
+class LabelView: UIView {
 
     lazy var divider: UIView = {
         let view = UIView()
@@ -50,13 +50,13 @@ class LabelView: UIView{
         setupAddSubView()
     }
     
-    func setupView(titleName:String,  subtitleName: String){
+    func setupView(titleName: String,  subtitleName: String) {
         outputLabel.text = titleName
         inputLabel.text = subtitleName
         
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(inputLabel)
         addSubview(outputLabel)
         addSubview(divider)
@@ -64,7 +64,7 @@ class LabelView: UIView{
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             
             inputLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -81,8 +81,7 @@ class LabelView: UIView{
             divider.trailingAnchor.constraint(equalTo: outputLabel.trailingAnchor),
             divider.widthAnchor.constraint(equalTo: outputLabel.widthAnchor),
             divider.topAnchor.constraint(equalTo: outputLabel.bottomAnchor),
-            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
-

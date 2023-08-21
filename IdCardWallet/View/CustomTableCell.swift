@@ -61,13 +61,13 @@ class CustomTableCell: UITableViewCell {
         setupAddSubView()
     }
     
-    func setupView(titleName: String, subtitleName: String){
+    func setupView(titleName: String, subtitleName: String) {
         title.text = titleName
         subtitle.text = subtitleName
     }
 
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(card)
         addSubview(checkBox)
         addSubview(iconButton)
@@ -81,7 +81,7 @@ class CustomTableCell: UITableViewCell {
     }
 
     
-    func setupLayout(isCheckboxVisible:Bool = true){
+    func setupLayout(isCheckboxVisible: Bool = true) {
         
         NSLayoutConstraint.activate([
             card.topAnchor.constraint(equalTo: topAnchor, constant: 8),
@@ -115,7 +115,10 @@ class CustomTableCell: UITableViewCell {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableCell.identifier, for: indexPath) as! CustomTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableCell.identifier,
+            for: indexPath)
+        as! CustomTableCell
         
         cell.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -127,4 +130,3 @@ class CustomTableCell: UITableViewCell {
     }
     
 }
-

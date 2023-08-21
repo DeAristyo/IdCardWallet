@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ReminderSheet: UIViewController{
+class ReminderSheet: UIViewController {
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -76,23 +76,34 @@ class ReminderSheet: UIViewController{
         view.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.sizeToFit()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(rightButtonAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Save",
+            style: .plain,
+            target: self,
+            action: #selector(rightButtonAction))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(textAttributes, for: .normal)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(leftButtonAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Cancel",
+            style: .plain,
+            target: self,
+            action: #selector(leftButtonAction))
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(textAttributes, for: .normal)
         
         setupLayout()
         textFieldInput.setupView(placeholders: "e.g. Disscuss New Album Release", labels: "Title", delegates: self)
         textFieldInputLocation.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
-        longTextFieldInput.setupView(placeholders: "e.g. He will release new album called “rose ” that was inspired by his mom name", labels: "Note", delegates: self)
+        longTextFieldInput.setupView(
+            placeholders: "e.g. He will release new album called “rose ” that was inspired by his mom name",
+            labels: "Note",
+            delegates: self)
    //     textFieldInput.setupView(placeholders: "e.g. Zoom", labels: "Location", delegates: self)
     }
     
     
-    @objc func rightButtonAction(){
+    @objc func rightButtonAction() {
         print("Udah ke save bang")
     }
-    @objc func leftButtonAction(){
+    @objc func leftButtonAction() {
         print("Udah ke balik bang")
         self.dismiss(animated: true)
     }
@@ -108,7 +119,7 @@ class ReminderSheet: UIViewController{
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: totalContentHeight)
     }
     
-    func setupLayout(){
+    func setupLayout() {
         stackView.addArrangedSubview(textFieldInput)
         stackView.addArrangedSubview(longTextFieldInput)
         stackView.addArrangedSubview(calendarFieldInput)
@@ -125,26 +136,10 @@ class ReminderSheet: UIViewController{
             
             calendarFieldInput.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             calendarFieldInput.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
-//            textFieldInput.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            textFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            textFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            textFieldInput.heightAnchor.constraint(equalToConstant: 74),
-//
-//            longTextFieldInput.topAnchor.constraint(equalTo: textFieldInput.bottomAnchor),
-//            longTextFieldInput.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            longTextFieldInput.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            longTextFieldInput.heightAnchor.constraint(equalToConstant: 118),
-//
-//            textFieldInputName.topAnchor.constraint(equalTo: longTextFieldInput.bottomAnchor),
-//            textFieldInputName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            textFieldInputName.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            textFieldInputName.heightAnchor.constraint(equalToConstant: 74),
-            
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
             
 
         ])
@@ -152,15 +147,15 @@ class ReminderSheet: UIViewController{
     
 }
 
-extension ReminderSheet: TextFieldIDDelegateNoImage{
+extension ReminderSheet: TextFieldIDDelegateNoImage {
     func getValueNoImage(value: String?) {
-        print(value)
+        print(value as Any)
     }
     
 }
 
-extension ReminderSheet: textViewIDDelegate{
+extension ReminderSheet: TextViewIDDelegate {
     func getValue(value: String?) {
-        print(value)
+        print(value as Any)
     }
 }

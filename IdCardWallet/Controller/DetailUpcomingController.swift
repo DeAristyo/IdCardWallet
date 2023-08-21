@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailUpcomingController: UIViewController{
+class DetailUpcomingController: UIViewController {
     
     let noteField = [
         Form(title: "Person", value: "Budi"),
@@ -15,7 +15,7 @@ class DetailUpcomingController: UIViewController{
         Form(title: "Note", value: "He will release new album called “rose ” that was inspired by his mom name"),
         Form(title: "Date", value: "Tuesday, 07 June 2023"),
         Form(title: "Time", value: "08:00"),
-        Form(title: "Location", value: "Zoom"),
+        Form(title: "Location", value: "Zoom")
     ]
     
     
@@ -52,18 +52,18 @@ class DetailUpcomingController: UIViewController{
         setupAddSubView()
     }
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         view.addSubview(tableView)
         
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -75,7 +75,10 @@ extension DetailUpcomingController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableCell.identifier, for: indexPath) as! DetailTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: DetailTableCell.identifier,
+            for: indexPath)
+        as! DetailTableCell
         
         cell.setupView(titleName: noteField[indexPath.row].value, subtitleName: noteField[indexPath.row].title)
         

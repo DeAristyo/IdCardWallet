@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol cellTextDelegate{
+protocol CellTextDelegate: AnyObject {
     func getCellText(value: String?)
 }
 
@@ -30,12 +30,12 @@ class EditTableCell: UITableViewCell {
         setupAddSubView()
     }
     
-    func setupView(placeholder: String, label: String, delegates: EditTextFieldDelegate){
+    func setupView(placeholder: String, label: String, delegates: EditTextFieldDelegate) {
         textField.setupView(placeholders: placeholder, labels: label, delegates: delegates)
     }
 
     
-    func setupAddSubView(){
+    func setupAddSubView() {
         addSubview(textField)
         
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -44,13 +44,13 @@ class EditTableCell: UITableViewCell {
     }
 
     
-    func setupLayout(isCheckboxVisible:Bool = true){
+    func setupLayout(isCheckboxVisible: Bool = true) {
         
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: topAnchor, constant: -5),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
             
 //            checkBox.centerYAnchor.constraint(equalTo: card.centerYAnchor),
 //            checkBox.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
@@ -75,4 +75,3 @@ class EditTableCell: UITableViewCell {
     
     
 }
-

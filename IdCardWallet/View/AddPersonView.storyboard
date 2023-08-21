@@ -285,12 +285,12 @@
                         <outlet property="AddressField" destination="12F-be-lpn" id="VM5-e3-dd4"/>
                         <outlet property="BirthdayField" destination="qeM-09-gbw" id="jRB-AT-HqW"/>
                         <outlet property="EmailField" destination="9K6-C1-xhj" id="qwB-GC-zSc"/>
-                        <outlet property="FullnameField" destination="PCb-2U-tS6" id="HgA-Dt-77C"/>
                         <outlet property="InstagramField" destination="hAk-fj-Pyu" id="QrI-36-bnv"/>
                         <outlet property="LinkedInField" destination="t9d-cv-YTe" id="0Eh-ZX-8Zq"/>
                         <outlet property="Note" destination="8FF-dh-4dR" id="S7P-HN-Y1o"/>
                         <outlet property="PhoneNumberField" destination="xHz-PH-bc8" id="fQG-yD-QZe"/>
                         <outlet property="Reminder" destination="NZK-zF-ySd" id="Z6c-0v-Yb2"/>
+                        <outlet property="fullNameField" destination="PCb-2U-tS6" id="dXb-t6-QZl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tk9-6I-4Nr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

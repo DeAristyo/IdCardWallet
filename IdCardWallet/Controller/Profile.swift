@@ -9,7 +9,7 @@ import UIKit
 
 class Profile: UIViewController {
     
-    private var cardView : IdCardView = {
+    private var cardView: IdCardView = {
         let view = IdCardView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
@@ -48,8 +48,9 @@ class Profile: UIViewController {
         navigationBarAppearace.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBarAppearace.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        navigationController?.navigationBar.standardAppearance = navigationBarAppearace;
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearace
+        navigationController?.navigationBar.scrollEdgeAppearance =
+            navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.dataSource = self
@@ -59,12 +60,16 @@ class Profile: UIViewController {
         view.addSubview(tableView)
         view.backgroundColor = UIColor(named: "BackgroundColor")
         
-        let actionEditProfile = UIAction(title: "Edit Profile", image: UIImage(named: "editProfileImage")) { [weak self] action in
+        let actionEditProfile = UIAction(
+            title: "Edit Profile",
+            image: UIImage(named: "editProfileImage")) { [weak self] _ in
             guard let self = self else { return }
             
             // Instantiate your EditProfileController from the storyboard
             let storyboard = UIStoryboard(name: "EditProfileView", bundle: nil)
-            let editProfileController = storyboard.instantiateViewController(withIdentifier: "EditProfileControllerID") as! EditProfileController
+            let editProfileController = storyboard.instantiateViewController(
+                withIdentifier: "EditProfileControllerID")
+            as! EditProfileController
             
             // Present the EditProfileController modally
             let navigationController = UINavigationController(rootViewController: editProfileController)
@@ -74,7 +79,11 @@ class Profile: UIViewController {
         
         let menu = UIMenu(title: "", children: [actionEditProfile])
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(named: "detailIcon"), primaryAction: nil, menu: menu)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: nil,
+            image: UIImage(named: "detailIcon"),
+            primaryAction: nil,
+            menu: menu)
         navigationItem.rightBarButtonItem?.tintColor = .white
         
         
@@ -87,7 +96,7 @@ class Profile: UIViewController {
         super.viewDidLayoutSubviews()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         NSLayoutConstraint.activate([
             
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -109,10 +118,13 @@ extension Profile: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableCell.identifier, for: indexPath) as! DetailTableCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: DetailTableCell.identifier,
+            for: indexPath)
+        as! DetailTableCell
         
         cell.backgroundColor = .clear
-        cell.setupView(titleName: x[indexPath.row].title, subtitleName: x[indexPath.row].value as! String)
+        cell.setupView(titleName: x[indexPath.row].title, subtitleName: x[indexPath.row].value )
         
         return cell
     }
